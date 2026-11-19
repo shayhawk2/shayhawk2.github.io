@@ -1,5 +1,5 @@
 /* Hoops Planner offline cache. Network first (3 s timeout) so updates show up; falls back to the cached copy with no signal. Bump C to force a fresh cache. */
-const C = "hoops-v2";
+const C = "hoops-v3";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-180.png", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {

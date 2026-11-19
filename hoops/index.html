@@ -123,6 +123,8 @@ aside{display:grid;gap:22px;position:sticky;top:calc(env(safe-area-inset-top,0px
 .ex .det{color:var(--muted);font-size:14px}
 .ex .det b{color:var(--ink);font-weight:600}
 .ex .tap{font-size:12px;color:var(--muted);font-weight:600}
+.ex .tm{color:var(--muted);font-weight:600;font-size:13px;white-space:nowrap}
+.card h3 small.btime{font-weight:600;color:var(--accent-ink);margin-left:4px;white-space:nowrap}
 .load{display:inline-block;font-size:12.5px;font-weight:700;color:var(--lift);border:1px solid var(--lift);border-radius:6px;padding:1px 7px;margin-top:5px}
 .knee{font-size:14px;color:var(--muted);margin:0}
 .knee b{color:var(--ink)}
@@ -503,15 +505,18 @@ const idxOf=s=>Math.round((Date.parse(s+"T00:00:00Z")-START.getTime())/864e5);
 function chi(){try{const o={};new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()).forEach(p=>o[p.type]=p.value);return {iso:o.year+"-"+o.month+"-"+o.day,h:(+o.hour)%24,m:+o.minute}}catch(e){const d=new Date();return {iso:d.toISOString().slice(0,10),h:d.getHours(),m:d.getMinutes()}}}
 let todayIdx=idxOf(chi().iso);
 const ex=(nm,dose,det,m,p,load)=>({nm,dose,det,m:m||[],p:p||null,load:load||""});
-const T=(t,i)=>({t,i:i||2}), S=(sets,rest,per)=>({sets,rest,per}), G=segs=>({segs});
+const T=(t,i)=>({t,i:i||2}), S=(sets,rest,per,work)=>({sets,rest,per,work:work||45}), G=segs=>({segs});
+/* time estimates: a set takes "work" seconds; untimed rows can carry an est in seconds */
+const X=(e,s)=>(e.est=s,e);
+const estTxt=s=>"≈ "+Math.max(1,Math.round(s/60))+" min";
 const mmss=s=>{s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
 const PT={
- 1:ex("#1 Banded bridge","2 × 20","Band above the knees, push knees out, squeeze at the top.",["bridge"],S(2,30,"20 reps")),
- 2:ex("#2 Band walks","2 rounds","10 small steps forward, back, right, left. Stay low.",["bandwalk"],S(2,30,"10 steps each way")),
- 3:ex("#3 Inchworm","2 × 5","Slow walk-out and back.",["inchworm"],S(2,30,"5 reps")),
- 5:ex("#5 Single-leg bridge","2 × 10 / side","Hips level, drive through the heel.",["slbridge"],S(2,30,"10 each side")),
- 6:ex("#6 Scissor squat","2 × 10 / side","Your taught shallow stance, pain-free depth.",["scissor"],S(2,30,"10 each side")),
- 7:ex("#7 Stork","2 × 10 / side","Long band at the basement beam. Check band and anchor first.",["stork"],S(2,30,"10 each side"))
+ 1:ex("#1 Banded bridge","2 × 20","Band above the knees, push knees out, squeeze at the top.",["bridge"],S(2,30,"20 reps",50)),
+ 2:ex("#2 Band walks","2 rounds","10 small steps forward, back, right, left. Stay low.",["bandwalk"],S(2,30,"10 steps each way",60)),
+ 3:ex("#3 Inchworm","2 × 5","Slow walk-out and back.",["inchworm"],S(2,30,"5 reps",50)),
+ 5:ex("#5 Single-leg bridge","2 × 10 / side","Hips level, drive through the heel.",["slbridge"],S(2,30,"10 each side",80)),
+ 6:ex("#6 Scissor squat","2 × 10 / side","Your taught shallow stance, pain-free depth.",["scissor"],S(2,30,"10 each side",80)),
+ 7:ex("#7 Stork","2 × 10 / side","Long band at the basement beam. Check band and anchor first.",["stork"],S(2,30,"10 each side",80))
 };
 /* Warm-up order: every stretch and exercise first, indoors. Walking and jogging come last, so you only go out the door once. */
 const MOB=()=>[
@@ -521,7 +526,7 @@ const MOB=()=>[
  ex("Open / close the gate","1 min","Slow and controlled, both legs.",["gate"],T(60,2))];
 function ladderWarm(w){if(w<2)return [];const ds=["fwd","lat"],sg=[];ds.forEach(k=>{for(let r=1;r<=2;r++){sg.push({k:"work",t:20,l:DR[k].n+" · "+r+" of 2",m:"l"+k,i:4});sg.push({k:"rest",t:40,l:"Walk back and reset"})}});
  return [ex("Ladder warm-up","2 × 20 s each",ds.map(k=>DR[k].n).join(", then ")+". Easy rhythm, 40 s between.",ds.map(k=>"l"+k),G(sg))]}
-const CLOSEOUT=()=>ex("Closeout: accelerate to stop","4 reps","Like closing out on a shooter: 3–4 quick steps at about <b>60%</b>, chop your feet, stop low and balanced with a hand up. Walk back.",["stops"]);
+const CLOSEOUT=()=>X(ex("Closeout: accelerate to stop","4 reps","Like closing out on a shooter: 3–4 quick steps at about <b>60%</b>, chop your feet, stop low and balanced with a hand up. Walk back.",["stops"]),120);
 const CUTS=()=>ex("Shallow 45° cuts","2 each way","Like getting open or cutting off a driver: jog in, plant the outside foot, push off at 45°.",["cuts"]);
 function warmBlocks(w,indoor,stops){const inside=MOB().concat(ladderWarm(w));
  if(indoor)return [{title:"Warm-up",items:inside.concat([ex("Quick march in place","2 min","Knees up, arms pumping. Build to a light sweat.",["walk"],T(120,3))])}];
@@ -533,10 +538,10 @@ const PLANK2=()=>G([{k:"work",t:20,l:"Front plank",i:5},{k:"work",t:20,l:"Left s
 function session(i,indoor){
  const d=dateOf(i),w=Math.floor(i/7)+1,wk=WEEK[w],t=ORDER[i%7],lw=Math.max(2,w),s={i,type:t,date:d,w,wk,blocks:[],canIndoor:false,indoor:false};
  const thanks=iso(d)==="2026-11-26";
- const gate5=ex("Open / close the gate","5 each leg, each way","Slow, wall for balance.",["gate"]),calf10=ex("Calf raises","1 × 10","Slow up, slow down.",["calf"],S(1,0,"10 reps"));
+ const gate5=ex("Open / close the gate","5 each leg, each way","Slow, wall for balance.",["gate"]),calf10=ex("Calf raises","1 × 10","Slow up, slow down.",["calf"],S(1,0,"10 reps",30));
  if(t==="rec"){
   if(w===1){s.title="Recovery after the game";s.why="Easy only. Your first game ended on conditioning, not the knee.";
-   s.blocks.push({title:"Mobility + bands",sub:"Inside first.",items:[gate5,calf10,PT[1],ex("#7 Stork","1 × 10 / side",PT[7].det,["stork"],S(1,0,"10 each side"))]});
+   s.blocks.push({title:"Mobility + bands",sub:"Inside first.",items:[gate5,calf10,PT[1],ex("#7 Stork","1 × 10 / side",PT[7].det,["stork"],S(1,0,"10 each side",80))]});
    s.blocks.push({title:"Easy walk",items:[ex("Easy walk","15–20 min","Flat, talking pace.",["walk"],T(1050,2))]})}
   else{s.title="Recovery + full PT";s.why="The day after a game: the full band routine at easy effort, then an easy walk to finish.";
    s.blocks.push({title:"Familiar PT block",sub:"From your clinician&rsquo;s handout. About 30 s between sets.",items:[gate5,calf10,PT[1],PT[2],PT[3],PT[5],PT[6],PT[7]]});
@@ -553,10 +558,10 @@ function session(i,indoor){
  if(t==="str"){s.title="Strength A + bands";s.why="Your one full leg-strength day. End every set with reps left: 3–4 for legs, 2–3 for upper body."+(w===3?" Same weights as week 2.":"");
   s.blocks.push({title:"Warm-up",items:MOB().concat([ex("Quick march in place","2 min","Knees up, arms pumping.",["walk"],T(120,3))])});
   s.blocks.push({title:"Lifts",sub:"From your 2025 program, at lower volume. Start at the low end of each weight. Go up when you hit the top of the rep range with reps to spare.",items:[
-   ex("DB squat (kettlebell)",wk.sq+" × 8–10","Held at the chest. <b>90 s</b> rest. 6/10 effort.",["kbsquat"],S(wk.sq,90,"8–10 reps"),"25-lb KB, then the 40-lb KB"),
-   ex("Dumbbell RDL",wk.rdl+" × 8–10","In place of your old hamstring curls. <b>90 s</b> rest.",["rdl"],S(wk.rdl,90,"8–10 reps"),"25–40 lb · 50 lb later"),
-   ex("Superset: bench press → one-arm row","2 rounds","On the bench for full range. Press <b>8–12</b>, then row <b>8–10 per side</b>. <b>60–75 s</b> after the pair.",["press","row"],S(2,70,"press 8–12, row 8–10 / side"),"Press 25–40 lb each · row 30–40 lb"),
-   ex("Calf raises (weighted)","2 × 12–15","One dumbbell at your side, other hand on a wall. Slow up, slow down. 45 s rest.",["calfdb"],S(2,45,"12–15 reps"),"40–50 lb"),
+   ex("DB squat (kettlebell)",wk.sq+" × 8–10","Held at the chest. <b>90 s</b> rest. 6/10 effort.",["kbsquat"],S(wk.sq,90,"8–10 reps",40),"25-lb KB, then the 40-lb KB"),
+   ex("Dumbbell RDL",wk.rdl+" × 8–10","In place of your old hamstring curls. <b>90 s</b> rest.",["rdl"],S(wk.rdl,90,"8–10 reps",45),"25–40 lb · 50 lb later"),
+   ex("Superset: bench press → one-arm row","2 rounds","On the bench for full range. Press <b>8–12</b>, then row <b>8–10 per side</b>. <b>60–75 s</b> after the pair.",["press","row"],S(2,70,"press 8–12, row 8–10 / side",150),"Press 25–40 lb each · row 30–40 lb"),
+   ex("Calf raises (weighted)","2 × 12–15","One dumbbell at your side, other hand on a wall. Slow up, slow down. 45 s rest.",["calfdb"],S(2,45,"12–15 reps",50),"40–50 lb"),
    ex("Plank series","2 rounds","20 s front, 20 s left, 20 s right. 30 s between rounds.",["plank"],PLANK2())]});
   s.blocks.push({title:"PT bands",items:[PT[1],PT[5],PT[7]]});
   s.easier="Warm-up, DB squat 2 × 8, one round of press and row, #1 bridge 2 × 20."}
@@ -575,11 +580,11 @@ function session(i,indoor){
   s.blocks.push({title:"Game-shaped blocks",items:[ex(indoor?"Fast feet / march":"Fast / easy jog",b.blocks+" × "+b.min+" min",indoor?"Every minute: <b>15 s</b> quick-feet ladder laps, <b>45 s</b> march in place. <b>2 min</b> walk between blocks.":"Every minute: <b>15 s fast</b> (about 80%) + <b>45 s easy jog</b>. <b>2 min</b> walk between blocks.",indoor?["lfwd","linout"]:["fast","jog"],G(sg))]});
   s.blocks.push(cool("Breathing should settle within about 2 minutes."));
   s.blocks.push({title:indoor?"Upper body + plank":"Back inside: upper body + plank",sub:"From your 2025 push and pull days.",items:[
-   ex("Superset: bench press → incline row","2 rounds","Press <b>8–12</b> on the flat bench, then incline row <b>8–10</b> with a 2 s hold at the top. <b>60 s</b> after the pair.",["press","irow"],S(2,60,"press 8–12, row 8–10"),"Press 25–40 lb each · row 25–35 lb each"),
+   ex("Superset: bench press → incline row","2 rounds","Press <b>8–12</b> on the flat bench, then incline row <b>8–10</b> with a 2 s hold at the top. <b>60 s</b> after the pair.",["press","irow"],S(2,60,"press 8–12, row 8–10",110),"Press 25–40 lb each · row 25–35 lb each"),
    ex("Plank series","1 round","20 s front, 20 s left, 20 s right.",["plank"],G([{k:"work",t:20,l:"Front plank",i:5},{k:"work",t:20,l:"Left side",i:5},{k:"work",t:20,l:"Right side",i:5}])),PT[1],PT[7]]});
   s.easier="Warm-up, 2 blocks × 3 minutes, then one round of the press and row."}
  if(t==="mon"){s.title="Recovery";s.why="Fresh legs for tomorrow. No tiring leg work today.";
-  s.blocks.push({title:"Easy recovery",sub:"Mobility inside first, walk last.",items:[ex("Open / close the gate","5 each leg, each way","",["gate"]),ex("Calf raises","1 × 10","",["calf"],S(1,0,"10 reps")),ex("Foam roll (optional)","3–5 min","Quads, calves, glutes.",["foam"]),ex("Easy walk","15–20 min","Flat, talking pace.",["walk"],T(1050,2))]});
+  s.blocks.push({title:"Easy recovery",sub:"Mobility inside first, walk last.",items:[ex("Open / close the gate","5 each leg, each way","",["gate"]),ex("Calf raises","1 × 10","",["calf"],S(1,0,"10 reps",30)),X(ex("Foam roll (optional)","3–5 min","Quads, calves, glutes.",["foam"]),240),ex("Easy walk","15–20 min","Flat, talking pace.",["walk"],T(1050,2))]});
   s.easier="A 10-minute walk is plenty."}
  if(t==="game"){s.title="Game day";s.why=wk.game;
   s.blocks.push({title:"Morning: band work",grp:"am",sub:"Easy effort. This wakes the hips up; it shouldn&rsquo;t tire your legs.",items:[PT[1],PT[2],PT[5],PT[7]]});
@@ -599,7 +604,7 @@ function session(i,indoor){
  s.steps=[];s.blocks.forEach(b=>{b.steps=[];if(!b.np)b.items.forEach(e=>{const st=Object.assign({blk:b.title,grp:b.grp||""},e);b.steps.push(st);s.steps.push(st)})});
  s.secs=s.steps.reduce((a,e)=>a+stepDur(e),0);s.time=t==="game"?"Tip-off 8 PM":"≈ "+Math.round(s.secs/60)+" min";
  return s}
-function stepDur(e){const p=e.p;if(!p)return 90;if(p.t)return p.t;if(p.segs)return p.segs.reduce((a,x)=>a+x.t,0);return p.sets*45+Math.max(0,p.sets-1)*p.rest}
+function stepDur(e){if(e.est)return e.est;const p=e.p;if(!p)return 90;if(p.t)return p.t;if(p.segs)return p.segs.reduce((a,x)=>a+x.t,0);return p.sets*(p.work||45)+Math.max(0,p.sets-1)*p.rest}
 function summary(i){const d=dateOf(i),w=Math.floor(i/7)+1,wk=WEEK[w],t=ORDER[i%7];
  return {rec:w===1?"Bands + walk":"Full PT + walk 20 min",i1:wk.i1.reps+" × ("+wk.i1.work+" s hard / 60 s easy)"+(iso(d)==="2026-11-26"?", before the meal":""),str:"Squat "+wk.sq+" sets, RDL "+wk.rdl+", bench + row, calves, plank, bands",easy:"Jog "+wk.run.jog+" / walk 1 × "+wk.run.sets,i2:wk.i2.blocks+" blocks × "+wk.i2.min+" min (15 s fast / 45 s jog) + upper",mon:"Mobility + easy walk 15–20 min",game:"AM bands · "+wk.gs}[t]}
 /* daily fuel: his creatine plan plus plain, familiar nutrition notes */
@@ -620,9 +625,9 @@ function setDone(k,v){if(v)done.add(k);else done.delete(k);saveDone();paintMarks
 
 
 /* ================= render ================= */
-function exHTML(e){const a=e.m.map(k=>M[k]).find(m=>m&&m.a);const can=e.m.length>0;
- return (can?'<button type="button" class="ex" data-m="'+e.m.join(",")+'">':'<div class="ex plain">')+(can?'<div class="thumb">'+(a?A(first(a.a)):'<span class="tap">How to</span>')+'</div>':'')+'<div><div class="hd"><span class="nm">'+e.nm+'</span><span class="dose">'+e.dose+'</span></div>'+(e.det?'<div class="det">'+e.det+'</div>':'')+(e.load?'<div class="load">Weight: '+e.load+'</div>':'')+'</div>'+(can?'</button>':'</div>')}
-function blockHTML(b,n){return '<div class="card"><h3><span>'+b.title+'</span>'+(b.steps&&b.steps.length?'<button type="button" class="bplay" data-bp="'+n+'">&#9654; Start</button>':'')+'</h3>'+(b.sub?'<p class="sub">'+b.sub+'</p>':'')+b.items.map(exHTML).join("")+'</div>'}
+function exHTML(e,timed){const a=e.m.map(k=>M[k]).find(m=>m&&m.a);const can=e.m.length>0,tm=timed===true&&!(e.p&&e.p.t)?' <span class="tm">· '+estTxt(stepDur(e))+'</span>':'';
+ return (can?'<button type="button" class="ex" data-m="'+e.m.join(",")+'">':'<div class="ex plain">')+(can?'<div class="thumb">'+(a?A(first(a.a)):'<span class="tap">How to</span>')+'</div>':'')+'<div><div class="hd"><span class="nm">'+e.nm+'</span><span class="dose">'+e.dose+tm+'</span></div>'+(e.det?'<div class="det">'+e.det+'</div>':'')+(e.load?'<div class="load">Weight: '+e.load+'</div>':'')+'</div>'+(can?'</button>':'</div>')}
+function blockHTML(b,n){const st=b.steps&&b.steps.length;return '<div class="card"><h3><span>'+b.title+(st?' <small class="btime">'+estTxt(b.steps.reduce((a,e)=>a+stepDur(e),0))+'</small>':'')+'</span>'+(st?'<button type="button" class="bplay" data-bp="'+n+'">&#9654; Start</button>':'')+'</h3>'+(b.sub?'<p class="sub">'+b.sub+'</p>':'')+b.items.map(e=>exHTML(e,!!st)).join("")+'</div>'}
 function profileSVG(s){const bars=[];s.steps.forEach(e=>{const p=e.p;if(p&&p.segs)p.segs.forEach(x=>bars.push([x.t,x.i||(x.k==="work"?7:1.5)]));else if(p&&p.sets){for(let k=0;k<p.sets;k++){bars.push([45,5.5]);if(k<p.sets-1)bars.push([p.rest,1.2])}}else bars.push([stepDur(e),p&&p.i||2])});
  const tot=bars.reduce((a,b)=>a+b[0],0)||1;let x=0,h='<svg viewBox="0 0 1000 54" preserveAspectRatio="none" role="img" aria-label="Effort across the session">';
  bars.forEach(b=>{const w=b[0]/tot*1000,ht=Math.max(3,b[1]/8*52);h+='<rect x="'+x.toFixed(1)+'" y="'+(54-ht).toFixed(1)+'" width="'+Math.max(1.5,w-1.5).toFixed(1)+'" height="'+ht.toFixed(1)+'" rx="1.5" fill="'+(b[1]>=5?"var(--accent)":"var(--hero-line)")+'"/>';x+=w});
@@ -640,7 +645,7 @@ function renderDay(){
  h+=quoteHTML(sel+qShift,"button");
  h+='<div class="card"><p class="knee"><b>Knee check first.</b> Walk the house and one flight of stairs. Right knee <b>0–3.5</b> and moving normally: go as written. <b>4+</b>, a limp, swelling, locking or giving way: use the easier option or walk only.</p></div>';
  s.blocks.forEach((b,n)=>h+=blockHTML(b,n));
- if(s.type!=="game")h+='<div class="card"><h3><span>Fuel today</span></h3><p class="sub">Simple and repeatable beats perfect.</p>'+fuelRows(s).map(exHTML).join("")+'</div>';
+ if(s.type!=="game")h+='<div class="card"><h3><span>Fuel today</span></h3><p class="sub">Simple and repeatable beats perfect.</p>'+fuelRows(s).map(e=>exHTML(e)).join("")+'</div>';
  h+='<div class="card"><h3>Easier option <small>~15 min</small></h3><p class="sub" style="margin:0">'+s.easier+' Use it when time is short or the knee check says so. No make-ups later.</p></div>';
  h+='<div class="card"><h3>Ball handling <small>'+s.ball+'</small></h3><p class="sub">Never replaces the workout. Pick a length and the timer walks you through the drills.</p><div class="ballgo"><button type="button" class="btn" data-ball="5">&#9654; 5 min</button><button type="button" class="btn" data-ball="10">&#9654; 10 min</button><button type="button" class="btn" data-ball="15">&#9654; 15 min</button></div>'+BD.map((b,n)=>exHTML(ex((n+1)+". "+b[0],b[1],b[2],["b"+(n+1)]))).join("")+'</div>';
  h+='<div class="card rules"><details class="rules"><summary>Knee rules</summary><table class="kn"><tr><td>0–3.5</td><td>Train as planned. Note it and watch the trend.</td></tr><tr><td>4</td><td>Finish that rep at a walk and reassess. Still 4: walk only today.</td></tr><tr><td>5–6</td><td>Stop running and impact for the day. Hold progress until under 4 and steady.</td></tr><tr><td>7–8</td><td>Stop leg work. PT advice if it lasts more than a day or two.</td></tr><tr><td>9–10</td><td>Stop and get it looked at urgently.</td></tr></table><ul><li>Swelling, locking, giving way or loss of motion: stop and get clinician advice at any number.</li><li>Worse that evening or the next morning: repeat the week instead of moving up.</li><li>Burning lungs and wanting to stop are not knee signals. Ease the pace instead.</li><li>Chest pain, fainting or unusually bad breathlessness: stop and get care right away.</li></ul></details></div>';
@@ -712,7 +717,7 @@ function enter(i){clearInterval(PL.iv);PL.iv=null;if(i>=PL.steps.length)return f
 function curMove(){const st=PL.steps[PL.i];if(PL.mode==="time"){const s=PL.q[PL.n];if(s&&s.m)return s.m;if(s&&s.lead){const nx=PL.q[PL.n+1];if(nx&&nx.m)return nx.m}}
  return st.m.find(k=>M[k]&&M[k].a)||st.m[0]||null}
 function paint(){const st=PL.steps[PL.i],pl=$("#player"),mk=curMove(),m=mk&&M[mk];PL.shown=mk;
- let mid='<div class="k">'+st.blk+' · '+(PL.i+1)+' of '+PL.steps.length+'</div><h2>'+st.nm+'</h2><div class="dose">'+st.dose+'</div>'+(st.load?'<div class="load">Weight: '+st.load+'</div>':'')+(m&&m.a?'<div class="big" id="pbig">'+A(first(m.a))+'</div>':'');
+ let mid='<div class="k">'+st.blk+' · '+(PL.i+1)+' of '+PL.steps.length+'</div><h2>'+st.nm+'</h2><div class="dose">'+st.dose+(st.p&&!st.p.t?' · '+estTxt(stepDur(st)):'')+'</div>'+(st.load?'<div class="load">Weight: '+st.load+'</div>':'')+(m&&m.a?'<div class="big" id="pbig">'+A(first(m.a))+'</div>':'');
  if(PL.mode==="time")mid+='<div class="clockbox" id="cb"><div class="ph" id="ph"></div><div class="ck" id="ck"></div><div class="nx" id="nx"></div></div>';
  if(PL.mode==="set")mid+='<div class="clockbox" id="cb"><div class="ph" id="ph">Set '+PL.set+' of '+st.p.sets+'</div><div class="ck" id="ck" style="font-size:44px">'+st.p.per+'</div><div class="nx" id="nx">Tap when the set is done</div></div>';
  mid+='<p class="cue">'+(st.det||"")+'</p>'+(m&&m.why?'<p class="whybox"><b>Why</b>'+m.why+'</p>':'')+(m?'<p class="cue">'+m.how.join(" ")+'</p>':'');
