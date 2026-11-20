@@ -7,11 +7,10 @@
    "shelf": "cuisines"
   },
   {
-   "id": "bbq",
-   "name": "BBQ & Smoker",
-   "emoji": "🔥",
-   "shelf": "cuisines",
-   "groupBy": "meat"
+   "id": "french",
+   "name": "French",
+   "emoji": "🥖",
+   "shelf": "cuisines"
   },
   {
    "id": "mexican",
@@ -26,9 +25,72 @@
    "shelf": "cuisines"
   },
   {
+   "id": "bbq",
+   "name": "BBQ & Smoker",
+   "emoji": "🔥",
+   "shelf": "cuisines",
+   "groupBy": "meat"
+  },
+  {
+   "id": "steak",
+   "name": "Steak",
+   "emoji": "🥩",
+   "shelf": "cuisines"
+  },
+  {
+   "id": "appetizers",
+   "name": "Appetizers",
+   "emoji": "🫒",
+   "shelf": "courses",
+   "fillType": "Appetizer",
+   "typeLabels": {
+    "Sauce & Condiment": "Dips & Salsas"
+   }
+  },
+  {
+   "id": "salads",
+   "name": "Salads",
+   "emoji": "🥗",
+   "shelf": "courses",
+   "typeLabels": {
+    "Sauce & Condiment": "Dressings"
+   }
+  },
+  {
+   "id": "soups",
+   "name": "Soups & Stews",
+   "emoji": "🍲",
+   "shelf": "courses"
+  },
+  {
+   "id": "sides",
+   "name": "Sides",
+   "emoji": "🥔",
+   "shelf": "courses",
+   "fillType": "Side"
+  },
+  {
+   "id": "sauces",
+   "name": "Sauces",
+   "emoji": "🥄",
+   "shelf": "courses"
+  },
+  {
+   "id": "baking",
+   "name": "Baking",
+   "emoji": "🧁",
+   "shelf": "courses"
+  },
+  {
    "id": "breakfast",
    "name": "Breakfast",
    "emoji": "🥞",
+   "shelf": "meals"
+  },
+  {
+   "id": "meal-prep",
+   "name": "Meal Prep & Freezer",
+   "emoji": "❄️",
    "shelf": "meals"
   },
   {
@@ -50,6 +112,9 @@
    "title": "Arancini with Calabrian Chile Sauce",
    "emoji": "🍙",
    "category": "italian",
+   "also": [
+    "dinner-party"
+   ],
    "type": "Appetizer",
    "prep": 60,
    "cook": 45,
@@ -69,7 +134,7 @@
     "name": "Bon Appétit, Molly Baz",
     "url": "https://www.bonappetit.com/recipe/mozzarella-arancini-stuffed-rice-balls"
    },
-   "notes": "Made 12/7/2022 with sweet yellow onion and arborio. Makes about 14 balls; shaping them is the hard part. Servings here means balls.",
+   "notes": "Made 12/7/2022 with sweet yellow onion and arborio. Makes about 14 balls; shaping them is the hard part. Servings here means balls. Video: Molly Makes Arancini (youtube.com/watch?v=HY8HQUlepE0).",
    "ingredients": [
     {
      "qty": 3,
@@ -189,10 +254,10 @@
      "aisle": "Spices"
     },
     {
-     "qty": 2,
+     "qty": 3,
      "unit": "oz",
      "item": "low-moisture mozzarella",
-     "note": "cut into ½-inch pieces",
+     "note": "cut into ⅓-inch pieces",
      "aisle": "Deli & Cheese"
     },
     {
@@ -1536,6 +1601,9 @@
    "title": "Crunchwrap Supreme",
    "emoji": "🌯",
    "category": "mexican",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "prep": 15,
    "cook": 20,
@@ -2129,6 +2197,9 @@
    "title": "Salsa Verde",
    "emoji": "🟢",
    "category": "mexican",
+   "also": [
+    "appetizers"
+   ],
    "type": "Sauce & Condiment",
    "sauce": "Salsa & Dip",
    "prep": 10,
@@ -2462,6 +2533,10 @@
    "title": "Goat Cheese & Arugula Salad",
    "emoji": "🥗",
    "category": "american",
+   "also": [
+    "dinner-party",
+    "salads"
+   ],
    "type": "Side",
    "prep": 15,
    "servings": 4,
@@ -2668,6 +2743,9 @@
    "title": "French Onion Beef Sliders",
    "emoji": "🧅",
    "category": "american",
+   "also": [
+    "dinner-party"
+   ],
    "type": "Appetizer",
    "prep": 10,
    "cook": 55,
@@ -2798,6 +2876,10 @@
    "title": "Prosciutto & Goat Cheese Sliders",
    "emoji": "🥓",
    "category": "american",
+   "also": [
+    "dinner-party",
+    "italian"
+   ],
    "type": "Appetizer",
    "prep": 10,
    "cook": 30,
@@ -2954,6 +3036,9 @@
    "title": "McConaughey Tuna Salad",
    "emoji": "🐟",
    "category": "american",
+   "also": [
+    "salads"
+   ],
    "type": "Main",
    "prep": 10,
    "servings": 4,
@@ -3183,6 +3268,9 @@
    "title": "French Toast Casserole",
    "emoji": "🥘",
    "category": "breakfast",
+   "also": [
+    "meal-prep"
+   ],
    "type": "Main",
    "prep": 15,
    "cook": 40,
@@ -3346,6 +3434,9 @@
    "title": "Make-Ahead Breakfast Sandwiches",
    "emoji": "🥪",
    "category": "breakfast",
+   "also": [
+    "meal-prep"
+   ],
    "type": "Main",
    "tags": [
     "breakfast",
@@ -3658,6 +3749,9 @@
    "title": "Mushroom-Shallot Cream Sauce",
    "emoji": "🍄",
    "category": "dinner-party",
+   "also": [
+    "french"
+   ],
    "type": "Sauce & Condiment",
    "sauce": "Butter & Cream",
    "prep": 10,
@@ -4011,7 +4105,8 @@
    "emoji": "🫐",
    "category": "old",
    "also": [
-    "breakfast"
+    "breakfast",
+    "meal-prep"
    ],
    "type": "Main",
    "prep": 5,
@@ -4080,7 +4175,9 @@
    "emoji": "🫙",
    "category": "old",
    "also": [
-    "mexican"
+    "mexican",
+    "salads",
+    "meal-prep"
    ],
    "type": "Main",
    "prep": 10,
@@ -4365,7 +4462,8 @@
    "emoji": "🫑",
    "category": "old",
    "also": [
-    "american"
+    "american",
+    "soups"
    ],
    "type": "Main",
    "prep": 10,
@@ -4629,6 +4727,9 @@
    "title": "Grilled Garlic Dijon Herb Salmon",
    "emoji": "🐟",
    "category": "old",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "prep": 5,
    "cook": 10,
@@ -4873,6 +4974,10 @@
    "title": "Chicken & Avocado Salad with Lime",
    "emoji": "🥑",
    "category": "old",
+   "also": [
+    "american",
+    "salads"
+   ],
    "type": "Main",
    "prep": 15,
    "servings": 4,
@@ -5370,6 +5475,9 @@
    "title": "Guacamole",
    "emoji": "🥑",
    "category": "mexican",
+   "also": [
+    "appetizers"
+   ],
    "type": "Sauce & Condiment",
    "sauce": "Salsa & Dip",
    "tags": [
@@ -5693,6 +5801,9 @@
    "title": "Balsamic Vinaigrette",
    "emoji": "🫙",
    "category": "american",
+   "also": [
+    "salads"
+   ],
    "type": "Sauce & Condiment",
    "sauce": "Dressing & Spread",
    "prep": 5,
@@ -5770,6 +5881,10 @@
    "title": "Smoked Jalapeño Poppers",
    "emoji": "🌶️",
    "category": "bbq",
+   "also": [
+    "dinner-party",
+    "american"
+   ],
    "type": "Appetizer",
    "prep": 30,
    "cook": 20,
@@ -6484,7 +6599,8 @@
    "emoji": "🌶️",
    "category": "bbq",
    "also": [
-    "american"
+    "american",
+    "soups"
    ],
    "type": "Main",
    "meat": "Beef",
@@ -7205,6 +7321,1815 @@
      "text": "Taste the juices. Dilute with water if salty or mix with mop sauce, and serve.",
      "uses": [
       5
+     ]
+    }
+   ]
+  },
+  {
+   "id": "french-onion-soup-bone-marrow",
+   "title": "French Onion Soup with Bone Marrow Toasts",
+   "emoji": "🧅",
+   "category": "french",
+   "also": [
+    "soups"
+   ],
+   "type": "Main",
+   "meat": "Beef",
+   "tags": [
+    "soup",
+    "beef",
+    "project",
+    "make-ahead"
+   ],
+   "prep": 30,
+   "cook": 120,
+   "servings": 4,
+   "equipment": [
+    "Large heavy sauté pan",
+    "Soup pot",
+    "Rimmed baking sheet",
+    "Wire rack",
+    "Oven-safe soup crocks",
+    "Kitchen twine"
+   ],
+   "source": {
+    "name": "Babish, Let's Make: French Onion Soup (cook-along)",
+    "url": "https://www.youtube.com/watch?v=he2SdezMpes"
+   },
+   "notes": "Start the marrow bones brining the night before. No marrow fat? Butter or oil works for the toasts.",
+   "ingredients": [
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "marrow bones",
+     "note": "4 to 6, cut lengthwise or crosswise",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "for the brine, toasts and to taste",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "baguette",
+     "note": "sliced into 2 cm rounds, about 4 per serving",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 1,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "for the toasts",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 8,
+     "unit": "",
+     "item": "large yellow onions",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "divided",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "all-purpose flour",
+     "note": "1 to 2 tbsp",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "tomato paste",
+     "note": "1 to 2 tsp, optional",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "brandy",
+     "note": "2 to 3 tbsp",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 6,
+     "unit": "cup",
+     "item": "beef stock or bone broth",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "soy sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "Worcestershire sauce",
+     "note": "or to taste",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "fish sauce",
+     "note": "optional",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "sprig",
+     "item": "thyme",
+     "note": "2 to 3",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "sprig",
+     "item": "parsley",
+     "note": "2 to 3",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "bay leaf",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "leek green",
+     "note": "or cheesecloth, for wrapping the herbs",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "Gruyère",
+     "note": "grated, 1½ to 2 cups",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "chives",
+     "note": "finely chopped, optional",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Brine the marrow bones overnight in cold salted water (this also thaws frozen ones).",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Heat the oven to 400°F. Set the bones cut side up on a foil cradle and roast 20 to 25 minutes, until the marrow puffs and the fat renders.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Cool slightly. Scoop out the marrow and save it. Strain and save the rendered fat.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Brush the baguette rounds on both sides with marrow fat and salt them. Toast on a wire rack at 400°F (convection if you have it) until golden and crisp, flipping as needed.",
+     "uses": [
+      2,
+      1
+     ]
+    },
+    {
+     "text": "Melt 2 tbsp butter in a large heavy pan over medium. Add the onions and about ½ cup water, cover, and cook over medium-low 5 to 10 minutes, until soft.",
+     "uses": [
+      4,
+      5
+     ],
+     "tips": [
+      "water-for-browning-onions"
+     ]
+    },
+    {
+     "text": "Uncover and cook 45 to 60 minutes, stirring often and adding splashes of water when the fond gets dark, until deeply golden.",
+     "uses": [
+      4
+     ],
+     "tips": [
+      "water-for-browning-onions"
+     ]
+    },
+    {
+     "text": "Move the onions to a soup pot with 1 to 2 tbsp butter. Stir in the flour and cook 1 to 2 minutes.",
+     "uses": [
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Stir in the tomato paste if using, then deglaze with the brandy, scraping up the fond.",
+     "uses": [
+      7,
+      8
+     ]
+    },
+    {
+     "text": "Add the stock in stages, stirring to work in the flour. Add the soy, Worcestershire and fish sauce and simmer 30 minutes.",
+     "uses": [
+      9,
+      10,
+      11,
+      12
+     ],
+     "tips": [
+      "enrich-boxed-broth"
+     ]
+    },
+    {
+     "text": "Tie the thyme, parsley and bay leaf in the leek green. Add for the last 15 to 20 minutes, then pull it out.",
+     "uses": [
+      13,
+      14,
+      15,
+      16
+     ]
+    },
+    {
+     "text": "Whip the marrow into a paste. Heat the broiler. Spread marrow on the toasts and grate raw garlic over each.",
+     "uses": [
+      0,
+      2,
+      3
+     ],
+     "tips": [
+      "garlic-on-hot-toast"
+     ]
+    },
+    {
+     "text": "Ladle the soup into oven-safe crocks, add the toasts and a heavy layer of Gruyère. Broil 2 to 5 minutes, until bubbly and browned.",
+     "uses": [
+      17
+     ]
+    },
+    {
+     "text": "Garnish with chives.",
+     "uses": [
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chicken-pan-sauce",
+   "title": "Chicken Pan Sauce",
+   "emoji": "🍋",
+   "category": "french",
+   "type": "Sauce & Condiment",
+   "sauce": "Butter & Cream",
+   "tags": [
+    "sauce",
+    "chicken",
+    "pan sauce",
+    "quick"
+   ],
+   "equipment": [
+    "Stainless steel skillet",
+    "Whisk"
+   ],
+   "source": {
+    "name": "ThatDudeCanCook (amounts), Babish Pan Sauces (method)",
+    "url": "https://www.youtube.com/watch?v=75nMfZXYcFk"
+   },
+   "notes": "Amounts from ThatDudeCanCook's video description, which lists the chives twice; this uses 2 tbsp total. Method from Babish's Pan Sauces episode (youtube.com/watch?v=ru4U_T83uOU). Babish's chicken: airline breast skin side down in 2 tbsp oil in a cold stainless pan, then medium-high until deeply browned; flip onto the rib cage and finish in a 400°F oven, checking at 10 to 15 minutes; rest 10 minutes.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "medium shallot",
+     "note": "finely diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "chives",
+     "note": "finely sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.333,
+     "unit": "cup",
+     "item": "dry white wine",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "chicken stock",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "2 to 3 tbsp, cold",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "lemon juice",
+     "note": "juice of ½ lemon",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cook the chicken in a stainless skillet and move it to rest. Pour off all but a thin layer of fat, keeping the browned bits.",
+     "uses": []
+    },
+    {
+     "text": "Over medium heat, cook the shallot in the fat until translucent. Add the garlic and cook 30 seconds.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Deglaze with the wine, scraping up the browned bits. Add the stock and simmer 5 to 7 minutes.",
+     "uses": [
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Add the lemon juice. Raise the heat to medium-high and reduce until a spoon drawn across the pan leaves a trail.",
+     "uses": [
+      6
+     ]
+    },
+    {
+     "text": "Take the pan off the heat for 30 seconds, then whisk in the cold butter until thick and glossy. If it turns oily, whisk in a splash of water.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Season with salt and pepper, stir in the chives and spoon over the chicken.",
+     "uses": [
+      2,
+      7,
+      8
+     ]
+    }
+   ]
+  },
+  {
+   "id": "steak-red-wine-pan-sauce",
+   "title": "Steak with Red Wine Pan Sauce",
+   "emoji": "🍷",
+   "category": "french",
+   "also": [
+    "steak"
+   ],
+   "type": "Main",
+   "meat": "Beef",
+   "tags": [
+    "beef",
+    "steak",
+    "pan sauce"
+   ],
+   "equipment": [
+    "Stainless steel skillet",
+    "Spoon for basting",
+    "Whisk"
+   ],
+   "source": {
+    "name": "Babish, Pan Sauces | Basics with Babish",
+    "url": "https://www.youtube.com/watch?v=ru4U_T83uOU"
+   },
+   "notes": "Babish names no cut or doneness temp; use the Steak Guide temps. He uses stock with gelatin added for body.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "steak",
+     "note": "medium thickness",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "vegetable oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "for basting",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "sprig",
+     "item": "rosemary",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "crushed, for basting",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "full-bodied red wine",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "chicken or beef stock",
+     "note": "with gelatin",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "for the sauce",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "shallots",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "crushed, for the sauce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Season the steak with salt and pepper.",
+     "uses": [
+      0,
+      10,
+      11
+     ]
+    },
+    {
+     "text": "Heat the oil in a stainless skillet until very hot. Sear the steak until a crust forms on both sides.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Add the butter, rosemary and garlic. Tilt the pan and spoon the foaming butter over the steak until it's done the way you like it.",
+     "uses": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Move the steak to a plate, spoon the brown butter over it and rest 10 minutes.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Pour off the excess fat, keeping the browned bits. Over medium heat, cook the shallots until translucent, then the garlic for 30 seconds.",
+     "uses": [
+      8,
+      9
+     ]
+    },
+    {
+     "text": "Deglaze with the red wine, scraping up the browned bits. Add the stock and reduce over medium-high until thick.",
+     "uses": [
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Whisk in the butter until the sauce turns creamy. Season with salt and pepper.",
+     "uses": [
+      7,
+      10,
+      11
+     ]
+    },
+    {
+     "text": "Slice the steak and spoon the sauce over it.",
+     "uses": [
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "freezer-breakfast-burritos",
+   "title": "Freezer Breakfast Burritos",
+   "emoji": "🌯",
+   "category": "breakfast",
+   "also": [
+    "meal-prep"
+   ],
+   "type": "Main",
+   "tags": [
+    "breakfast",
+    "make-ahead",
+    "freezer",
+    "meal prep"
+   ],
+   "servings": 6,
+   "equipment": [
+    "Large saucepan",
+    "Medium skillet",
+    "Plastic wrap or parchment",
+    "Aluminum foil",
+    "Gallon freezer bags"
+   ],
+   "source": {
+    "name": "Babish, Freezer Meals | Basics with Babish",
+    "url": "https://www.youtube.com/watch?v=-XUzpAiYuVA"
+   },
+   "notes": "Babish's assembly step skips the sausage even though it's in the ingredients; it goes in with the eggs here. Keeps 1 to 3 months frozen.",
+   "ingredients": [
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "butter",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 15,
+     "unit": "",
+     "item": "eggs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "neutral oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "bunch",
+     "item": "Swiss chard",
+     "note": "stems removed, leaves chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "pre-cooked chicken sausages",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 6,
+     "unit": "",
+     "item": "flour tortillas",
+     "note": "14-inch",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 12,
+     "unit": "oz",
+     "item": "Gruyère or cheddar",
+     "note": "grated",
+     "aisle": "Deli & Cheese"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Melt the butter in a large saucepan. Scramble the eggs until fully cooked, season with salt and pepper and cool completely.",
+     "uses": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Heat the oil in a medium pan over medium-high. Cook the onion 1 to 2 minutes, add the chard and cook 3 to 4 minutes until tender. Cool completely.",
+     "uses": [
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Cut the sausages into bite-size pieces.",
+     "uses": [
+      7
+     ]
+    },
+    {
+     "text": "Optional: warm each tortilla over a burner flame about 30 seconds per side so it rolls without tearing.",
+     "uses": [
+      8
+     ]
+    },
+    {
+     "text": "Build each burrito: a layer of cheese across the middle, then onions and chard, eggs and sausage, then more cheese.",
+     "uses": [
+      9,
+      5,
+      6,
+      1,
+      7
+     ]
+    },
+    {
+     "text": "Roll tightly, wrap in plastic wrap or parchment, then foil. Label with the name and date.",
+     "uses": [
+      8
+     ]
+    },
+    {
+     "text": "Refrigerate 1 hour, then move to gallon freezer bags and freeze.",
+     "uses": []
+    },
+    {
+     "text": "To reheat: unwrap and bake at 350°F for 10 to 12 minutes, or wrap in a damp paper towel and microwave on medium 1 to 2 minutes.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "babish-red-sauce",
+   "title": "Red Sauce (Marinara)",
+   "emoji": "🍅",
+   "category": "italian",
+   "type": "Sauce & Condiment",
+   "sauce": "Tomato",
+   "tags": [
+    "sauce",
+    "vegetarian",
+    "make-ahead"
+   ],
+   "servings": 4,
+   "equipment": [
+    "Large skillet or saucepan"
+   ],
+   "source": {
+    "name": "Babish, Sauces | Basics with Babish",
+    "url": "https://www.babi.sh/recipes/sauces"
+   },
+   "notes": "Not in the \"Recipes (made prev)\" playlist, but Jim has made it.",
+   "ingredients": [
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "olive oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 3,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "red pepper flakes",
+     "note": "optional",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "dried oregano",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "yellow onion",
+     "note": "finely diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "tomato paste",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "can",
+     "item": "San Marzano tomatoes",
+     "note": "28 oz each",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "sprig",
+     "item": "basil",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Heat the olive oil in a large skillet over medium until it shimmers. Cook the garlic until fragrant, about 1 minute.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Stir in the red pepper flakes and oregano and cook 1 minute more.",
+     "uses": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Add the onion and cook 5 to 7 minutes, until soft and translucent.",
+     "uses": [
+      4
+     ]
+    },
+    {
+     "text": "Stir in the tomato paste and cook 2 minutes.",
+     "uses": [
+      5
+     ],
+     "tips": [
+      "tomato-paste-brick-red"
+     ]
+    },
+    {
+     "text": "Add the tomatoes, crushing them by hand as they go in. Add the basil and bring to a low simmer.",
+     "uses": [
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Partially cover and simmer 1 hour, stirring now and then.",
+     "uses": []
+    },
+    {
+     "text": "Pull the basil, stir in the butter and season with salt and pepper.",
+     "uses": [
+      7,
+      8,
+      9,
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "id": "one-pan-salmon",
+   "title": "One-Pan Salmon, Potatoes and Asparagus",
+   "emoji": "🐟",
+   "category": "american",
+   "type": "Main",
+   "meat": "Seafood",
+   "tags": [
+    "salmon",
+    "sheet pan",
+    "weeknight"
+   ],
+   "servings": 4,
+   "placeholder": true,
+   "equipment": [
+    "Rimmed baking sheet",
+    "Instant-read thermometer"
+   ],
+   "source": {
+    "name": "Babish, Weeknight Meals | Basics with Babish",
+    "url": "https://www.youtube.com/watch?v=zQm9Bk2bA_Q"
+   },
+   "notes": "Missing amounts: olive oil, garlic and Dijon (Babish gives none). His page says serves 2 but lists 4 fillets; servings here follow the fillets.",
+   "ingredients": [
+    {
+     "qty": 15,
+     "unit": "",
+     "item": "baby Yukon Gold potatoes",
+     "note": "halved",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "olive oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 30,
+     "unit": "",
+     "item": "asparagus spears",
+     "note": "ends trimmed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "salmon fillets",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "crushed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "lemon",
+     "note": "juiced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "tsp",
+     "item": "Dijon mustard",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "chives",
+     "note": "minced",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Put a sheet pan in the oven and heat to 400°F for about 20 minutes.",
+     "uses": []
+    },
+    {
+     "text": "Toss the potatoes with olive oil, salt and pepper. Set them cut side down on the hot pan and roast about 25 minutes.",
+     "uses": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Toss the asparagus with olive oil, salt and pepper.",
+     "uses": [
+      4,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Whisk the garlic, lemon juice, Dijon, a good glug of olive oil, salt and pepper into a vinaigrette.",
+     "uses": [
+      6,
+      7,
+      8,
+      1
+     ]
+    },
+    {
+     "text": "Coat the salmon generously with the vinaigrette.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Stir the potatoes and push them to one side. Lay the salmon skin side down in the middle and the asparagus on the other side.",
+     "uses": [
+      0,
+      5,
+      4
+     ]
+    },
+    {
+     "text": "Roast at 400°F for 15 minutes, or until the salmon reads 125°F. Top with chives.",
+     "uses": [
+      5,
+      9
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mashed-fingerling-potatoes",
+   "title": "Mashed Fingerling Potatoes",
+   "emoji": "🥔",
+   "category": "american",
+   "type": "Side",
+   "tags": [
+    "side",
+    "potatoes",
+    "vegetarian"
+   ],
+   "servings": 4,
+   "equipment": [
+    "Large saucepot",
+    "Masher",
+    "Whisk"
+   ],
+   "source": {
+    "name": "Babish, Mashed Potatoes | Basics with Babish",
+    "url": "https://www.youtube.com/watch?v=ZLnWdPPJvYg"
+   },
+   "notes": "The episode also has aligot (whipped with Swiss) and loaded ranch mashed potatoes.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "lb",
+     "item": "fingerling potatoes",
+     "note": "cut into 1-inch pieces",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "16 oz",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "unsalted butter",
+     "note": "2 sticks",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Put the potatoes in a large pot, cover with water and add a pinch of salt.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Boil about 15 minutes, until very tender.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Drain, return the potatoes to the pot and mash.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Whisk in the cream and butter until smooth.",
+     "uses": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Season with salt and pepper.",
+     "uses": [
+      1,
+      4
+     ]
+    }
+   ]
+  },
+  {
+   "id": "steak-guide",
+   "title": "Steak Guide: Flank, Ribeye, KC Strip, Filet",
+   "emoji": "🥩",
+   "category": "american",
+   "also": [
+    "bbq",
+    "steak"
+   ],
+   "type": "Main",
+   "meat": "Beef",
+   "tags": [
+    "beef",
+    "steak",
+    "technique"
+   ],
+   "equipment": [
+    "Cast iron pan",
+    "Instant-read thermometer",
+    "Smoker (ribeye)",
+    "Grill (flank)"
+   ],
+   "source": {
+    "name": "Babish, The Best Way To Cook EVERY Steak",
+    "url": "https://www.youtube.com/watch?v=peAbYlvP6rU"
+   },
+   "notes": "Strip and ribeye methods are Babish's. He doesn't cook a plain filet (his is tartare) or a plain flank (his is stuffed pinwheels: pound thin, layer cheese and sautéed peppers and onions, roll, tie, slice, sear, then finish at 375°F to medium). Those two lines use his strip method and standard hot-and-fast with the doneness temps. Temps are after resting; pull about 5°F early. Sauces: Steak with Red Wine Pan Sauce or Steak au Poivre.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "steak",
+     "note": "flank, ribeye, KC strip or filet",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "neutral oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "for basting strip or filet",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 4,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "whole",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "sprig",
+     "item": "rosemary or thyme",
+     "note": "optional",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "parsley",
+     "note": "chopped",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Doneness after resting: rare 120°F, medium-rare 130°F, medium 140°F. Pull about 5°F early.",
+     "uses": []
+    },
+    {
+     "text": "All cuts: salt ahead (overnight, uncovered in the fridge, is best) and pat dry before cooking.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "KC strip: heat a cast iron pan on high until smoking. Add oil and sear both sides hard and fast.",
+     "uses": [
+      0,
+      3
+     ]
+    },
+    {
+     "text": "KC strip: once there's a dark crust, lower the heat, add the butter and garlic, and spoon the butter over the steak. Mop with the herb sprig if using.",
+     "uses": [
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "KC strip: move to a plate, pour the hot butter over and rest 10 minutes. Rub the top with a garlic clove, slice, and finish with parsley, salt and pepper.",
+     "uses": [
+      5,
+      7,
+      1,
+      2
+     ]
+    },
+    {
+     "text": "Filet: sear and baste the same way as the strip, browning the sides too. It's lean, so pull it by medium-rare.",
+     "uses": [
+      0,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "text": "Ribeye (thick, bone-in): smoke at 225°F until it reads 110 to 115°F inside.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Ribeye: rest briefly, then sear over very hot cast iron or a grill to build the crust. Slice and serve right away.",
+     "uses": [
+      0,
+      3
+     ],
+     "tips": [
+      "ribeye-fat-edge"
+     ]
+    },
+    {
+     "text": "Flank: sear on a very hot grill or skillet to medium-rare, rest 10 minutes, then slice thin across the grain.",
+     "uses": [
+      0,
+      3
+     ],
+     "tips": [
+      "dry-and-slice-across-grain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "steak-au-poivre",
+   "title": "Steak au Poivre",
+   "emoji": "🥩",
+   "category": "french",
+   "also": [
+    "steak",
+    "dinner-party"
+   ],
+   "type": "Main",
+   "meat": "Beef",
+   "tags": [
+    "beef",
+    "steak",
+    "pan sauce",
+    "date night"
+   ],
+   "prep": 15,
+   "cook": 30,
+   "servings": 4,
+   "equipment": [
+    "Large cast iron skillet",
+    "Mortar and pestle or zip bag",
+    "Instant-read thermometer"
+   ],
+   "source": {
+    "name": "Bon Appétit, Molly Baz (Cook This Book)",
+    "url": "https://www.bonappetit.com/recipe/strip-steak-au-poivre"
+   },
+   "notes": "The playlist video is Alexia Duchêne's steak frites (Bon Appétit French Fundamentals, youtube.com/watch?v=jkyv6RXYH64); this is Bon Appétit's written strip version. Take the pan off the heat before adding the cognac. Serve with Frites.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "KC strip steaks",
+     "note": "1½ inches thick, about 1½ lb total",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "freshly ground, generous",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "whole black peppercorns",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "vegetable oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 3,
+     "unit": "sprig",
+     "item": "thyme",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "smashed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "divided",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large shallot",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.333,
+     "unit": "cup",
+     "item": "cognac",
+     "note": "or dry sherry or brandy",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "heavy cream",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "flaky sea salt",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pat the steaks dry and season all over with salt and plenty of pepper. Let sit 15 to 30 minutes.",
+     "uses": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "text": "Coarsely crush the peppercorns in a mortar or a zip bag under a small pan. They should be much coarser than ground pepper. Set aside.",
+     "uses": [
+      3
+     ]
+    },
+    {
+     "text": "Heat the oil in a large cast iron skillet over medium-high. Sear the steaks undisturbed until deeply browned, about 3 minutes.",
+     "uses": [
+      4,
+      0
+     ]
+    },
+    {
+     "text": "Flip and cook about 3 minutes more. Stand them on the fat cap and brown it, about 3 minutes.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Lower to medium-low. Add the thyme, smashed garlic and 1 tbsp butter and baste nonstop until the thickest part reads 120°F, about 2 minutes.",
+     "uses": [
+      5,
+      6,
+      8
+     ]
+    },
+    {
+     "text": "Move the steaks to a cutting board and rest 10 minutes.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Add the shallot, sliced garlic, remaining 2 tbsp butter and crushed peppercorns to the skillet. Cook, stirring, until soft but not browned, about 5 minutes.",
+     "uses": [
+      9,
+      7,
+      8,
+      3
+     ]
+    },
+    {
+     "text": "Take the pan off the heat and add the cognac. Back over medium, cook 1 to 2 minutes, until mostly evaporated and a spoon leaves a track.",
+     "uses": [
+      10
+     ]
+    },
+    {
+     "text": "Add the cream, bring to a simmer and cook about 1 minute, until it coats a spoon. Season with salt.",
+     "uses": [
+      11,
+      1
+     ]
+    },
+    {
+     "text": "Slice the steaks against the grain. Stir the board juices into the sauce, spoon it over the steak and finish with flaky salt.",
+     "uses": [
+      0,
+      12
+     ]
+    }
+   ]
+  },
+  {
+   "id": "frites",
+   "title": "Frites (Double-Fried)",
+   "emoji": "🍟",
+   "category": "french",
+   "type": "Side",
+   "tags": [
+    "to try",
+    "fries",
+    "fried",
+    "potatoes"
+   ],
+   "placeholder": true,
+   "equipment": [
+    "Heavy pot",
+    "Deep-fry thermometer",
+    "Spider or slotted spoon"
+   ],
+   "source": {
+    "name": "Bon Appétit, French Fundamentals (Alexia Duchêne)",
+    "url": "https://www.youtube.com/watch?v=jkyv6RXYH64"
+   },
+   "notes": "To try. From the steak frites video: potato prep, blanch, first fry, second fry. No written amounts, oil temps or times; fill in from the video or after the first cook.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "russet potatoes",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "frying oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cut the potatoes into sticks.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Blanch the fries.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Heat the frying oil.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "First fry, then drain.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Second fry until golden and crisp.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Salt while hot and serve.",
+     "uses": [
+      2
+     ],
+     "tips": [
+      "finish-fries-open"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kenji-beef-stew",
+   "title": "All-American Beef Stew",
+   "emoji": "🍲",
+   "category": "american",
+   "also": [
+    "soups"
+   ],
+   "type": "Main",
+   "meat": "Beef",
+   "tags": [
+    "beef",
+    "stew",
+    "braise",
+    "make-ahead"
+   ],
+   "prep": 5,
+   "cook": 190,
+   "servings": 6,
+   "equipment": [
+    "Large Dutch oven",
+    "Blender",
+    "Rimmed baking sheet"
+   ],
+   "source": {
+    "name": "J. Kenji López-Alt, Serious Eats",
+    "url": "https://www.seriouseats.com/all-american-beef-stew-recipe"
+   },
+   "nutrition": {
+    "cal": 810,
+    "protein": 67,
+    "carbs": 20,
+    "fat": 50
+   },
+   "notes": "Video: Really Good Beef Stew | Kenji's Cooking Show (youtube.com/watch?v=VIdlVi-VzPY). Keeps up to 5 days in the fridge and reheats well.",
+   "ingredients": [
+    {
+     "qty": 4,
+     "unit": "cup",
+     "item": "low-sodium chicken stock",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "tomato paste",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "anchovy fillets",
+     "note": "rinsed, or 1 tbsp fish sauce",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "packets unflavored gelatin",
+     "note": "1 oz",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "soy sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "Worcestershire sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "vegetable oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 3,
+     "unit": "lb",
+     "item": "boneless beef chuck roast",
+     "note": "whole, cut into 3 steaks",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 10,
+     "unit": "oz",
+     "item": "white button mushrooms",
+     "note": "quartered",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "medium carrots",
+     "note": "2 whole, 2 cut bite-size",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "pearl onions",
+     "note": "frozen and thawed, or fresh and peeled",
+     "aisle": "Frozen"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large yellow onion",
+     "note": "unpeeled, halved",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "small celery ribs",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "unpeeled",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "dry sherry",
+     "note": "or dry vermouth or red wine",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "all-purpose flour",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "bay leaves",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "sprig",
+     "item": "thyme",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "Yukon Gold potatoes",
+     "note": "peeled and cubed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "oz",
+     "item": "frozen peas",
+     "aisle": "Frozen"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Blend the stock, tomato paste, anchovies, gelatin, soy and Worcestershire on high until smooth. Set aside.",
+     "uses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "text": "Move a rack to the lowest position and heat the oven to 300°F.",
+     "uses": []
+    },
+    {
+     "text": "Heat the oil in a large Dutch oven over medium-high until shimmering. Season the beef and brown it well on 2 sides, about 10 minutes. Set aside on a tray.",
+     "uses": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    {
+     "text": "Cook the mushrooms, stirring, until they release their liquid and start to brown, about 6 minutes.",
+     "uses": [
+      10
+     ]
+    },
+    {
+     "text": "Add the diced carrots and pearl onions and cook until well browned. Season and set aside in a bowl.",
+     "uses": [
+      11,
+      12,
+      8,
+      9
+     ]
+    },
+    {
+     "text": "Add the halved onion cut side down, plus the whole carrots, celery and garlic. Brown, about 4 minutes.",
+     "uses": [
+      13,
+      11,
+      14,
+      15
+     ]
+    },
+    {
+     "text": "Add the sherry, scrape up the browned bits and reduce by three-quarters, about 3 minutes. Add the stock mixture, bring to a simmer and take off the heat.",
+     "uses": [
+      16,
+      0
+     ]
+    },
+    {
+     "text": "Cut the beef into 1½- to 2-inch chunks and toss with the flour. Add it with its juices, the bay leaves and thyme, and return to a simmer over medium.",
+     "uses": [
+      7,
+      17,
+      18,
+      19
+     ]
+    },
+    {
+     "text": "Put it in the oven with the lid partly open. Cook about 1 hour 30 minutes, at a slow, steady simmer, until the beef starts to get tender.",
+     "uses": []
+    },
+    {
+     "text": "Fish out and discard the whole carrots, celery, onion, garlic, thyme and bay leaves.",
+     "uses": [
+      11,
+      14,
+      13,
+      15,
+      19,
+      18
+     ]
+    },
+    {
+     "text": "Add the potatoes and the reserved mushrooms, pearl onions and carrots. Cook partly covered 45 minutes to 1 hour, until everything is tender and the broth has thickened.",
+     "uses": [
+      20,
+      10,
+      12,
+      11
+     ]
+    },
+    {
+     "text": "If needed, simmer on the stove up to 15 minutes to thicken. Stir in the peas and season.",
+     "uses": [
+      21,
+      8,
+      9
      ]
     }
    ]

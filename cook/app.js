@@ -12,7 +12,7 @@ const MEATS = [['Beef', 'Beef'], ['Pork', 'Pork'], ['Poultry', 'Poultry'], ['Lam
 const SAUCES = [['Tomato', 'Tomato sauces'], ['Butter & Cream', 'Butter & cream sauces'], ['Salsa & Dip', 'Salsas & dips'], ['Dressing & Spread', 'Dressings & spreads']];
 // Techniques that are really small sauces; shown at the bottom of the Sauces page.
 const QUICK_SAUCES = ['cutlet-sauce-on-the-side', 'tartar-without-brine', 'ancho-ranch', 'dijon-binds-dressing', 'reduce-balsamic-lightly', 'cornstarch-slurry'];
-const SHELVES = [['cuisines', 'Cuisines'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
+const SHELVES = [['cuisines', 'Cuisines'], ['courses', 'Courses'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
 const PLURAL = new Set(['cup', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig']);
@@ -84,10 +84,17 @@ function all() {
 }
 const byId = id => all().find(r => r.id === id);
 const total = r => (r.prep || 0) + (r.cook || 0);
-// A recipe sits in its main `category` plus any listed in `also`.
-const inCat = (r, id) => r.category === id || (r.also || []).includes(id);
 const isSauce = r => !!r.sauce || r.type === 'Sauce & Condiment';
-const catName = id => (DATA.categories.find(c => c.id === id) || {}).name || 'Uncategorized';
+const catById = id => DATA.categories.find(c => c.id === id) || {};
+const catName = id => catById(id).name || 'Uncategorized';
+// A recipe sits in its main `category` plus any listed in `also`. A category with `fillType`
+// also takes every recipe of that type (Sides, Appetizers); the `sauces` category takes every sauce.
+const inCat = (r, id) => {
+  if (r.category === id || (r.also || []).includes(id)) return true;
+  if (id === 'sauces') return isSauce(r);
+  const c = catById(id);
+  return !!c.fillType && r.type === c.fillType;
+};
 const mins = m => m >= 60 ? `${Math.floor(m / 60)} hr${m % 60 ? ' ' + (m % 60) + ' min' : ''}` : `${m} min`;
 
 function fracStr(n) {
@@ -296,7 +303,7 @@ function homeBody() {
   const tile = t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`;
   const known = new Set(SHELVES.map(s => s[0]));
   const tiles = DATA.categories.map(c => ({ shelf: known.has(c.shelf) ? c.shelf : 'cuisines', href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => inCat(r, c.id)).length }));
-  tiles.push({ shelf: 'collections', href: '#/c/sauces', e: '🥄', n: 'Sauces', k: rs.filter(isSauce).length });
+  if (!DATA.categories.some(c => c.id === 'sauces')) tiles.push({ shelf: 'collections', href: '#/c/sauces', e: '🥄', n: 'Sauces', k: rs.filter(isSauce).length });
   tiles.push({ shelf: 'collections', href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
   tiles.push({ shelf: 'collections', href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
   tiles.push({ shelf: 'collections', href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
@@ -326,8 +333,9 @@ function viewCat(id) {
   const isMeat = r => byMeat && MEATS.some(([m]) => m === r.meat);
   const meatGroups = byMeat ? MEATS.map(([m, label]) => group(label, list.filter(r => r.meat === m))).join('') : '';
   const rest = list.filter(r => !isMeat(r));
+  const labels = cat.typeLabels || {};
   const typeGroups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) =>
-    group(label, rest.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type)))).join('');
+    group(labels[t] || label, rest.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type)))).join('');
   return head(title) + meatGroups + typeGroups;
 }
 function viewSauces(list) {

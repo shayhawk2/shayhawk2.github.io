@@ -60,7 +60,10 @@ Rules:
 
 - `id`: unique, lowercase, hyphens. It is the URL and the key for ratings and notes, so do not rename it later.
 - `category`: must match a category `id`.
-- Category `shelf`: which home-page shelf the tile sits on: `cuisines`, `meals` (Meals & Occasions) or `collections`. Left out, it lands on Cuisines. A new tile needs 3 or more recipes; anything smaller is a tag.
+- Category `shelf`: which home-page shelf the tile sits on: `cuisines`, `courses`, `meals` (Meals & Occasions) or `collections`. Left out, it lands on Cuisines. Tiles show in the order the categories are listed. A new tile normally needs 3 or more recipes; anything smaller is a tag (Baking is the exception, shown early on purpose).
+- Category `fillType`: a recipe `type` the category takes automatically, on top of any recipe that names it in `category` or `also`. Sides uses `"Side"` and Appetizers uses `"Appetizer"`, so Guacamole only needs `"also": ["appetizers"]`.
+- Category `typeLabels`: renames a type group on that category's page, e.g. `{ "Sauce & Condiment": "Dressings" }` on Salads.
+- The `sauces` category is special: it takes every sauce (`type` `Sauce & Condiment` or a `sauce` value) and its page groups by `sauce`. Its position in the list sets where the Sauces tile sits.
 - `also`: optional list of extra category ids, e.g. `["italian"]` on Crispy Chicken Cutlets (main category Dinner Party). The recipe shows on those category pages, in their tile counts and in Tonight's category filter. `category` stays the main one.
 - `sauce`: the Sauces tile group, one of `Tomato`, `Butter & Cream`, `Salsa & Dip`, `Dressing & Spread`. Set it on every `Sauce & Condiment` recipe; one without it shows under "Other sauces".
 - Category `groupBy`: set to `"meat"` to group that category's page by each recipe's `meat` before `type` (used by BBQ & Smoker). Left out, the page groups by `type`.
