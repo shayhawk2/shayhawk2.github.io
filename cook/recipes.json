@@ -5321,6 +5321,109 @@
      ]
     }
    ]
+  },
+  {
+   "id": "guacamole",
+   "title": "Guacamole",
+   "emoji": "🥑",
+   "category": "mexican",
+   "type": "Sauce & Condiment",
+   "tags": [
+    "avocado",
+    "dip",
+    "vegetarian",
+    "no-cook"
+   ],
+   "equipment": [
+    "Medium bowl",
+    "Fork or potato masher"
+   ],
+   "notes": "From a restaurant's published recipe; they make it with 48 avocados per batch, several times a day. The source gives no yield or prep time.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "ripe Hass avocados",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "lime juice",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "cilantro",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "red onion",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "",
+     "item": "jalapeño",
+     "note": "including seeds, finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pick avocados that feel squishy yet firm, like the palm of your hand. They should be dark green inside.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Cut the avocados in half and carefully remove the pits.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Scoop the avocados into a medium bowl.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Toss and coat with the lime juice.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Add the salt and mash with a fork or potato masher until smooth.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Fold in the cilantro, red onion and jalapeño and mix well.",
+     "uses": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Taste the guacamole, over and over, and adjust the seasoning.",
+     "uses": []
+    }
+   ]
   }
  ]
 }
