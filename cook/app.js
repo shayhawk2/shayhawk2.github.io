@@ -8,6 +8,10 @@ const KEY = 'tasa:v1';
 const TYPES = [['Main', 'Mains'], ['Side', 'Sides'], ['Appetizer', 'Appetizers'], ['Sauce & Condiment', 'Sauces & Condiments'], ['Building Block', 'Building Blocks'], ['Dessert', 'Desserts'], ['Drink', 'Drinks']];
 // Categories with "groupBy": "meat" (BBQ) group recipes by their meat first, then by type.
 const MEATS = [['Beef', 'Beef'], ['Pork', 'Pork'], ['Poultry', 'Poultry'], ['Lamb', 'Lamb'], ['Seafood', 'Seafood']];
+// The Sauces tile groups by base. Every "Sauce & Condiment" recipe should carry one of these in `sauce`.
+const SAUCES = [['Tomato', 'Tomato sauces'], ['Butter & Cream', 'Butter & cream sauces'], ['Salsa & Dip', 'Salsas & dips'], ['Dressing & Spread', 'Dressings & spreads']];
+// Techniques that are really small sauces; shown at the bottom of the Sauces page.
+const QUICK_SAUCES = ['cutlet-sauce-on-the-side', 'tartar-without-brine', 'ancho-ranch', 'dijon-binds-dressing', 'reduce-balsamic-lightly', 'cornstarch-slurry'];
 const SHELVES = [['cuisines', 'Cuisines'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
@@ -80,6 +84,9 @@ function all() {
 }
 const byId = id => all().find(r => r.id === id);
 const total = r => (r.prep || 0) + (r.cook || 0);
+// A recipe sits in its main `category` plus any listed in `also`.
+const inCat = (r, id) => r.category === id || (r.also || []).includes(id);
+const isSauce = r => !!r.sauce || r.type === 'Sauce & Condiment';
 const catName = id => (DATA.categories.find(c => c.id === id) || {}).name || 'Uncategorized';
 const mins = m => m >= 60 ? `${Math.floor(m / 60)} hr${m % 60 ? ' ' + (m % 60) + ' min' : ''}` : `${m} min`;
 
@@ -281,14 +288,15 @@ const rowsHTML = (list, emptyMsg) => list.length
 
 function searchList(q) {
   q = q.toLowerCase().trim();
-  return all().filter(r => [r.title, catName(r.category), ...(r.tags || []), ...(r.equipment || []), ...r.ingredients.map(g => g.item)].join(' ').toLowerCase().includes(q));
+  return all().filter(r => [r.title, catName(r.category), ...(r.also || []).map(catName), r.sauce || '', ...(r.tags || []), ...(r.equipment || []), ...r.ingredients.map(g => g.item)].join(' ').toLowerCase().includes(q));
 }
 function homeBody() {
   if (V.q.trim()) return rowsHTML(searchList(V.q), `No recipes match “${esc(V.q)}”. Try an ingredient or a tag.`);
   const rs = all();
   const tile = t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`;
   const known = new Set(SHELVES.map(s => s[0]));
-  const tiles = DATA.categories.map(c => ({ shelf: known.has(c.shelf) ? c.shelf : 'cuisines', href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => r.category === c.id).length }));
+  const tiles = DATA.categories.map(c => ({ shelf: known.has(c.shelf) ? c.shelf : 'cuisines', href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => inCat(r, c.id)).length }));
+  tiles.push({ shelf: 'collections', href: '#/c/sauces', e: '🥄', n: 'Sauces', k: rs.filter(isSauce).length });
   tiles.push({ shelf: 'collections', href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
   tiles.push({ shelf: 'collections', href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
   tiles.push({ shelf: 'collections', href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
@@ -309,7 +317,8 @@ function viewHome() {
 function viewCat(id) {
   const rs = all();
   const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])] };
-  const [title, list] = special[id] || [catName(id), rs.filter(r => r.category === id)];
+  if (id === 'sauces') return viewSauces(rs.filter(isSauce));
+  const [title, list] = special[id] || [catName(id), rs.filter(r => inCat(r, id))];
   if (special[id] || !list.length) return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
   const group = (label, rows) => rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
   const cat = DATA.categories.find(c => c.id === id) || {};
@@ -320,6 +329,15 @@ function viewCat(id) {
   const typeGroups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) =>
     group(label, rest.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type)))).join('');
   return head(title) + meatGroups + typeGroups;
+}
+function viewSauces(list) {
+  const group = (label, rows) => rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
+  const quick = QUICK_SAUCES.map(tipById).filter(Boolean);
+  return head('Sauces') + `<p class="muted small-text">Every sauce in the book, grouped by what it's built on. Each one also stays in its own category.</p>`
+    + [...SAUCES, ['', 'Other sauces']].map(([k, label]) => group(label, list.filter(r => k ? r.sauce === k : !SAUCES.some(x => x[0] === r.sauce)))).join('')
+    + (quick.length ? `<h2 class="group-name">Quick sauces <span class="group-count">${quick.length}</span></h2>
+      <p class="muted small-text">Small sauces and fixes kept in Techniques.</p>
+      <div class="row" style="gap:8px">${quick.map(t => `<a class="chip" href="#/tips/${esc(t.id)}">🧂 ${esc(t.title)}</a>`).join('')}</div>` : '');
 }
 function viewFavs() {
   return head('Favorites') + rowsHTML(all().filter(r => S.favs.includes(r.id)), 'No favorites yet. Tap the heart on a recipe to keep it here.');
@@ -341,7 +359,7 @@ function viewRecipe(id) {
   const serv = V.serv[id] || r.servings || 1, f = serv / (r.servings || 1);
   const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition, rt = recipeTips(r);
   return `<div class="page-head no-print">
-      <a class="back" href="#/c/${esc(r.category || 'all')}" aria-label="Back">←</a><span style="flex:1"></span>
+      <a class="back" href="${esc(V.from || '#/c/' + (r.category || 'all'))}" aria-label="Back">←</a><span style="flex:1"></span>
       <button class="icon-btn" data-act="fav" data-id="${esc(id)}" aria-label="Favorite" aria-pressed="${S.favs.includes(id)}">${S.favs.includes(id) ? '❤️' : '🤍'}</button>
       <button class="icon-btn" data-act="shareRecipe" data-id="${esc(id)}" aria-label="Share recipe">📤</button>
       <a class="icon-btn" style="display:grid;place-items:center;text-decoration:none" href="#/edit/${esc(id)}" aria-label="Edit recipe">✏️</a>
@@ -350,7 +368,7 @@ function viewRecipe(id) {
       <div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span>
         <div><h1>${esc(r.title)}</h1>
         <div class="row" style="gap:6px;margin-top:6px">
-          <span class="pill">${esc(catName(r.category))}</span>${r.meat ? `<span class="pill">${esc(r.meat)}</span>` : ''}${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
+          <span class="pill">${esc(catName(r.category))}</span>${(r.also || []).map(c => `<span class="pill">${esc(catName(c))}</span>`).join('')}${r.meat ? `<span class="pill">${esc(r.meat)}</span>` : ''}${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
           ${r.kid ? '<span class="pill sage">kid-approved</span>' : ''}${r._draft ? '<span class="pill">my draft</span>' : ''}${r.placeholder ? '<span class="pill red">stand-in recipe</span>' : ''}
         </div></div></div>
       <hr class="redline">
@@ -443,7 +461,7 @@ function viewCook(id) {
 
 function tonightList() {
   const T = V.tonight;
-  return all().filter(r => (!T.max || (total(r) && total(r) <= T.max)) && (!T.cat || r.category === T.cat) && (!T.kid || r.kid) && (!T.again || S.again[r.id]))
+  return all().filter(r => (!T.max || (total(r) && total(r) <= T.max)) && (!T.cat || inCat(r, T.cat)) && (!T.kid || r.kid) && (!T.again || S.again[r.id]))
     .sort((a, b) => (pantryMatch(b) || 0) - (pantryMatch(a) || 0) || total(a) - total(b));
 }
 function viewTonight() {
@@ -590,6 +608,7 @@ function viewForm(id) {
         ${f('Emoji', 'emoji', v.emoji, 'placeholder="🍲" maxlength="8"')}
         <label class="field"><span>Category</span><select name="category">${DATA.categories.map(c => `<option value="${esc(c.id)}" ${v.category === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
         <label class="field"><span>Type</span><select name="type"><option value="">Not sorted yet</option>${TYPES.map(([t]) => `<option ${v.type === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label>
+        <label class="field"><span>Sauce family</span><select name="sauce"><option value="">Not a sauce</option>${SAUCES.map(([k]) => `<option ${v.sauce === k ? 'selected' : ''}>${esc(k)}</option>`).join('')}</select><small>Puts it on the Sauces page.</small></label>
         <label class="field"><span>Meat</span><select name="meat"><option value="">None</option>${MEATS.map(([m]) => `<option ${v.meat === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</select><small>Groups BBQ & Smoker by meat.</small></label>
         ${f('Prep minutes', 'prep', v.prep, 'inputmode="numeric"')}
         ${f('Cook minutes', 'cook', v.cook, 'inputmode="numeric"')}
@@ -597,6 +616,7 @@ function viewForm(id) {
       </div>
       <label class="field"><span>Ingredients</span><textarea name="ingredients" rows="8" placeholder="1 1/2 cup flour, sifted&#10;2 large eggs&#10;1 lb ground beef" required>${esc(ingLines)}</textarea><small>One per line: amount, unit, item, then a comma and any note.</small></label>
       <label class="field"><span>Steps</span><textarea name="steps" rows="8" placeholder="Heat the oven to 400°F.&#10;Bake for 20 minutes." required>${esc(v.steps.map(s => s.text).join('\n'))}</textarea><small>One per line. Times like “20 minutes” become timers in cook mode.</small></label>
+      <div class="field"><span>Also in</span><div class="row" style="gap:8px;margin-top:4px">${DATA.categories.map(c => `<label class="chip"><input type="checkbox" name="also" value="${esc(c.id)}" ${(v.also || []).includes(c.id) ? 'checked' : ''}> ${esc(c.emoji)} ${esc(c.name)}</label>`).join('')}</div><small>Shows the recipe in these categories too. The main category above is where it lives.</small></div>
       ${f('Tags', 'tags', v.tags.join(', '), 'placeholder="chicken, quick"')}
       ${f('Equipment', 'equipment', v.equipment.join(', '), 'placeholder="Grill, Instant Pot"')}
       <div class="grid2">${f('Source name', 'sname', v.source && v.source.name, 'placeholder="Cookbook p. 42"')}${f('Source link', 'surl', v.source && v.source.url, 'inputmode="url"')}</div>
@@ -645,6 +665,7 @@ function render(keepScroll) {
     '': viewHome, c: () => viewCat(arg), r: () => viewRecipe(arg), cook: () => viewCook(arg), tonight: viewTonight, list: viewList,
     pantry: viewPantry, favorites: viewFavs, add: () => viewForm(), edit: () => viewForm(arg), settings: viewSettings, import: () => viewImport(arg), tips: viewTips
   };
+  if (!['r', 'cook', 'edit'].includes(name)) V.from = location.hash || '#/';
   const cooking = name === 'cook';
   document.body.classList.toggle('cooking', cooking);
   if (cooking) wakeOn(); else { wakeOff(); V.cook = null; V.sheet = false; if (window.speechSynthesis) speechSynthesis.cancel(); }
@@ -815,7 +836,9 @@ document.addEventListener('submit', e => {
     const lines = s => (s || '').split('\n').map(x => x.trim()).filter(Boolean);
     let id = form.dataset.id;
     if (!id) { id = slug(d.title); let n = 2; const base = id; while (byId(id)) id = `${base}-${n++}`; }
-    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, meat: d.meat || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, meat: d.meat || undefined, sauce: d.sauce || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const also = new FormData(form).getAll('also').filter(c => c !== d.category);
+    if (also.length) r.also = also;
     const old = byId(id);
     if (old) {
       if (old.tips) r.tips = old.tips;

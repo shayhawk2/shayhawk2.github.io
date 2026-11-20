@@ -524,6 +524,7 @@
    "emoji": "🍅",
    "category": "italian",
    "type": "Sauce & Condiment",
+   "sauce": "Tomato",
    "servings": 8,
    "tags": [
     "sauce",
@@ -2129,6 +2130,7 @@
    "emoji": "🟢",
    "category": "mexican",
    "type": "Sauce & Condiment",
+   "sauce": "Salsa & Dip",
    "prep": 10,
    "cook": 10,
    "servings": 12,
@@ -2313,6 +2315,7 @@
    "emoji": "🥫",
    "category": "american",
    "type": "Sauce & Condiment",
+   "sauce": "Dressing & Spread",
    "prep": 5,
    "tags": [
     "sauce",
@@ -3443,6 +3446,9 @@
    "title": "Crispy Chicken Cutlets",
    "emoji": "🍗",
    "category": "dinner-party",
+   "also": [
+    "italian"
+   ],
    "type": "Main",
    "prep": 30,
    "cook": 25,
@@ -3565,7 +3571,11 @@
    "title": "Lemon-Caper Butter Sauce",
    "emoji": "🍋",
    "category": "dinner-party",
+   "also": [
+    "italian"
+   ],
    "type": "Sauce & Condiment",
+   "sauce": "Butter & Cream",
    "prep": 5,
    "cook": 10,
    "servings": 6,
@@ -3649,6 +3659,7 @@
    "emoji": "🍄",
    "category": "dinner-party",
    "type": "Sauce & Condiment",
+   "sauce": "Butter & Cream",
    "prep": 10,
    "cook": 15,
    "servings": 6,
@@ -3751,6 +3762,9 @@
    "title": "Whipped Ricotta with Chili Oil & Lemon",
    "emoji": "🫙",
    "category": "dinner-party",
+   "also": [
+    "italian"
+   ],
    "type": "Appetizer",
    "prep": 10,
    "servings": 6,
@@ -3841,6 +3855,9 @@
    "title": "Antipasto Skewers",
    "emoji": "🍢",
    "category": "dinner-party",
+   "also": [
+    "italian"
+   ],
    "type": "Appetizer",
    "prep": 20,
    "servings": 6,
@@ -3993,6 +4010,9 @@
    "title": "Blackberry Chia Pudding",
    "emoji": "🫐",
    "category": "old",
+   "also": [
+    "breakfast"
+   ],
    "type": "Main",
    "prep": 5,
    "servings": 1,
@@ -4059,6 +4079,9 @@
    "title": "Mason Jar Taco Salad",
    "emoji": "🫙",
    "category": "old",
+   "also": [
+    "mexican"
+   ],
    "type": "Main",
    "prep": 10,
    "cook": 20,
@@ -4206,6 +4229,9 @@
    "title": "Pollo in Potacchio",
    "emoji": "🍗",
    "category": "old",
+   "also": [
+    "italian"
+   ],
    "type": "Main",
    "prep": 15,
    "cook": 75,
@@ -4338,6 +4364,9 @@
    "title": "Stuffed Pepper Soup",
    "emoji": "🫑",
    "category": "old",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "prep": 10,
    "cook": 40,
@@ -4706,6 +4735,9 @@
    "title": "Stuffed Peppers",
    "emoji": "🫑",
    "category": "old",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "prep": 15,
    "cook": 45,
@@ -4922,6 +4954,9 @@
    "title": "Grilled Salmon with Avocado Salsa",
    "emoji": "🐟",
    "category": "old",
+   "also": [
+    "mexican"
+   ],
    "type": "Main",
    "prep": 10,
    "cook": 5,
@@ -5064,6 +5099,9 @@
    "title": "Chicken Avocado Burgers",
    "emoji": "🍔",
    "category": "old",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "prep": 10,
    "cook": 10,
@@ -5333,6 +5371,7 @@
    "emoji": "🥑",
    "category": "mexican",
    "type": "Sauce & Condiment",
+   "sauce": "Salsa & Dip",
    "tags": [
     "avocado",
     "dip",
@@ -5655,6 +5694,7 @@
    "emoji": "🫙",
    "category": "american",
    "type": "Sauce & Condiment",
+   "sauce": "Dressing & Spread",
    "prep": 5,
    "servings": 4,
    "tags": [
@@ -6046,6 +6086,9 @@
    "title": "Smoked Meatloaf",
    "emoji": "🍖",
    "category": "bbq",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "meat": "Beef",
    "prep": 25,
@@ -6239,6 +6282,9 @@
    "title": "Cat's Eggfest Meatloaf",
    "emoji": "🍞",
    "category": "bbq",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "meat": "Beef",
    "prep": 30,
@@ -6437,6 +6483,9 @@
    "title": "Egret's Cow Lickin' Chili",
    "emoji": "🌶️",
    "category": "bbq",
+   "also": [
+    "american"
+   ],
    "type": "Main",
    "meat": "Beef",
    "prep": 30,
