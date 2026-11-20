@@ -58,7 +58,7 @@ Rules:
 - `id`: unique, lowercase, hyphens. It is the URL and the key for ratings and notes, so do not rename it later.
 - `category`: must match a category `id`.
 - `qty`: a number (`0.5`, not `"1/2"`), or `null` for "to taste". The app shows fractions and scales by servings.
-- `unit`: one of `cup tbsp tsp "fl oz" oz lb pt qt clove can slice piece pinch stick bunch sprig g kg ml L`, or `""` for counted items like eggs.
+- `unit`: one of `cup tbsp tsp "fl oz" oz lb pt qt gal clove can slice piece pinch stick bunch sprig g kg ml L`, or `""` for counted items like eggs.
 - `aisle`: one of `Produce`, `Meat & Seafood`, `Dairy & Eggs`, `Bakery`, `Pantry`, `Spices`, `Frozen`, `Other`. Groups the grocery list.
 - `steps[].uses`: indexes into `ingredients` (starting at 0) shown under that step. Leave `uses` out and the app guesses by matching words.
 - Times in step text ("simmer for 10 minutes") become timer buttons. Temperatures written like `425°F` convert in metric mode.
