@@ -3,37 +3,44 @@
   {
    "id": "italian",
    "name": "Italian",
-   "emoji": "🍝"
+   "emoji": "🍝",
+   "shelf": "cuisines"
   },
   {
    "id": "bbq",
    "name": "BBQ & Smoker",
-   "emoji": "🔥"
+   "emoji": "🔥",
+   "shelf": "cuisines"
   },
   {
    "id": "mexican",
    "name": "Mexican",
-   "emoji": "🌮"
+   "emoji": "🌮",
+   "shelf": "cuisines"
   },
   {
    "id": "american",
    "name": "American",
-   "emoji": "🍔"
+   "emoji": "🍔",
+   "shelf": "cuisines"
   },
   {
    "id": "breakfast",
    "name": "Breakfast",
-   "emoji": "🥞"
+   "emoji": "🥞",
+   "shelf": "meals"
   },
   {
    "id": "dinner-party",
    "name": "Dinner Party",
-   "emoji": "🥂"
+   "emoji": "🥂",
+   "shelf": "meals"
   },
   {
    "id": "old",
    "name": "Old Recipes",
-   "emoji": "📜"
+   "emoji": "📜",
+   "shelf": "collections"
   }
  ],
  "recipes": [
@@ -42,6 +49,7 @@
    "title": "Arancini with Calabrian Chile Sauce",
    "emoji": "🍙",
    "category": "italian",
+   "type": "Appetizer",
    "prep": 60,
    "cook": 45,
    "servings": 14,
@@ -67,14 +75,14 @@
      "unit": "tbsp",
      "item": "Calabrian chiles",
      "note": "chopped, for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "extra-virgin olive oil",
      "note": "for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1.5,
@@ -102,7 +110,7 @@
      "unit": "cup",
      "item": "low-sodium chicken stock",
      "note": "homemade if you have it",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 4,
@@ -130,7 +138,7 @@
      "unit": "cup",
      "item": "arborio rice",
      "note": "or carnaroli",
-     "aisle": "Pantry"
+     "aisle": "Pasta, Rice & Grains"
     },
     {
      "qty": 1.5,
@@ -143,14 +151,14 @@
      "qty": 0.5,
      "unit": "cup",
      "item": "dry white wine",
-     "aisle": "Other"
+     "aisle": "Beverages"
     },
     {
      "qty": 2,
      "unit": "oz",
      "item": "Parmesan",
      "note": "finely grated, about 1 cup",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 0.25,
@@ -184,19 +192,19 @@
      "unit": "oz",
      "item": "low-moisture mozzarella",
      "note": "cut into ½-inch pieces",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 2,
      "unit": "cup",
      "item": "panko",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.5,
      "unit": "cup",
      "item": "all-purpose flour",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 2,
@@ -209,7 +217,7 @@
      "unit": "cup",
      "item": "canola oil",
      "note": "for frying",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     }
    ],
    "steps": [
@@ -299,6 +307,7 @@
    "title": "Rigatoni with Vodka Sauce",
    "emoji": "🍝",
    "category": "italian",
+   "type": "Main",
    "prep": 20,
    "cook": 50,
    "servings": 4,
@@ -321,21 +330,21 @@
      "unit": "oz",
      "item": "peeled San Marzano tomatoes",
      "note": "one can, DiNapoli brand",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 14,
      "unit": "oz",
      "item": "pancetta",
      "note": "diced",
-     "aisle": "Meat & Seafood"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 4.5,
      "unit": "oz",
      "item": "double-concentrated tomato paste",
      "note": "the tube, not a can",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -368,13 +377,13 @@
      "qty": 3.3,
      "unit": "fl oz",
      "item": "vodka",
-     "aisle": "Other"
+     "aisle": "Beverages"
     },
     {
      "qty": 3,
      "unit": "tbsp",
      "item": "Calabrian chiles",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 14,
@@ -387,21 +396,21 @@
      "qty": 1,
      "unit": "lb",
      "item": "rigatoni",
-     "aisle": "Pantry"
+     "aisle": "Pasta, Rice & Grains"
     },
     {
      "qty": 3,
      "unit": "oz",
      "item": "Pecorino Romano",
      "note": "grated from a block",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 3,
      "unit": "oz",
      "item": "Parmesan",
      "note": "grated from a block",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
@@ -414,14 +423,14 @@
      "unit": "",
      "item": "chicken bouillon",
      "note": "optional extra",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
      "unit": "",
      "item": "soy sauce",
      "note": "optional extra",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -448,6 +457,9 @@
       6,
       11,
       12
+     ],
+     "tips": [
+      "tomato-paste-brick-red"
      ]
     },
     {
@@ -462,6 +474,9 @@
      "text": "Deglaze with the vodka, then lower the heat and simmer 7 to 10 minutes.",
      "uses": [
       7
+     ],
+     "tips": [
+      "vodka-before-cream"
      ]
     },
     {
@@ -507,6 +522,7 @@
    "title": "Nonna's Red Sauce (Gravy)",
    "emoji": "🍅",
    "category": "italian",
+   "type": "Sauce & Condiment",
    "servings": 8,
    "tags": [
     "sauce",
@@ -527,14 +543,14 @@
      "unit": "oz",
      "item": "crushed San Marzano tomatoes",
      "note": "one can",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 3,
      "unit": "can",
      "item": "tomato paste",
      "note": "6 oz each",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -560,7 +576,7 @@
      "qty": 2,
      "unit": "tbsp",
      "item": "sugar",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.5,
@@ -579,7 +595,7 @@
      "qty": 3,
      "unit": "cup",
      "item": "chicken stock",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -598,35 +614,35 @@
      "unit": "",
      "item": "Parmesan rind",
      "note": "optional enhancer",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
      "unit": "",
      "item": "fish sauce",
      "note": "optional enhancer",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "soy sauce",
      "note": "optional enhancer",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "Better Than Bouillon",
      "note": "optional enhancer",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
      "unit": "",
      "item": "red or white miso paste",
      "note": "optional enhancer",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -640,7 +656,7 @@
      "unit": "",
      "item": "Calabrian or dried chiles",
      "note": "optional enhancer",
-     "aisle": "Pantry"
+     "aisle": "Spices"
     }
    ],
    "steps": [
@@ -648,6 +664,9 @@
      "text": "Sear the pork chop in the pot until well browned, then deglaze. Keep all the fond.",
      "uses": [
       2
+     ],
+     "tips": [
+      "sauce-on-a-pork-chop"
      ]
     },
     {
@@ -668,6 +687,9 @@
       6,
       9,
       10
+     ],
+     "tips": [
+      "tomato-paste-brick-red"
      ]
     },
     {
@@ -680,12 +702,23 @@
       15,
       16,
       17
+     ],
+     "tips": [
+      "sauce-head-start",
+      "savory-enhancer"
      ]
     },
     {
      "text": "For meatballs, drop the browned meatballs in and simmer at least 30 to 45 minutes. Remove the bay leaf, chop and rind before serving.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "fry-meatballs-keep-pan",
+      "sausage-steaming-water"
+     ]
     }
+   ],
+   "tips": [
+    "aromatic-profile"
    ]
   },
   {
@@ -693,6 +726,7 @@
    "title": "Nonna's Enhanced Meatballs",
    "emoji": "🧆",
    "category": "italian",
+   "type": "Main",
    "prep": 20,
    "cook": 60,
    "servings": 6,
@@ -748,7 +782,7 @@
      "unit": "cup",
      "item": "Parmigiano and Pecorino",
      "note": "freshly grated, mixed",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 0.25,
@@ -782,14 +816,14 @@
      "unit": "cup",
      "item": "corn oil",
      "note": "for frying",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "beef tallow",
      "note": "for frying",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     }
    ],
    "steps": [
@@ -809,11 +843,17 @@
      "text": "Melt the tallow into the corn oil in a wide heavy skillet over medium-high heat, about ¼ inch deep."
     },
     {
-     "text": "Fry in batches, 3 to 4 minutes per side, until a deep golden crust forms. They do not need to cook through."
+     "text": "Fry in batches, 3 to 4 minutes per side, until a deep golden crust forms. They do not need to cook through.",
+     "tips": [
+      "fry-meatballs-keep-pan"
+     ]
     },
     {
      "text": "Drain briefly, then simmer in red sauce at least 30 to 45 minutes until tender."
     }
+   ],
+   "tips": [
+    "aromatic-profile"
    ]
   },
   {
@@ -821,6 +861,7 @@
    "title": "Fresh Hand-Pulled Mozzarella",
    "emoji": "🧀",
    "category": "italian",
+   "type": "Building Block",
    "prep": 5,
    "cook": 15,
    "servings": 4,
@@ -840,7 +881,7 @@
      "qty": 1,
      "unit": "lb",
      "item": "fresh mozzarella curd",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 1.25,
@@ -898,6 +939,9 @@
      "uses": [
       2,
       3
+     ],
+     "tips": [
+      "stretch-bath-vs-seasoning"
      ]
     },
     {
@@ -906,7 +950,10 @@
     },
     {
      "text": "With gloved hands or a slotted spoon, gather the curd and gently pull, fold and rotate. Caprese 2 to 3 folds, sandwiches 4 to 5, pizza 5 to 6 at most. Stop when smooth and glossy.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "fold-count"
+     ]
     },
     {
      "text": "Shape into one large ball, two medium balls, or a log for slicing.",
@@ -924,6 +971,9 @@
      "text": "Store in fresh light brine in a sealed container. Best within 24 to 48 hours.",
      "uses": []
     }
+   ],
+   "tips": [
+    "season-a-slice"
    ]
   },
   {
@@ -931,6 +981,7 @@
    "title": "Mozzarella Curd from Whole Milk",
    "emoji": "🥛",
    "category": "italian",
+   "type": "Building Block",
    "prep": 10,
    "cook": 40,
    "servings": 4,
@@ -957,7 +1008,7 @@
      "qty": 1.5,
      "unit": "tsp",
      "item": "citric acid",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.25,
@@ -970,7 +1021,7 @@
      "qty": 0.25,
      "unit": "tsp",
      "item": "liquid rennet",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.25,
@@ -1016,6 +1067,7 @@
    "title": "Texas Brisket, Point Only",
    "emoji": "🥩",
    "category": "bbq",
+   "type": "Main",
    "prep": 45,
    "cook": 450,
    "servings": 8,
@@ -1070,14 +1122,14 @@
      "unit": "",
      "item": "low-sodium beef broth",
      "note": "for injecting, optional",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
      "unit": "",
      "item": "apple cider vinegar",
      "note": "a splash in the spritz water",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 0.25,
@@ -1091,7 +1143,7 @@
      "unit": "cup",
      "item": "BBQ sauce",
      "note": "for burnt ends",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -1130,7 +1182,10 @@
      "text": "At 160 to 170°F, once the bark is dark and set, wrap tight in butcher paper."
     },
     {
-     "text": "Cook to about 203°F, until the probe slides in like butter and it jiggles. Save the juices."
+     "text": "Cook to about 203°F, until the probe slides in like butter and it jiggles. Save the juices.",
+     "tips": [
+      "brisket-bark-and-probe"
+     ]
     },
     {
      "text": "Rest 2 to 4 hours in a cooler with towels or a 150 to 170°F oven."
@@ -1151,6 +1206,7 @@
    "title": "Texas Brisket, Full Packer",
    "emoji": "🥩",
    "category": "bbq",
+   "type": "Main",
    "prep": 60,
    "cook": 510,
    "servings": 20,
@@ -1206,14 +1262,14 @@
      "unit": "",
      "item": "low-sodium beef broth",
      "note": "for injecting",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
      "unit": "",
      "item": "apple cider vinegar",
      "note": "a splash in the spritz water",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 0.25,
@@ -1227,7 +1283,7 @@
      "unit": "cup",
      "item": "BBQ sauce",
      "note": "for burnt ends",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -1239,7 +1295,10 @@
    ],
    "steps": [
     {
-     "text": "Day before: separate the point and flat along the natural fat seam with long strokes."
+     "text": "Day before: separate the point and flat along the natural fat seam with long strokes.",
+     "tips": [
+      "point-and-flat-apart"
+     ]
     },
     {
      "text": "Trim hard fat and silver skin. Leave about ¼ inch of fat on the flat. Save trimmings for burnt ends."
@@ -1290,6 +1349,7 @@
    "title": "Pork Butt, Sous Vide then Smoked",
    "emoji": "🐖",
    "category": "bbq",
+   "type": "Main",
    "tags": [
     "pork",
     "smoked",
@@ -1320,7 +1380,7 @@
      "unit": "",
      "item": "yellow mustard",
      "note": "binder",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -1339,14 +1399,14 @@
      "unit": "",
      "item": "apple juice",
      "note": "for injecting",
-     "aisle": "Pantry"
+     "aisle": "Beverages"
     },
     {
      "qty": null,
      "unit": "",
      "item": "beef stock",
      "note": "for the drip pan",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
@@ -1393,6 +1453,7 @@
    "title": "Boston Butt, First Run (2015)",
    "emoji": "🐖",
    "category": "bbq",
+   "type": "Main",
    "tags": [
     "pork",
     "smoked"
@@ -1421,7 +1482,7 @@
      "unit": "",
      "item": "yellow mustard",
      "note": "binder",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -1469,6 +1530,7 @@
    "title": "Crunchwrap Supreme",
    "emoji": "🌯",
    "category": "mexican",
+   "type": "Main",
    "prep": 15,
    "cook": 20,
    "servings": 4,
@@ -1494,7 +1556,7 @@
      "unit": "tbsp",
      "item": "neutral oil",
      "note": "optional if the beef is lean",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
@@ -1548,13 +1610,13 @@
      "qty": 1,
      "unit": "tsp",
      "item": "tomato paste",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
      "unit": "tsp",
      "item": "cornstarch",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.25,
@@ -1566,7 +1628,7 @@
      "qty": 4,
      "unit": "",
      "item": "tostada shells",
-     "aisle": "Pantry"
+     "aisle": "Other"
     },
     {
      "qty": 4,
@@ -1587,7 +1649,7 @@
      "unit": "cup",
      "item": "nacho cheese sauce",
      "note": "warmed",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -1612,7 +1674,7 @@
      "qty": 1,
      "unit": "cup",
      "item": "shredded mild cheddar",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 1,
@@ -1624,10 +1686,14 @@
    ],
    "steps": [
     {
-     "text": "Brown the beef in a skillet over medium heat, breaking it up very fine.",
+     "text": "Press the beef into a hot skillet as one big patty over medium-high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip, sear the second side, then break it up very fine.",
      "uses": [
       0,
       1
+     ],
+     "asWritten": "Brown the beef in a skillet over medium heat, breaking it up very fine.",
+     "tips": [
+      "big-beef-patty"
      ]
     },
     {
@@ -1649,6 +1715,9 @@
      "uses": [
       11,
       12
+     ],
+     "tips": [
+      "cornstarch-slurry"
      ]
     },
     {
@@ -1682,6 +1751,7 @@
    "title": "Barbacoa (Clean Chuck Braise)",
    "emoji": "🐄",
    "category": "mexican",
+   "type": "Main",
    "prep": 20,
    "cook": 300,
    "servings": 6,
@@ -1717,13 +1787,13 @@
      "unit": "",
      "item": "neutral oil",
      "note": "for searing",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "cup",
      "item": "beef stock",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 7,
@@ -1737,7 +1807,7 @@
      "unit": "",
      "item": "dried guajillo chiles",
      "note": "stemmed and seeded",
-     "aisle": "Pantry"
+     "aisle": "Spices"
     },
     {
      "qty": 2,
@@ -1769,7 +1839,10 @@
      "text": "Pat the chuck very dry and salt it well on all sides. Dry-brine uncovered in the fridge for a few hours or overnight if you can."
     },
     {
-     "text": "Heat a Dutch oven over medium-high to high with a thin film of oil. Sear the chuck hard on the broad sides, then the edges, until deeply browned."
+     "text": "Heat a Dutch oven over medium-high to high with a thin film of oil. Sear the chuck hard on the broad sides, then the edges, until deeply browned.",
+     "tips": [
+      "barbacoa-whole-chuck"
+     ]
     },
     {
      "text": "With the chuck in the pot, add the stock, garlic, guajillos, cumin, bay leaves, cinnamon and water. Bring just to a simmer."
@@ -1778,8 +1851,14 @@
      "text": "Lay parchment directly on the surface, cover, and braise in a 300°F oven 4 to 5½ hours, until fork-tender."
     },
     {
-     "text": "Shred the beef. Taste and reduce the liquid if needed, return the beef and salt to taste."
+     "text": "Shred the beef. Taste and reduce the liquid if needed, return the beef and salt to taste.",
+     "tips": [
+      "reduce-after-lifting-meat"
+     ]
     }
+   ],
+   "tips": [
+    "braise-in-layers"
    ]
   },
   {
@@ -1787,6 +1866,7 @@
    "title": "Better Barbacoa (Whole Chuck, Chile Sauce)",
    "emoji": "🌶️",
    "category": "mexican",
+   "type": "Main",
    "prep": 30,
    "cook": 240,
    "servings": 7,
@@ -1828,34 +1908,34 @@
      "unit": "tbsp",
      "item": "neutral oil",
      "note": "if needed",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 3,
      "unit": "",
      "item": "dried guajillo chiles",
      "note": "stemmed and seeded",
-     "aisle": "Pantry"
+     "aisle": "Spices"
     },
     {
      "qty": 2,
      "unit": "",
      "item": "dried ancho chiles",
      "note": "stemmed and seeded",
-     "aisle": "Pantry"
+     "aisle": "Spices"
     },
     {
      "qty": 1,
      "unit": "",
      "item": "chipotle in adobo",
      "note": "1 or 2",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
      "unit": "tbsp",
      "item": "adobo sauce",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -1876,13 +1956,13 @@
      "unit": "cup",
      "item": "beef stock",
      "note": "or water",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "apple cider vinegar",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1.5,
@@ -1896,7 +1976,7 @@
      "unit": "tbsp",
      "item": "Worcestershire sauce",
      "note": "or soy sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
@@ -1934,14 +2014,14 @@
      "unit": "tsp",
      "item": "fish sauce",
      "note": "optional",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
      "unit": "tsp",
      "item": "brown sugar",
      "note": "only if the chiles taste harsh",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 2.5,
@@ -1965,6 +2045,9 @@
      "uses": [
       4,
       5
+     ],
+     "tips": [
+      "toast-soften-blend-chiles"
      ]
     },
     {
@@ -1986,6 +2069,9 @@
       18,
       19,
       20
+     ],
+     "tips": [
+      "each-chile-a-job"
      ]
     },
     {
@@ -1993,6 +2079,9 @@
      "uses": [
       0,
       3
+     ],
+     "tips": [
+      "barbacoa-whole-chuck"
      ]
     },
     {
@@ -2007,7 +2096,10 @@
     },
     {
      "text": "Rest the roast briefly, then shred.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "crisp-the-shreds"
+     ]
     },
     {
      "text": "Simmer the sauce until slightly thick and glossy. Toss the beef back in with the cilantro and more lime. Adjust salt.",
@@ -2015,8 +2107,15 @@
       21,
       12,
       1
+     ],
+     "tips": [
+      "reduce-after-lifting-meat",
+      "split-the-acid"
      ]
     }
+   ],
+   "tips": [
+    "braise-in-layers"
    ]
   },
   {
@@ -2024,6 +2123,7 @@
    "title": "Salsa Verde",
    "emoji": "🟢",
    "category": "mexican",
+   "type": "Sauce & Condiment",
    "prep": 10,
    "cook": 10,
    "servings": 12,
@@ -2113,6 +2213,7 @@
    "title": "Smash Burgers with Special Sauce",
    "emoji": "🍔",
    "category": "american",
+   "type": "Main",
    "tags": [
     "beef",
     "griddle"
@@ -2152,28 +2253,28 @@
      "unit": "",
      "item": "Kewpie mayo",
      "note": "for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "sesame oil",
      "note": "for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "soy sauce",
      "note": "for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "chili crisp",
      "note": "for the sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -2206,6 +2307,7 @@
    "title": "Burger Sauce",
    "emoji": "🥫",
    "category": "american",
+   "type": "Sauce & Condiment",
    "prep": 5,
    "tags": [
     "sauce",
@@ -2217,31 +2319,31 @@
      "qty": null,
      "unit": "",
      "item": "mayo",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "yellow mustard",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "ketchup",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "sweet relish or chopped gherkins",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "white wine vinegar",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -2273,7 +2375,7 @@
      "qty": null,
      "unit": "",
      "item": "Worcestershire sauce",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     }
    ],
    "steps": [
@@ -2287,6 +2389,7 @@
    "title": "Chicken, Broccoli & Potatoes",
    "emoji": "🥦",
    "category": "american",
+   "type": "Main",
    "prep": 20,
    "cook": 35,
    "tags": [
@@ -2351,6 +2454,7 @@
    "title": "Goat Cheese & Arugula Salad",
    "emoji": "🥗",
    "category": "american",
+   "type": "Side",
    "prep": 15,
    "servings": 4,
    "tags": [
@@ -2369,21 +2473,21 @@
      "unit": "tbsp",
      "item": "aged balsamic vinegar",
      "note": "dressing",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "Dijon mustard",
      "note": "dressing",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1.5,
      "unit": "tbsp",
      "item": "maple syrup or honey",
      "note": "1 to 2 tbsp, dressing",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.25,
@@ -2397,7 +2501,7 @@
      "unit": "tbsp",
      "item": "olive oil",
      "note": "dressing",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -2425,14 +2529,14 @@
      "unit": "cup",
      "item": "pecans",
      "note": "roughly chopped; plain, toasted or glazed",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 2,
      "unit": "oz",
      "item": "soft goat cheese",
      "note": "crumbled",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
@@ -2443,7 +2547,10 @@
    ],
    "steps": [
     {
-     "text": "Whisk the balsamic, Dijon, maple syrup, salt and olive oil until emulsified."
+     "text": "Whisk the balsamic, Dijon, maple syrup, salt and olive oil until emulsified.",
+     "tips": [
+      "dijon-binds-dressing"
+     ]
     },
     {
      "text": "Thinly slice the apple and shallot."
@@ -2461,6 +2568,7 @@
    "title": "White Castle Sliders",
    "emoji": "🍔",
    "category": "american",
+   "type": "Main",
    "prep": 10,
    "cook": 6,
    "servings": 8,
@@ -2514,13 +2622,13 @@
      "unit": "slice",
      "item": "cheese",
      "note": "optional",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
      "unit": "",
      "item": "dill pickle slices",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     }
    ],
    "steps": [
@@ -2552,6 +2660,7 @@
    "title": "French Onion Beef Sliders",
    "emoji": "🧅",
    "category": "american",
+   "type": "Appetizer",
    "prep": 10,
    "cook": 55,
    "servings": 8,
@@ -2592,14 +2701,14 @@
      "unit": "tsp",
      "item": "beef base",
      "note": "divided",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
      "unit": "tsp",
      "item": "Worcestershire sauce",
      "note": "divided",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -2618,7 +2727,7 @@
      "unit": "oz",
      "item": "Gruyère or Swiss",
      "note": "shredded",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 2,
@@ -2647,13 +2756,20 @@
    ],
    "steps": [
     {
-     "text": "Melt 1 tbsp butter in a skillet over medium, add the onion, drop to medium-low and cook 25 to 30 minutes until caramelized. Add a tablespoon of water if it dries out."
+     "text": "Melt 1 tbsp butter in a skillet over medium, add the onion, drop to medium-low and cook 25 to 30 minutes until caramelized. Add a tablespoon of water if it dries out.",
+     "tips": [
+      "water-for-browning-onions"
+     ]
     },
     {
      "text": "Mix the beef with half the beef base and half the Worcestershire, and season well."
     },
     {
-     "text": "Add the beef to the onions, raise to medium-high and brown, breaking it up. Drain the grease."
+     "text": "Move the onions to a bowl. Raise the heat to medium-high, press the beef in as one big patty and sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Break it up, drain the grease and stir the onions back in.",
+     "asWritten": "Add the beef to the onions, raise to medium-high and brown, breaking it up. Drain the grease.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Heat the oven to 350°F. Arrange the bottom buns tightly on a greased sheet."
@@ -2674,6 +2790,7 @@
    "title": "Prosciutto & Goat Cheese Sliders",
    "emoji": "🥓",
    "category": "american",
+   "type": "Appetizer",
    "prep": 10,
    "cook": 30,
    "servings": 8,
@@ -2700,21 +2817,21 @@
      "unit": "slice",
      "item": "prosciutto",
      "note": "4 to 5",
-     "aisle": "Meat & Seafood"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 2.5,
      "unit": "oz",
      "item": "fontina or Swiss",
      "note": "shredded",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 2.5,
      "unit": "oz",
      "item": "goat cheese",
      "note": "crumbled",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 2,
@@ -2727,7 +2844,7 @@
      "unit": "",
      "item": "honey",
      "note": "for drizzling, optional",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 2.333,
@@ -2740,7 +2857,7 @@
      "qty": 2,
      "unit": "tsp",
      "item": "Dijon mustard",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -2779,6 +2896,9 @@
      "text": "Heat the oven to 425°F. Bake the prosciutto on parchment 8 to 10 minutes until crisp, then cool and crumble.",
      "uses": [
       1
+     ],
+     "tips": [
+      "crisp-the-prosciutto"
      ]
     },
     {
@@ -2795,6 +2915,9 @@
       3,
       5,
       0
+     ],
+     "tips": [
+      "goat-plus-melting-cheese"
      ]
     },
     {
@@ -2813,6 +2936,9 @@
      "text": "Bake covered with foil 10 minutes, then uncovered 10 minutes until golden. Broil 1 to 2 minutes for a crisper top.",
      "uses": []
     }
+   ],
+   "tips": [
+    "prosciutto-with-fruit"
    ]
   },
   {
@@ -2820,6 +2946,7 @@
    "title": "McConaughey Tuna Salad",
    "emoji": "🐟",
    "category": "american",
+   "type": "Main",
    "prep": 10,
    "servings": 4,
    "tags": [
@@ -2834,19 +2961,19 @@
      "unit": "can",
      "item": "tuna",
      "note": "drained well, about 10 oz",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
      "unit": "cup",
      "item": "mayonnaise",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "tsp",
      "item": "white wine vinegar",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -2858,19 +2985,19 @@
      "qty": 2,
      "unit": "tsp",
      "item": "wasabi paste",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "tsp",
      "item": "Italian dressing",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
      "unit": "tsp",
      "item": "agave",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 3,
@@ -2884,14 +3011,14 @@
      "unit": "tbsp",
      "item": "dill pickles or gherkins",
      "note": "finely chopped",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.333,
      "unit": "cup",
      "item": "crispy jalapeño chips",
      "note": "crushed",
-     "aisle": "Pantry"
+     "aisle": "Other"
     },
     {
      "qty": 0.25,
@@ -2904,7 +3031,7 @@
      "qty": 0.5,
      "unit": "cup",
      "item": "corn kernels",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
@@ -2922,7 +3049,10 @@
    ],
    "steps": [
     {
-     "text": "Stir the mayo, vinegar, lemon juice, wasabi, Italian dressing and agave until smooth."
+     "text": "Stir the mayo, vinegar, lemon juice, wasabi, Italian dressing and agave until smooth.",
+     "tips": [
+      "dressing-before-fillings"
+     ]
     },
     {
      "text": "Add the red onion, pickles, apple, corn, peas and crushed jalapeño chips."
@@ -2933,6 +3063,10 @@
     {
      "text": "Chill 15 to 30 minutes. Serve on toasted sourdough, with crackers or pita chips, or in lettuce cups."
     }
+   ],
+   "tips": [
+    "rebalance-for-chicken",
+    "pack-by-sogginess"
    ]
   },
   {
@@ -2940,6 +3074,7 @@
    "title": "Classic French Toast",
    "emoji": "🍞",
    "category": "breakfast",
+   "type": "Main",
    "prep": 10,
    "cook": 20,
    "servings": 4,
@@ -2981,14 +3116,14 @@
      "unit": "tbsp",
      "item": "granulated sugar",
      "note": "3 to 4",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 1.5,
      "unit": "tsp",
      "item": "vanilla extract",
      "note": "1 to 2",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.5,
@@ -3014,7 +3149,7 @@
      "unit": "",
      "item": "maple syrup and butter",
      "note": "for serving",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     }
    ],
    "steps": [
@@ -3040,6 +3175,7 @@
    "title": "French Toast Casserole",
    "emoji": "🥘",
    "category": "breakfast",
+   "type": "Main",
    "prep": 15,
    "cook": 40,
    "servings": 8,
@@ -3080,14 +3216,14 @@
      "unit": "tbsp",
      "item": "granulated sugar",
      "note": "3 to 4",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 1.5,
      "unit": "tsp",
      "item": "vanilla extract",
      "note": "1 to 2",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 0.5,
@@ -3113,7 +3249,7 @@
      "qty": 3,
      "unit": "tbsp",
      "item": "brown sugar",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 1,
@@ -3133,21 +3269,21 @@
      "unit": "",
      "item": "pecans",
      "note": "a handful, chopped",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": null,
      "unit": "",
      "item": "turbinado sugar",
      "note": "a few pinches",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": null,
      "unit": "",
      "item": "maple syrup and butter",
      "note": "for serving",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     }
    ],
    "steps": [
@@ -3202,6 +3338,7 @@
    "title": "Make-Ahead Breakfast Sandwiches",
    "emoji": "🥪",
    "category": "breakfast",
+   "type": "Main",
    "tags": [
     "breakfast",
     "make-ahead",
@@ -3219,7 +3356,7 @@
      "qty": null,
      "unit": "",
      "item": "sliced cheese",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
@@ -3252,6 +3389,7 @@
    "title": "Clever Dripper Coffee",
    "emoji": "☕",
    "category": "breakfast",
+   "type": "Drink",
    "prep": 2,
    "cook": 4,
    "servings": 1,
@@ -3270,7 +3408,7 @@
      "unit": "g",
      "item": "coffee beans",
      "note": "16 to 24 g per cup",
-     "aisle": "Pantry"
+     "aisle": "Beverages"
     },
     {
      "qty": null,
@@ -3300,6 +3438,7 @@
    "title": "Crispy Chicken Cutlets",
    "emoji": "🍗",
    "category": "dinner-party",
+   "type": "Main",
    "prep": 30,
    "cook": 25,
    "servings": 6,
@@ -3342,7 +3481,7 @@
      "unit": "",
      "item": "all-purpose flour",
      "note": "for dredging",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 3,
@@ -3355,28 +3494,28 @@
      "qty": 2,
      "unit": "cup",
      "item": "Italian breadcrumbs or panko",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": null,
      "unit": "",
      "item": "Parmesan",
      "note": "finely grated, mixed into the crumbs",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
      "unit": "",
      "item": "corn oil",
      "note": "for frying",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "beef tallow",
      "note": "for frying",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -3406,8 +3545,14 @@
      "text": "Fry in batches without crowding, 3 to 4 minutes per side, until deep golden and 165°F inside."
     },
     {
-     "text": "Drain on a wire rack, never paper towels. Hold in a 200°F oven on the rack. Finish with flaky salt and lemon."
+     "text": "Drain on a wire rack, never paper towels. Hold in a 200°F oven on the rack. Finish with flaky salt and lemon.",
+     "tips": [
+      "cutlet-sauce-on-the-side"
+     ]
     }
+   ],
+   "tips": [
+    "reheat-by-surface"
    ]
   },
   {
@@ -3415,6 +3560,7 @@
    "title": "Lemon-Caper Butter Sauce",
    "emoji": "🍋",
    "category": "dinner-party",
+   "type": "Sauce & Condiment",
    "prep": 5,
    "cook": 10,
    "servings": 6,
@@ -3444,20 +3590,20 @@
      "unit": "cup",
      "item": "dry white wine",
      "note": "optional",
-     "aisle": "Other"
+     "aisle": "Beverages"
     },
     {
      "qty": 0.5,
      "unit": "cup",
      "item": "chicken stock",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "capers",
      "note": "drained",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1,
@@ -3479,7 +3625,10 @@
      "text": "Melt most of the butter over medium heat and sauté the garlic until fragrant. Brown the butter first for a nuttier sauce."
     },
     {
-     "text": "Add the wine and reduce, then the stock and capers. Reduce until it lightly coats a spoon."
+     "text": "Add the wine and reduce, then the stock and capers. Reduce until it lightly coats a spoon.",
+     "tips": [
+      "cornstarch-slurry"
+     ]
     },
     {
      "text": "If making ahead, stop here, cool and refrigerate. Reheat gently over low, never boiling."
@@ -3494,6 +3643,7 @@
    "title": "Mushroom-Shallot Cream Sauce",
    "emoji": "🍄",
    "category": "dinner-party",
+   "type": "Sauce & Condiment",
    "prep": 10,
    "cook": 15,
    "servings": 6,
@@ -3535,13 +3685,13 @@
      "qty": 1,
      "unit": "tbsp",
      "item": "olive oil",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 0.25,
      "unit": "cup",
      "item": "dry white wine or sherry",
-     "aisle": "Other"
+     "aisle": "Beverages"
     },
     {
      "qty": 0.5,
@@ -3596,6 +3746,7 @@
    "title": "Whipped Ricotta with Chili Oil & Lemon",
    "emoji": "🫙",
    "category": "dinner-party",
+   "type": "Appetizer",
    "prep": 10,
    "servings": 6,
    "tags": [
@@ -3611,7 +3762,7 @@
      "qty": 1,
      "unit": "cup",
      "item": "whole milk ricotta",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 1.5,
@@ -3638,20 +3789,20 @@
      "unit": "",
      "item": "olive oil",
      "note": "for drizzling",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "red chili flakes or chili crisp",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "honey",
      "note": "optional",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": null,
@@ -3685,6 +3836,7 @@
    "title": "Antipasto Skewers",
    "emoji": "🍢",
    "category": "dinner-party",
+   "type": "Appetizer",
    "prep": 20,
    "servings": 6,
    "tags": [
@@ -3705,14 +3857,14 @@
      "unit": "oz",
      "item": "marinated mozzarella balls",
      "note": "or cubed mozzarella",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
      "unit": "",
      "item": "salami or soppressata",
      "note": "sliced and folded",
-     "aisle": "Meat & Seafood"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
@@ -3725,14 +3877,14 @@
      "unit": "",
      "item": "Kalamata or Castelvetrano olives",
      "note": "pitted",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": null,
      "unit": "",
      "item": "balsamic glaze",
      "note": "optional",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -3749,7 +3901,10 @@
      "text": "Cover tightly and refrigerate."
     },
     {
-     "text": "Plate and drizzle with balsamic glaze before serving."
+     "text": "Plate and drizzle with balsamic glaze before serving.",
+     "tips": [
+      "reduce-balsamic-lightly"
+     ]
     }
    ]
   },
@@ -3758,6 +3913,7 @@
    "title": "Grilled Asparagus with Lemon Zest",
    "emoji": "🌿",
    "category": "dinner-party",
+   "type": "Side",
    "prep": 10,
    "cook": 6,
    "servings": 6,
@@ -3782,7 +3938,7 @@
      "unit": "",
      "item": "olive oil",
      "note": "to coat",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -3802,14 +3958,14 @@
      "unit": "",
      "item": "Parmesan",
      "note": "shaved, optional",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": null,
      "unit": "",
      "item": "pistachios or almonds",
      "note": "crushed, optional",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     }
    ],
    "steps": [
@@ -3832,6 +3988,7 @@
    "title": "Blackberry Chia Pudding",
    "emoji": "🫐",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "servings": 1,
    "tags": [
@@ -3853,7 +4010,7 @@
      "qty": 3,
      "unit": "tbsp",
      "item": "chia seeds",
-     "aisle": "Pantry"
+     "aisle": "Pasta, Rice & Grains"
     },
     {
      "qty": 1,
@@ -3865,19 +4022,19 @@
      "qty": 0.25,
      "unit": "tsp",
      "item": "vanilla extract",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 1,
      "unit": "tbsp",
      "item": "unsweetened shredded coconut",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 10,
      "unit": "",
      "item": "raw unsalted pistachios",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     }
    ],
    "steps": [
@@ -3897,6 +4054,7 @@
    "title": "Mason Jar Taco Salad",
    "emoji": "🫙",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 20,
    "servings": 2,
@@ -3921,7 +4079,7 @@
      "unit": "tbsp",
      "item": "olive oil",
      "note": "divided",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 8,
@@ -3987,7 +4145,7 @@
      "qty": 1,
      "unit": "cup",
      "item": "salsa",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 2,
@@ -4043,6 +4201,7 @@
    "title": "Pollo in Potacchio",
    "emoji": "🍗",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "cook": 75,
    "servings": 5,
@@ -4088,7 +4247,7 @@
      "unit": "tbsp",
      "item": "olive oil",
      "note": "1 tbsp + 1 tsp",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -4130,7 +4289,7 @@
      "unit": "cup",
      "item": "crushed tomatoes",
      "note": "Tuttorosso",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.25,
@@ -4142,13 +4301,13 @@
      "qty": 0.25,
      "unit": "cup",
      "item": "dry white wine",
-     "aisle": "Other"
+     "aisle": "Beverages"
     },
     {
      "qty": 2,
      "unit": "cup",
      "item": "low-sodium chicken broth",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     }
    ],
    "steps": [
@@ -4174,6 +4333,7 @@
    "title": "Stuffed Pepper Soup",
    "emoji": "🫑",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 40,
    "servings": 6,
@@ -4233,19 +4393,19 @@
      "unit": "can",
      "item": "petite diced tomatoes",
      "note": "14.5 oz each",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 1.75,
      "unit": "cup",
      "item": "tomato sauce",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 2,
      "unit": "cup",
      "item": "low-sodium chicken broth",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
@@ -4264,12 +4424,16 @@
      "unit": "cup",
      "item": "cooked brown rice",
      "note": "for serving",
-     "aisle": "Pantry"
+     "aisle": "Pasta, Rice & Grains"
     }
    ],
    "steps": [
     {
-     "text": "Brown the beef in a large pot over high heat and season with salt."
+     "text": "Press the beef into a hot large pot as one big patty over high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip, season with salt and sear the second side, then break it up.",
+     "asWritten": "Brown the beef in a large pot over high heat and season with salt.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Drain any fat, lower to medium-low, and cook the peppers, onion and garlic about 5 minutes."
@@ -4287,6 +4451,7 @@
    "title": "Indian Shrimp Curry",
    "emoji": "🍤",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "cook": 10,
    "servings": 4,
@@ -4315,7 +4480,7 @@
      "unit": "tbsp",
      "item": "canola oil",
      "note": "divided",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -4385,13 +4550,13 @@
      "unit": "oz",
      "item": "tomato sauce",
      "note": "one can",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.75,
      "unit": "cup",
      "item": "lite coconut milk",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
@@ -4430,6 +4595,7 @@
    "title": "Grilled Garlic Dijon Herb Salmon",
    "emoji": "🐟",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "cook": 10,
    "servings": 4,
@@ -4469,25 +4635,25 @@
      "qty": 1,
      "unit": "tsp",
      "item": "red wine vinegar",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
      "unit": "tsp",
      "item": "olive oil",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 2,
      "unit": "tbsp",
      "item": "Dijon mustard",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
      "unit": "",
      "item": "olive oil spray",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 4,
@@ -4535,6 +4701,7 @@
    "title": "Stuffed Peppers",
    "emoji": "🫑",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "cook": 45,
    "servings": 3,
@@ -4571,7 +4738,7 @@
      "unit": "tsp",
      "item": "avocado or olive oil",
      "note": "plus more for the dish",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -4615,21 +4782,21 @@
      "unit": "oz",
      "item": "diced tomatoes",
      "note": "one can",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 4,
      "unit": "oz",
      "item": "diced jalapeños or mild green chiles",
      "note": "one can, drained",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
      "unit": "can",
      "item": "black olives",
      "note": "drained and sliced",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 3,
@@ -4647,7 +4814,11 @@
      "text": "Sauté the onion and garlic in 1 tsp oil over medium until translucent."
     },
     {
-     "text": "Add the beef, cumin, parsley, paprika, salt and pepper and cook until browned, breaking it up."
+     "text": "Scoop the onion and garlic out of the pan. Raise the heat to medium-high, press the beef in as one big patty and sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Break it up and stir in the onion, garlic, cumin, parsley, paprika, salt and pepper.",
+     "asWritten": "Add the beef, cumin, parsley, paprika, salt and pepper and cook until browned, breaking it up.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Stir in the tomatoes, chiles and half the olives. Take off the heat."
@@ -4665,6 +4836,7 @@
    "title": "Chicken & Avocado Salad with Lime",
    "emoji": "🥑",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "servings": 4,
    "tags": [
@@ -4722,7 +4894,7 @@
      "qty": 2,
      "unit": "tbsp",
      "item": "mayo",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     }
    ],
    "steps": [
@@ -4745,6 +4917,7 @@
    "title": "Grilled Salmon with Avocado Salsa",
    "emoji": "🐟",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 5,
    "servings": 4,
@@ -4779,7 +4952,7 @@
      "qty": 1,
      "unit": "tbsp",
      "item": "olive oil",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": 1,
@@ -4886,6 +5059,7 @@
    "title": "Chicken Avocado Burgers",
    "emoji": "🍔",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 10,
    "servings": 4,
@@ -4914,7 +5088,7 @@
      "unit": "cup",
      "item": "almond meal",
      "note": "or crushed crackers",
-     "aisle": "Pantry"
+     "aisle": "Baking"
     },
     {
      "qty": 1,
@@ -4953,7 +5127,7 @@
      "qty": 2,
      "unit": "tbsp",
      "item": "extra-virgin olive oil",
-     "aisle": "Pantry"
+     "aisle": "Oils, Vinegars & Condiments"
     },
     {
      "qty": null,
@@ -4990,6 +5164,7 @@
    "title": "Ground Beef Tacos",
    "emoji": "🌮",
    "category": "mexican",
+   "type": "Main",
    "tags": [
     "beef",
     "tex-mex",
@@ -5059,7 +5234,7 @@
      "qty": 2,
      "unit": "tbsp",
      "item": "tomato paste",
-     "aisle": "Pantry"
+     "aisle": "Canned & Jarred"
     },
     {
      "qty": 0.5,
@@ -5071,7 +5246,7 @@
      "qty": 12,
      "unit": "",
      "item": "taco shells",
-     "aisle": "Pantry"
+     "aisle": "Other"
     },
     {
      "qty": 1,
@@ -5083,7 +5258,7 @@
      "qty": 1,
      "unit": "cup",
      "item": "shredded cheddar",
-     "aisle": "Dairy & Eggs"
+     "aisle": "Deli & Cheese"
     },
     {
      "qty": 1,
@@ -5102,10 +5277,14 @@
    ],
    "steps": [
     {
-     "text": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.",
+     "text": "Press the beef into a hot large skillet as one big patty over medium-high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Add the onion, break the beef up and cook until the onion softens. Drain off most of the fat.",
      "uses": [
       0,
       1
+     ],
+     "asWritten": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.",
+     "tips": [
+      "big-beef-patty"
      ]
     },
     {

@@ -5,21 +5,40 @@
 'use strict';
 
 const KEY = 'tasa:v1';
-const AISLES = ['Produce', 'Meat & Seafood', 'Dairy & Eggs', 'Bakery', 'Pantry', 'Spices', 'Frozen', 'Other'];
+const TYPES = [['Main', 'Mains'], ['Side', 'Sides'], ['Appetizer', 'Appetizers'], ['Sauce & Condiment', 'Sauces & Condiments'], ['Building Block', 'Building Blocks'], ['Dessert', 'Desserts'], ['Drink', 'Drinks']];
+const SHELVES = [['cuisines', 'Cuisines'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
 const PLURAL = new Set(['cup', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig']);
 const UNIT_ALIASES = { cups: 'cup', c: 'cup', tablespoon: 'tbsp', tablespoons: 'tbsp', tbsps: 'tbsp', tbs: 'tbsp', teaspoon: 'tsp', teaspoons: 'tsp', tsps: 'tsp', ounce: 'oz', ounces: 'oz', pound: 'lb', pounds: 'lb', lbs: 'lb', cloves: 'clove', cans: 'can', slices: 'slice', pieces: 'piece', sticks: 'stick', pint: 'pt', pints: 'pt', quart: 'qt', quarts: 'qt', gallon: 'gal', gallons: 'gal', grams: 'g', gram: 'g', liter: 'L', liters: 'L', l: 'L' };
 const UNITS = ['cup', 'tbsp', 'tsp', 'fl oz', 'oz', 'lb', 'pt', 'qt', 'gal', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig', 'g', 'kg', 'ml', 'L'];
+const AISLES = ['Produce', 'Bakery', 'Deli & Cheese', 'Meat & Seafood', 'Dairy & Eggs', 'Canned & Jarred', 'Pasta, Rice & Grains', 'Baking', 'Oils, Vinegars & Condiments', 'Spices', 'Frozen', 'Beverages', 'Other'];
+const RE_CHEESE = /cheese|parmesan|parmigiano|pecorino|mozzarella|cheddar|ricotta|fontina|gruy[eè]re|provolone|feta|mascarpone|burrata|curd/;
+const RE_DELI = /prosciutto|salami|soppressata|pancetta|guanciale|pepperoni|deli |lunch ?meat|hummus/;
+// Splits the shelf-stable middle of the store. Order matters: first match wins.
+const SHELF_GUESS = [
+  ['Beverages', /coffee/],
+  ['Spices', /dried .*chil|guajillo|ancho chil/],
+  ['Oils, Vinegars & Condiments', /vinegar|\boil\b|mayo|mustard|ketchup|worcestershire|soy sauce|aminos|fish sauce|hot sauce|sriracha|bbq sauce|barbecue sauce|dressing|peanut butter|tahini|tallow|lard|cooking spray|liquid smoke|balsamic|relish|horseradish|wasabi|miso|chili crisp|chil[ei] oil/],
+  ['Canned & Jarred', /canned|tomato (paste|sauce|pur[eé]e)|tomatoes|passata|marinara|broth|stock|bouillon|beef base|\bbeans?\b|chickpea|coconut milk|tuna|anchov|olives?\b|capers?|pickle|green chil|chipotle|adobo|artichoke|roasted red pepper|sun-dried|evaporated|condensed|salsa|preserves|jam\b|jelly|nacho cheese|calabrian|corn kernels/],
+  ['Pasta, Rice & Grains', /pasta|rigatoni|penne|spaghetti|noodle|macaroni|orzo|lasagn|tortellini|\brice\b|arborio|quinoa|couscous|farro|barley|\boats?\b|polenta|grits|lentil|chia/],
+  ['Baking', /flour|sugar|baking (soda|powder)|cornstarch|arrowroot|cornmeal|yeast|vanilla|cocoa|chocolate|honey|maple|syrup|agave|molasses|panko|crumb|\bnuts?\b|pecan|walnut|almond|peanut|pistachio|coconut|raisin|gelatin|shortening|citric acid|rennet/],
+  ['Beverages', /wine|beer|vodka|sherry|marsala|bourbon|whiskey|tequila|coffee|\btea\b|juice|soda|seltzer/]
+];
 const AISLE_GUESS = [
   ['Frozen', /frozen/],
-  ['Spices', /salt|black pepper|cumin|paprika|oregano|powder|flakes|seasoning|cinnamon|nutmeg|thyme|bay lea|vanilla/],
-  ['Meat & Seafood', /beef|chicken|pork|sausage|bacon|turkey|steak|ham\b|fish|salmon|shrimp|brisket|ribs/],
-  ['Dairy & Eggs', /milk|cheese|butter|egg|cream|yogurt|parmesan|mozzarella|cheddar|ricotta/],
-  ['Bakery', /bread|bun|tortilla|roll|bagel|pita/],
-  ['Produce', /onion|garlic|tomato\b|tomatoes|lettuce|cilantro|parsley|lemon|lime|pepper|potato|carrot|basil|avocado|celery|spinach|mushroom|apple|banana|berr|ginger|scallion|cucumber|zucchini|broccoli|corn\b/],
-  ['Pantry', /flour|sugar|oil|rice|pasta|crumb|panko|sauce|broth|stock|vinegar|bean|paste|honey|syrup|shell|noodle|oat|nut|chip|cracker|canned|mustard|ketchup|mayo/]
+  ['Oils, Vinegars & Condiments', /vinegar|\boil\b/],
+  ['Spices', /\bsalt\b|black pepper|white pepper|peppercorn|pepper flakes|cumin|paprika|oregano|powder(?!ed)|flakes|seasoning|cinnamon|nutmeg|dried thyme|bay lea|cayenne|coriander|turmeric|marjoram|allspice|fennel seed|sesame seed|\brub\b/],
+  ['Deli & Cheese', RE_CHEESE], ['Deli & Cheese', RE_DELI],
+  ['Canned & Jarred', /tomato (paste|sauce|pur[eé]e)|canned|broth|stock|\bbeans?\b|tuna|coconut milk/],
+  ['Meat & Seafood', /beef|chicken|pork|sausage|bacon|turkey|steak|ham\b|fish|salmon|shrimp|brisket|ribs|chuck|bison|lamb/],
+  ['Dairy & Eggs', /milk|butter|egg|cream|yogurt|half-and-half|cr[eè]me/],
+  ['Bakery', /bread|bun|tortilla|roll|bagel|pita|baguette|sourdough|brioche/],
+  ['Produce', /onion|garlic|tomato|lettuce|cilantro|parsley|lemon|lime|pepper|potato|carrot|basil|avocado|celery|spinach|arugula|mushroom|apple|banana|berr|ginger|scallion|shallot|cucumber|zucchini|broccoli|asparagus|jalape|thyme|rosemary|\bcorn\b|pear|orange|cabbage|kale|herb/],
+  ...SHELF_GUESS
 ];
+const LOCS = ['Fridge', 'Freezer', 'Cabinet', 'Spice Rack', 'Counter', 'Basement Fridge', 'Garage Freezer'];
+const LOC_EMOJI = { Fridge: '🧊', Freezer: '❄️', Cabinet: '🚪', 'Spice Rack': '🧂', Counter: '🍌', 'Basement Fridge': '🧊', 'Garage Freezer': '❄️' };
 
 const GENERIC = new Set(['fresh', 'freshly', 'large', 'small', 'medium', 'ground', 'dried', 'whole', 'kosher', 'black', 'white', 'yellow', 'sweet', 'unsalted', 'sodium', 'extra', 'virgin', 'grated', 'chopped', 'minced', 'sliced', 'boneless', 'skinless', 'size', 'style', 'optional', 'soft', 'crisp', 'baby', 'plain', 'lite', 'lean', 'mild', 'aged', 'pure', 'coarse', 'mesh', 'leaves', 'neutral', 'double', 'concentrated', 'imported', 'stale', 'raw', 'thick', 'slices', 'with', 'from', 'pieces']);
 const $ = (s, r = document) => r.querySelector(s);
@@ -27,11 +46,20 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'recipe';
 
 let S = load();
-let DATA = { categories: [], recipes: [] };
-const V = { serv: {}, tab: {}, checked: {}, timers: [], q: '', tonight: { max: 0, cat: '', kid: false, again: false }, cook: null, sheet: false, autoRead: false, pick: null };
+let DATA = { categories: [], recipes: [], sections: [], tips: [] };
+const V = { serv: {}, tab: {}, checked: {}, timers: [], q: '', gq: '', gPick: null, pEdit: '', tq: '', tkind: '', tipsOpen: {}, tonight: { max: 0, cat: '', kid: false, again: false }, cook: null, sheet: false, autoRead: false, pick: null };
 
 function load() {
-  try { return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return { ...DEFAULTS }; }
+  try { return migrate({ ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY) || '{}') }); } catch { return { ...DEFAULTS }; }
+}
+// Same tasa:v1 key and shape. Fills in what older saves lack: 13 departments on the list, location and category on pantry items.
+function migrate(d) {
+  d.grocery = (d.grocery || []).map(g => ({ ...g, aisle: deptOf(g.item, g.aisle) }));
+  d.pantry = (d.pantry || []).map(p => {
+    const cat = AISLES.includes(p.cat) ? p.cat : deptOf(p.item);
+    return { ...p, cat, loc: LOCS.includes(p.loc) ? p.loc : guessLoc(p.item, cat) };
+  });
+  return d;
 }
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { toast('Could not save on this device. Storage may be full or blocked.'); }
@@ -107,6 +135,33 @@ function guessAisle(item) {
   for (const [a, re] of AISLE_GUESS) if (re.test(t)) return a;
   return 'Other';
 }
+// Old lists and recipes used 8 aisles with one big "Pantry". Map those to the 13 departments.
+function deptOf(item, aisle) {
+  const t = String(item || '').toLowerCase();
+  if (aisle === 'Pantry' || !AISLES.includes(aisle)) {
+    if (aisle === 'Pantry') { for (const [a, re] of SHELF_GUESS) if (re.test(t)) return a; return 'Other'; }
+    return guessAisle(t);
+  }
+  if (aisle === 'Dairy & Eggs' && RE_CHEESE.test(t)) return 'Deli & Cheese';
+  if (aisle === 'Meat & Seafood' && RE_DELI.test(t)) return 'Deli & Cheese';
+  if (aisle === 'Other' && SHELF_GUESS[SHELF_GUESS.length - 1][1].test(t)) return 'Beverages';
+  return aisle;
+}
+// Where a pantry item most likely lives at home. A guess; the pantry page lets you move it.
+function guessLoc(item, cat) {
+  const t = item.toLowerCase();
+  if (cat === 'Frozen') return 'Freezer';
+  if (cat === 'Spices') return 'Spice Rack';
+  if (cat === 'Bakery') return 'Counter';
+  if (cat === 'Produce') return /onion|garlic|potato|tomato|banana|avocado|shallot|squash/.test(t) ? 'Counter' : 'Fridge';
+  if (['Meat & Seafood', 'Dairy & Eggs', 'Deli & Cheese'].includes(cat)) return 'Fridge';
+  if (/mayo|ketchup|mustard|jam\b|jelly|preserves|pickle|relish|salsa|miso|horseradish/.test(t)) return 'Fridge';
+  return 'Cabinet';
+}
+function pantryItem(item, status = 'have', aisle) {
+  const cat = deptOf(item, aisle);
+  return { item, status, cat, loc: guessLoc(item, cat) };
+}
 function parseQty(s) {
   return s.trim().split(/\s+/).reduce((sum, p) => {
     const [a, b] = p.split('/');
@@ -134,6 +189,30 @@ const pantryHas = item => S.pantry.find(p => p.status !== 'out' && (item.toLower
 function pantryMatch(r) {
   if (!S.pantry.length || !r.ingredients.length) return null;
   return Math.round(100 * r.ingredients.filter(g => pantryHas(g.item)).length / r.ingredients.length);
+}
+
+/* ---------- techniques ---------- */
+const KIND = { house: "Jim's way", method: 'Technique', optional: 'Optional' };
+const tipById = id => DATA.tips.find(t => t.id === id);
+const rich = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+// Every tip on a recipe: step tips first (with their step number), then recipe-wide ones.
+function recipeTips(r) {
+  const out = [];
+  r.steps.forEach((st, i) => (st.tips || []).forEach(id => { const t = tipById(id); if (t) out.push({ t, step: i }); }));
+  (r.tips || []).forEach(id => { const t = tipById(id); if (t && !out.some(x => x.t.id === id)) out.push({ t, step: null }); });
+  return out;
+}
+function tipsUsing(id) {
+  return all().filter(r => (r.tips || []).includes(id) || r.steps.some(st => (st.tips || []).includes(id)));
+}
+function tipNote(t, open) {
+  return `<details class="tip ${esc(t.kind)}" ${open ? 'open' : ''}><summary><span class="tip-kind">${KIND[t.kind] || KIND.method}</span> ${esc(t.title)}</summary>
+    <p>${rich(t.text)}</p><a class="small-text" href="#/tips/${esc(t.id)}">Open in Techniques</a></details>`;
+}
+function stepExtras(st, open) {
+  const tips = (st.tips || []).map(tipById).filter(Boolean);
+  return tips.map(t => tipNote(t, open || t.kind === 'house')).join('')
+    + (st.asWritten ? `<details class="as-written"><summary>As written</summary><p>${esc(stepText(st.asWritten))}</p></details>` : '');
 }
 
 /* ---------- small UI helpers ---------- */
@@ -205,11 +284,16 @@ function searchList(q) {
 function homeBody() {
   if (V.q.trim()) return rowsHTML(searchList(V.q), `No recipes match “${esc(V.q)}”. Try an ingredient or a tag.`);
   const rs = all();
-  const tiles = DATA.categories.map(c => ({ href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => r.category === c.id).length }));
-  tiles.push({ href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
-  tiles.push({ href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
-  tiles.push({ href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
-  return `<div class="tiles">${tiles.map(t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`).join('')}</div>`;
+  const tile = t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`;
+  const known = new Set(SHELVES.map(s => s[0]));
+  const tiles = DATA.categories.map(c => ({ shelf: known.has(c.shelf) ? c.shelf : 'cuisines', href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => r.category === c.id).length }));
+  tiles.push({ shelf: 'collections', href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
+  tiles.push({ shelf: 'collections', href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
+  tiles.push({ shelf: 'collections', href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
+  return SHELVES.map(([id, name]) => {
+    const list = tiles.filter(t => t.shelf === id);
+    return list.length ? `<section class="shelf"><h2 class="shelf-name">${name}</h2><div class="tiles">${list.map(tile).join('')}</div></section>` : '';
+  }).join('');
 }
 function viewHome() {
   return `<div class="hero">
@@ -224,7 +308,12 @@ function viewCat(id) {
   const rs = all();
   const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])] };
   const [title, list] = special[id] || [catName(id), rs.filter(r => r.category === id)];
-  return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
+  if (special[id] || !list.length) return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
+  const groups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) => {
+    const rows = list.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type));
+    return rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
+  }).join('');
+  return head(title) + groups;
 }
 function viewFavs() {
   return head('Favorites') + rowsHTML(all().filter(r => S.favs.includes(r.id)), 'No favorites yet. Tap the heart on a recipe to keep it here.');
@@ -244,7 +333,7 @@ function viewRecipe(id) {
   const r = byId(id);
   if (!r) return head('Not found') + `<div class="empty"><span class="big">🧭</span>That recipe is not in the book. <a href="#/">Back to recipes</a>.</div>`;
   const serv = V.serv[id] || r.servings || 1, f = serv / (r.servings || 1);
-  const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition;
+  const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition, rt = recipeTips(r);
   return `<div class="page-head no-print">
       <a class="back" href="#/c/${esc(r.category || 'all')}" aria-label="Back">←</a><span style="flex:1"></span>
       <button class="icon-btn" data-act="fav" data-id="${esc(id)}" aria-label="Favorite" aria-pressed="${S.favs.includes(id)}">${S.favs.includes(id) ? '❤️' : '🤍'}</button>
@@ -255,7 +344,7 @@ function viewRecipe(id) {
       <div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span>
         <div><h1>${esc(r.title)}</h1>
         <div class="row" style="gap:6px;margin-top:6px">
-          <span class="pill">${esc(catName(r.category))}</span>
+          <span class="pill">${esc(catName(r.category))}</span>${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
           ${r.kid ? '<span class="pill sage">kid-approved</span>' : ''}${r._draft ? '<span class="pill">my draft</span>' : ''}${r.placeholder ? '<span class="pill red">stand-in recipe</span>' : ''}
         </div></div></div>
       <hr class="redline">
@@ -280,16 +369,18 @@ function viewRecipe(id) {
       </div>
       <div class="row no-print" style="margin-top:16px">
         <a class="btn primary" href="#/cook/${esc(id)}">👩‍🍳 Start cooking</a>
-        <button class="btn" data-act="addToList" data-id="${esc(id)}">🧺 Add to grocery list</button>
+        <button class="btn" data-act="gPick" data-id="${esc(id)}">🧺 Add to grocery list</button>
       </div>
 
       <div class="tabs no-print" role="tablist">
         <button role="tab" aria-selected="${tab === 'ing'}" data-act="tab" data-id="${esc(id)}" data-t="ing">Ingredients</button>
         <button role="tab" aria-selected="${tab === 'steps'}" data-act="tab" data-id="${esc(id)}" data-t="steps">Steps</button>
+        ${rt.length ? `<button role="tab" aria-selected="${tab === 'tips'}" data-act="tab" data-id="${esc(id)}" data-t="tips">Tips <span class="tab-count">${rt.length}</span></button>` : ''}
       </div>
       <div style="padding-top:8px">
         ${tab === 'ing' ? ingListHTML(r, f)
-          : `<ol class="steps">${r.steps.map(st => `<li>${esc(stepText(st.text))}${usesHTML(r, st, f)}</li>`).join('')}</ol>`}
+          : tab === 'tips' && rt.length ? `<div class="tip-list">${rt.map(x => `<div class="tip-row"><span class="pill ${x.step == null ? '' : 'sage'}">${x.step == null ? 'Whole recipe' : 'Step ' + (x.step + 1)}</span>${tipNote(x.t, true)}</div>`).join('')}</div>`
+          : `<ol class="steps">${r.steps.map(st => `<li>${esc(stepText(st.text))}${usesHTML(r, st, f)}${stepExtras(st)}</li>`).join('')}</ol>`}
       </div>
     </article>
 
@@ -302,7 +393,8 @@ function viewRecipe(id) {
       <label class="field"><span>My notes and tweaks</span>
         <textarea class="hand" data-in="note" data-id="${esc(id)}" placeholder="Less salt next time, double the garlic…">${esc(S.notes[id] || '')}</textarea>
         <small>Saved on this device as you type.</small></label>
-    </section>`;
+    </section>
+    ${gPickHTML()}`;
 }
 
 function timersHTML() {
@@ -322,7 +414,7 @@ function viewCook(id) {
   const st = r.steps[i];
   const body = i < 0
     ? `<div><div class="cook-count">Before you start</div><p class="cook-text" style="font-size:1.5rem">Gather everything for ${V.serv[id] || r.servings} servings.</p></div>${ingListHTML(r, f)}`
-    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}`;
+    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}<div class="cook-tips">${stepExtras(st, true)}</div>`;
   return `<div class="cook">
     <div class="cook-top">
       <a class="icon-btn" style="display:grid;place-items:center;text-decoration:none" href="#/r/${esc(id)}" aria-label="Leave cook mode">✕</a>
@@ -368,41 +460,115 @@ function viewTonight() {
     ${rowsHTML(list, 'Nothing fits those filters. Loosen the time or the meal type.')}`;
 }
 
+const byItem = (a, b) => a.item.localeCompare(b.item);
 function groceryText() {
   return AISLES.map(a => {
-    const items = S.grocery.filter(g => g.aisle === a && !g.done);
+    const items = S.grocery.filter(g => g.aisle === a && !g.done).sort(byItem);
     return items.length ? `${a}\n${items.map(g => '- ' + ingPlain(g)).join('\n')}` : '';
   }).filter(Boolean).join('\n\n');
+}
+const NO_BUY = /^(cold |cool |warm |hot |ice )?water$|non-chlorinated water/i;
+function gFindHTML() {
+  const q = V.gq.trim();
+  if (!q) return '';
+  const hits = searchList(q).slice(0, 6);
+  return hits.length
+    ? `<div class="pick-results">${hits.map(r => `<button class="pick-result" data-act="gPick" data-id="${esc(r.id)}"><span>${esc(r.emoji || '🍴')}</span><span>${esc(r.title)}</span><span class="muted small-text">${r.ingredients.length} items</span></button>`).join('')}</div>`
+    : `<p class="muted small-text">No recipes match “${esc(q)}”.</p>`;
+}
+// Opens with everything checked except what the pantry says is on hand.
+function gPickStart(id) {
+  const r = byId(id); if (!r) return;
+  V.gPick = { id, serv: V.serv[id] || r.servings || 1, on: r.ingredients.map(g => !pantryHas(g.item) && !NO_BUY.test(g.item)) };
+}
+function gPickHTML() {
+  const P = V.gPick, r = P && byId(P.id);
+  if (!r) return '';
+  const f = P.serv / (r.servings || 1), n = P.on.filter(Boolean).length;
+  const skipped = r.ingredients.filter((g, i) => !P.on[i] && pantryHas(g.item)).length;
+  return `<div class="sheet-scrim" data-act="gPickX"></div>
+    <div class="sheet pick-sheet" role="dialog" aria-label="Add ingredients from ${esc(r.title)}">
+      <div class="row spread"><h2>${esc(r.emoji || '🍴')} ${esc(r.title)}</h2><button class="btn small" data-act="gPickX">Close</button></div>
+      <div class="row spread" style="margin:10px 0">
+        <div class="stepper" role="group" aria-label="Servings"><button data-act="gPickServ" data-d="-1" aria-label="Fewer servings">−</button><span>Serves ${P.serv}</span><button data-act="gPickServ" data-d="1" aria-label="More servings">+</button></div>
+        <div class="row" style="gap:6px"><button class="btn small plain" data-act="gPickAll" data-on="1">Select all</button><button class="btn small plain" data-act="gPickAll" data-on="">None</button></div>
+      </div>
+      ${skipped ? `<p class="pantry-warn">⚠️ ${skipped} unchecked because the pantry says you have ${skipped === 1 ? 'it' : 'them'}. The pantry may be out of date, so confirm before you shop.</p>` : ''}
+      <ul class="ruled">${r.ingredients.map((g, i) => `<li><label><input type="checkbox" data-in="gPickOne" data-i="${i}" ${P.on[i] ? 'checked' : ''}><span>${ingHTML(g, f)}${pantryHas(g.item) ? ' <span class="pill sage">in pantry</span>' : ''}</span></label></li>`).join('')}</ul>
+      <div class="row pick-foot"><button class="btn primary" data-act="gPickAdd" ${n ? '' : 'disabled style="opacity:.4"'}>Add ${n} ${n === 1 ? 'item' : 'items'} to the list</button></div>
+    </div>`;
 }
 function viewList() {
   const open = S.grocery.filter(g => !g.done).length;
   const groups = AISLES.map(a => {
-    const items = S.grocery.filter(g => g.aisle === a);
+    const items = S.grocery.filter(g => g.aisle === a).sort(byItem);
     if (!items.length) return '';
-    return `<div class="aisle">${esc(a)}</div><ul class="ruled">${items.map(g => `<li><label><input type="checkbox" data-in="gDone" data-gid="${esc(g.id)}" ${g.done ? 'checked' : ''}><span>${ingHTML(g)}${pantryHas(g.item) && !g.done ? ' <span class="pill sage">in pantry</span>' : ''}${g.from && g.from.length ? `<span class="note small-text"> (${esc(g.from.join(', '))})</span>` : ''}</span></label></li>`).join('')}</ul>`;
+    return `<div class="aisle">${esc(a)} <span class="group-count">${items.filter(g => !g.done).length}</span></div><ul class="ruled">${items.map(g => `<li><label><input type="checkbox" data-in="gDone" data-gid="${esc(g.id)}" ${g.done ? 'checked' : ''}><span>${ingHTML(g)}${pantryHas(g.item) && !g.done ? ' <span class="pill sage">in pantry</span>' : ''}${g.from && g.from.length ? `<span class="note small-text"> (${esc(g.from.join(', '))})</span>` : ''}</span></label></li>`).join('')}</ul>`;
   }).join('');
   return head('Grocery list') + `
     <form class="addbar" data-form="gAdd"><input type="text" name="item" placeholder="Add an item, like 2 lb chicken thighs" aria-label="Add an item" autocomplete="off"><button class="btn primary">Add</button></form>
+    <div class="search no-print" style="margin:0 0 8px;max-width:none"><input type="search" data-in="gSearch" value="${esc(V.gq)}" placeholder="Add from a recipe: search by name or ingredient" aria-label="Search recipes to add ingredients"></div>
+    <div id="gFind" class="no-print">${gFindHTML()}</div>
     ${S.grocery.length ? `<div class="row no-print" style="margin:10px 0">
         <button class="btn small" data-act="gShare">📤 Send list</button>
         <button class="btn small" data-act="gCopy">📋 Copy as text</button>
         <button class="btn small plain" data-act="gToPantry">Move checked to pantry</button>
         <button class="btn small plain" data-act="gClear">Clear checked</button>
-      </div><p class="muted small-text">${open} left to get. “Send list” opens the share sheet, where you can pick Reminders or Messages.</p>
+      </div><p class="muted small-text">${open} left to get, in store-walk order. “Send list” opens the share sheet, where you can pick Reminders or Messages.</p>
       <div class="card">${groups}</div>`
-      : `<div class="empty"><span class="big">🧺</span>The basket is empty. Add items above, or open a recipe and tap “Add to grocery list”.</div>`}`;
+      : `<div class="empty"><span class="big">🧺</span>The basket is empty. Add items above, search a recipe, or open a recipe and tap “Add to grocery list”.</div>`}
+    ${gPickHTML()}`;
 }
 function viewPantry() {
-  const items = [...S.pantry].sort((a, b) => a.item.localeCompare(b.item));
   const label = { have: 'Have it', low: 'Running low', out: 'Out' };
-  return head('Pantry') + `
-    <form class="addbar" data-form="pAdd"><input type="text" name="item" placeholder="Add something you keep on hand" aria-label="Add a pantry item" autocomplete="off"><button class="btn primary">Add</button></form>
-    <p class="muted small-text">Tap a status to change it. Recipes and the grocery list flag what you already have.</p>
-    ${items.length ? `<div class="card">${items.map(p => `<div class="pantry-item"><span class="name">${esc(p.item)}</span>
+  const row = p => `<div class="pantry-item"><button class="name" data-act="pEdit" data-item="${esc(p.item)}" aria-expanded="${V.pEdit === p.item}">${esc(p.item)}</button>
         <button class="status ${p.status}" data-act="pCycle" data-item="${esc(p.item)}">${label[p.status]}</button>
         ${p.status !== 'have' ? `<button class="btn small plain" data-act="pToList" data-item="${esc(p.item)}">+ list</button>` : ''}
-        <button class="x" data-act="pDel" data-item="${esc(p.item)}" aria-label="Remove ${esc(p.item)}">✕</button></div>`).join('')}</div>`
+        <button class="x" data-act="pDel" data-item="${esc(p.item)}" aria-label="Remove ${esc(p.item)}">✕</button></div>
+        ${V.pEdit === p.item ? `<div class="pantry-move">
+          <label>Where<select data-in="pLoc" data-item="${esc(p.item)}">${LOCS.map(l => `<option ${p.loc === l ? 'selected' : ''}>${esc(l)}</option>`).join('')}</select></label>
+          <label>Category<select data-in="pCat" data-item="${esc(p.item)}">${AISLES.map(c => `<option ${p.cat === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></label></div>` : ''}`;
+  const groups = LOCS.map(loc => {
+    const here = S.pantry.filter(p => p.loc === loc);
+    if (!here.length) return '';
+    return `<div class="card"><div class="aisle" style="margin-top:0">${LOC_EMOJI[loc]} ${esc(loc)} <span class="group-count">${here.length}</span></div>
+      ${AISLES.map(c => { const items = here.filter(p => p.cat === c).sort(byItem); return items.length ? `<div class="pantry-cat">${esc(c)}</div>${items.map(row).join('')}` : ''; }).join('')}</div>`;
+  }).join('');
+  return head('Pantry') + `
+    <form class="addbar" data-form="pAdd"><input type="text" name="item" placeholder="Add something you keep on hand" aria-label="Add a pantry item" autocomplete="off"><button class="btn primary">Add</button></form>
+    <p class="muted small-text">Sorted by where it lives, then by category. New items are placed by best guess; tap a name to move it. Tap a status to change it.</p>
+    ${S.pantry.length ? groups
       : `<div class="empty"><span class="big">🫙</span>Nothing on the shelves yet. Start with the staples: olive oil, salt, garlic, eggs.</div>`}`;
+}
+
+function tipsBody() {
+  const q = V.tq.toLowerCase().trim();
+  const match = t => (!V.tkind || t.kind === V.tkind) && (!q || [t.title, t.text, t.where].join(' ').toLowerCase().includes(q));
+  const out = DATA.sections.map(sec => {
+    const list = DATA.tips.filter(t => t.section === sec.id && match(t));
+    if (!list.length) return '';
+    return `<h2 class="group-name">${esc(sec.emoji || '')} ${esc(sec.name)} <span class="group-count">${list.length}</span></h2>
+      ${list.map(t => {
+        const rs = tipsUsing(t.id);
+        return `<article class="card tip-card ${esc(t.kind)}" id="tip-${esc(t.id)}">
+          <h3>${esc(t.title)}</h3>
+          <div class="row" style="gap:6px;margin:6px 0 8px"><span class="pill ${t.kind === 'house' ? 'red' : t.kind === 'optional' ? '' : 'sage'}">${KIND[t.kind] || KIND.method}</span></div>
+          <p>${rich(t.text)}</p>
+          ${t.where ? `<p class="muted small-text"><b>Where:</b> ${esc(t.where)}</p>` : ''}
+          ${rs.length ? `<div class="row" style="gap:6px">${rs.map(r => `<a class="chip" href="#/r/${esc(r.id)}">${esc(r.emoji || '🍴')} ${esc(r.title)}</a>`).join('')}</div>` : ''}
+          ${t.sources && t.sources.length ? `<p class="small-text" style="margin:10px 0 0">Backed by: ${t.sources.map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</p>` : ''}
+        </article>`;
+      }).join('')}`;
+  }).join('');
+  return out || `<div class="empty"><span class="big">🧭</span>No techniques match. Try another word or clear the filter.</div>`;
+}
+function viewTips() {
+  const chip = (k, label) => `<button class="chip" data-act="tKind" data-k="${k}" aria-pressed="${V.tkind === k}">${label}</button>`;
+  return head('Techniques') + `
+    <p class="muted small-text">${DATA.tips.length} tips, tricks and flavor enhancers. They also show on the recipe steps where they matter.</p>
+    <div class="search" style="margin:0 0 10px"><input type="search" data-in="tipSearch" value="${esc(V.tq)}" placeholder="Search techniques" aria-label="Search techniques"></div>
+    <div class="row" style="gap:8px;margin-bottom:6px">${chip('', 'All')}${chip('house', "Jim's way")}${chip('method', 'Techniques')}${chip('optional', 'Optional')}</div>
+    <div id="tipsBody">${tipsBody()}</div>`;
 }
 
 function viewForm(id) {
@@ -417,6 +583,7 @@ function viewForm(id) {
       <div class="grid2">
         ${f('Emoji', 'emoji', v.emoji, 'placeholder="🍲" maxlength="8"')}
         <label class="field"><span>Category</span><select name="category">${DATA.categories.map(c => `<option value="${esc(c.id)}" ${v.category === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
+        <label class="field"><span>Type</span><select name="type"><option value="">Not sorted yet</option>${TYPES.map(([t]) => `<option ${v.type === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label>
         ${f('Prep minutes', 'prep', v.prep, 'inputmode="numeric"')}
         ${f('Cook minutes', 'cook', v.cook, 'inputmode="numeric"')}
         ${f('Servings', 'servings', v.servings, 'inputmode="numeric"')}
@@ -469,7 +636,7 @@ function render(keepScroll) {
   const [name = '', arg, arg2] = location.hash.replace(/^#\/?/, '').split('/');
   const views = {
     '': viewHome, c: () => viewCat(arg), r: () => viewRecipe(arg), cook: () => viewCook(arg), tonight: viewTonight, list: viewList,
-    pantry: viewPantry, favorites: viewFavs, add: () => viewForm(), edit: () => viewForm(arg), settings: viewSettings, import: () => viewImport(arg)
+    pantry: viewPantry, favorites: viewFavs, add: () => viewForm(), edit: () => viewForm(arg), settings: viewSettings, import: () => viewImport(arg), tips: viewTips
   };
   const cooking = name === 'cook';
   document.body.classList.toggle('cooking', cooking);
@@ -479,6 +646,7 @@ function render(keepScroll) {
   $('#app').classList.remove('menu-open');
   updateBadge();
   if (!keepScroll) window.scrollTo(0, 0);
+  if (name === 'tips' && arg && !keepScroll) { const el = document.getElementById('tip-' + arg); if (el) { el.classList.add('flash'); el.scrollIntoView({ block: 'start' }); } }
 }
 
 /* ---------- wake lock, speech, timers ---------- */
@@ -523,7 +691,7 @@ function addGrocery(g, from) {
     hit.qty = hit.qty != null && g.qty != null ? +(hit.qty + g.qty).toFixed(3) : (hit.qty ?? g.qty);
     if (from && !hit.from.includes(from)) hit.from.push(from);
   } else {
-    S.grocery.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), item: g.item, qty: g.qty ?? null, unit: g.unit || '', aisle: AISLES.includes(g.aisle) ? g.aisle : guessAisle(g.item), done: false, from: from ? [from] : [] });
+    S.grocery.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), item: g.item, qty: g.qty ?? null, unit: g.unit || '', aisle: deptOf(g.item, g.aisle), done: false, from: from ? [from] : [] });
   }
 }
 const toggle = (arr, v) => { const i = arr.indexOf(v); i < 0 ? arr.push(v) : arr.splice(i, 1); };
@@ -540,11 +708,6 @@ const acts = {
   rate(el) { const id = el.dataset.id, n = +el.dataset.n; S.ratings[id] = S.ratings[id] === n ? 0 : n; save(); render(true); },
   tab(el) { V.tab[el.dataset.id] = el.dataset.t; render(true); },
   serv(el) { const id = el.dataset.id, r = byId(id); V.serv[id] = Math.max(1, (V.serv[id] || r.servings || 1) + +el.dataset.d); render(true); },
-  addToList(el) {
-    const r = byId(el.dataset.id), f = (V.serv[r.id] || r.servings || 1) / (r.servings || 1);
-    r.ingredients.forEach(g => addGrocery({ ...g, qty: g.qty != null ? +(g.qty * f).toFixed(3) : null }, r.title));
-    save(); updateBadge(); toast(`Added ${r.ingredients.length} items to the grocery list`);
-  },
   shareRecipe(el) {
     const r = byId(el.dataset.id), { _draft, ...clean } = r;
     shareOrCopy(r.title, '', `${location.origin}${location.pathname}#/import/${enc(clean)}`);
@@ -567,6 +730,7 @@ const acts = {
   speak: speakStep,
   autoRead() { V.autoRead = !V.autoRead; render(true); if (V.autoRead) speakStep(); else if (window.speechSynthesis) speechSynthesis.cancel(); },
   sheet() { V.sheet = !V.sheet; render(true); },
+  tKind(el) { V.tkind = el.dataset.k; render(true); },
   tMax(el) { V.tonight.max = +el.dataset.m; V.pick = null; render(true); },
   tCat(el) { V.tonight.cat = el.dataset.c; V.pick = null; render(true); },
   tFlag(el) { V.tonight[el.dataset.k] = !V.tonight[el.dataset.k]; V.pick = null; render(true); },
@@ -575,13 +739,24 @@ const acts = {
     const d = $('#dice'); d.classList.add('roll');
     setTimeout(() => { const pool = list.length > 1 ? list.filter(r => r.id !== V.pick) : list; V.pick = pool[Math.floor(Math.random() * pool.length)].id; render(true); }, 600);
   },
+  gPick(el) { gPickStart(el.dataset.id); render(true); },
+  gPickX() { V.gPick = null; render(true); },
+  gPickServ(el) { V.gPick.serv = Math.max(1, V.gPick.serv + +el.dataset.d); render(true); },
+  gPickAll(el) { V.gPick.on = V.gPick.on.map(() => !!el.dataset.on); render(true); },
+  gPickAdd() {
+    const P = V.gPick, r = byId(P.id), f = P.serv / (r.servings || 1);
+    const picked = r.ingredients.filter((g, i) => P.on[i]);
+    picked.forEach(g => addGrocery({ ...g, qty: g.qty != null ? +(g.qty * f).toFixed(3) : null }, r.title));
+    V.gPick = null; V.gq = ''; save(); render(true); toast(`Added ${picked.length} from ${r.title}`);
+  },
+  pEdit(el) { V.pEdit = V.pEdit === el.dataset.item ? '' : el.dataset.item; render(true); },
   gShare: () => shareOrCopy('Grocery list', groceryText()),
   async gCopy() { try { await navigator.clipboard.writeText(groceryText()); toast('List copied'); } catch { toast('Copying is not available in this browser.'); } },
   gClear() { S.grocery = S.grocery.filter(g => !g.done); save(); render(true); },
   gToPantry() {
     const done = S.grocery.filter(g => g.done);
     if (!done.length) return toast('Check off what you bought first.');
-    done.forEach(g => { const p = S.pantry.find(p => p.item.toLowerCase() === g.item.toLowerCase()); p ? p.status = 'have' : S.pantry.push({ item: g.item, status: 'have' }); });
+    done.forEach(g => { const p = S.pantry.find(p => p.item.toLowerCase() === g.item.toLowerCase()); p ? p.status = 'have' : S.pantry.push(pantryItem(g.item, 'have', g.aisle)); });
     S.grocery = S.grocery.filter(g => !g.done); save(); render(true); toast(`Moved ${done.length} to the pantry`);
   },
   pCycle(el) { const p = S.pantry.find(p => p.item === el.dataset.item); p.status = { have: 'low', low: 'out', out: 'have' }[p.status]; save(); render(true); },
@@ -599,17 +774,21 @@ document.addEventListener('click', e => {
 document.addEventListener('input', e => {
   const el = e.target, k = el.dataset.in;
   if (k === 'search') { V.q = el.value; $('#homeBody').innerHTML = homeBody(); }
+  else if (k === 'gSearch') { V.gq = el.value; $('#gFind').innerHTML = gFindHTML(); }
+  else if (k === 'tipSearch') { V.tq = el.value; $('#tipsBody').innerHTML = tipsBody(); }
   else if (k === 'note') { S.notes[el.dataset.id] = el.value; save(); }
 });
 document.addEventListener('change', e => {
   const el = e.target, k = el.dataset.in;
   if (k === 'check') (V.checked[el.dataset.id] ||= {})[el.dataset.i] = el.checked;
+  else if (k === 'gPickOne') { V.gPick.on[+el.dataset.i] = el.checked; render(true); }
+  else if (k === 'pLoc' || k === 'pCat') { const p = S.pantry.find(p => p.item === el.dataset.item); if (p) { p[k === 'pLoc' ? 'loc' : 'cat'] = el.value; save(); render(true); } }
   else if (k === 'gDone') { const g = S.grocery.find(g => g.id === el.dataset.gid); if (g) { g.done = el.checked; save(); render(true); } }
   else if (k === 'restore' && el.files[0]) {
     el.files[0].text().then(t => {
       const d = JSON.parse(t);
       if (!d || typeof d !== 'object' || !Array.isArray(d.grocery)) throw 0;
-      S = { ...DEFAULTS, ...d }; save(); applyTheme(); render(); toast('Backup restored');
+      S = migrate({ ...DEFAULTS, ...d }); save(); applyTheme(); render(); toast('Backup restored');
     }).catch(() => toast('That file is not a Snack Again backup.'));
   }
 });
@@ -621,7 +800,7 @@ document.addEventListener('submit', e => {
   if (k === 'gAdd' || k === 'pAdd') {
     const text = (d.item || '').trim(); if (!text) return;
     if (k === 'gAdd') addGrocery(parseIng(text));
-    else if (!S.pantry.some(p => p.item.toLowerCase() === text.toLowerCase())) S.pantry.push({ item: text, status: 'have' });
+    else if (!S.pantry.some(p => p.item.toLowerCase() === text.toLowerCase())) S.pantry.push(pantryItem(text));
     save(); render(true); $(`[data-form="${k}"] input`).focus();
   } else if (k === 'recipe') {
     const list = s => (s || '').split(',').map(x => x.trim()).filter(Boolean);
@@ -629,21 +808,27 @@ document.addEventListener('submit', e => {
     const lines = s => (s || '').split('\n').map(x => x.trim()).filter(Boolean);
     let id = form.dataset.id;
     if (!id) { id = slug(d.title); let n = 2; const base = id; while (byId(id)) id = `${base}-${n++}`; }
-    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const old = byId(id);
+    if (old) {
+      if (old.tips) r.tips = old.tips;
+      if (old.placeholder) r.placeholder = true;
+      r.steps = r.steps.map(st => { const o = old.steps.find(x => x.text === st.text); return o ? { ...o } : st; });
+    }
     if (d.sname || d.surl) r.source = { name: d.sname.trim(), url: d.surl.trim() };
     if (num(d.cal) != null) r.nutrition = { cal: num(d.cal), protein: num(d.protein) || 0, carbs: num(d.carbs) || 0, fat: num(d.fat) || 0 };
     S.drafts = S.drafts.filter(x => x.id !== id).concat(r); save(); toast('Recipe saved'); location.hash = `#/r/${id}`;
   }
 });
 
-window.addEventListener('hashchange', () => render());
-window.addEventListener('keydown', e => { if (e.key === 'Escape') $('#app').classList.remove('menu-open'); });
+window.addEventListener('hashchange', () => { V.gPick = null; render(); });
+window.addEventListener('keydown', e => { if (e.key === 'Escape') { $('#app').classList.remove('menu-open'); if (V.gPick) { V.gPick = null; render(true); } } });
 
 /* ---------- start ---------- */
 applyTheme();
-fetch('recipes.json', { cache: 'no-cache' })
-  .then(r => r.json())
-  .then(d => { DATA = { categories: d.categories || [], recipes: d.recipes || [] }; })
+const getJSON = f => fetch(f, { cache: 'no-cache' }).then(r => r.json());
+Promise.all([getJSON('recipes.json'), getJSON('techniques.json').catch(() => ({}))])
+  .then(([d, t]) => { DATA = { categories: d.categories || [], recipes: d.recipes || [], sections: t.sections || [], tips: t.techniques || [] }; })
   .catch(() => toast('Could not load the recipe book. Check your connection and reopen.'))
   .finally(() => render());
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});

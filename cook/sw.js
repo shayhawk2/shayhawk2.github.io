@@ -1,7 +1,7 @@
 // Bump VERSION whenever app files change so phones pick up the update.
-const VERSION = 'tasa-v2';
+const VERSION = 'tasa-v5';
 const SHELL = [
-  './', 'index.html', 'styles.css', 'app.js', 'recipes.json', 'manifest.webmanifest',
+  './', 'index.html', 'styles.css', 'app.js', 'recipes.json', 'techniques.json', 'manifest.webmanifest',
   'fonts/caveat-latin-500-normal.woff2', 'fonts/caveat-latin-700-normal.woff2',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'
 ];
