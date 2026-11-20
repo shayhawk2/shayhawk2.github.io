@@ -699,6 +699,9 @@ function viewSettings() {
     <div class="card"><h2>My drafts</h2>
       <p>${S.drafts.length} ${S.drafts.length === 1 ? 'recipe' : 'recipes'} added or edited on this device. Export them to merge into <code>recipes.json</code> in the repo, which makes them appear on every device.</p>
       <button class="btn" data-act="exportDrafts" ${S.drafts.length ? '' : 'disabled style="opacity:.4"'}>Export drafts</button></div>
+    <div class="card"><h2>Import a shared recipe</h2>
+      <p>Someone sent you a recipe from their own recipe app? Long-press the link, copy it, and paste it here.</p>
+      <form class="addbar" data-form="importLink" style="margin-bottom:0"><input type="text" name="link" placeholder="Paste a shared recipe link" aria-label="Shared recipe link" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="btn primary">Open</button></form></div>
     <div class="card"><h2>Move to another device</h2>
       <p>Favorites, ratings, notes, the grocery list, the pantry and drafts live on this device only. Back them up here and restore the file on your iPad or PC.</p>
       <div class="row"><button class="btn" data-act="backup">Back up everything</button>
@@ -711,9 +714,14 @@ function viewImport(data) {
   try {
     const r = norm(dec(data));
     if (!r.title) throw 0;
+    // A recipe from someone else's app may use categories this book doesn't have, so pick one here.
+    const cats = DATA.categories, known = id => cats.some(c => c.id === id);
+    if (!known(r.category)) r.category = (cats[0] || {}).id;
+    r.also = (r.also || []).filter(known);
     V.importing = r;
     return head('A recipe was shared with you') + `<div class="card index"><div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span><h1>${esc(r.title)}</h1></div>
       <p style="margin-top:12px">${r.ingredients.length} ingredients, ${r.steps.length} steps.</p>
+      ${cats.length ? `<label class="field"><span>File it under</span><select data-in="importCat">${cats.map(c => `<option value="${esc(c.id)}" ${c.id === r.category ? 'selected' : ''}>${esc(c.emoji)} ${esc(c.name)}</option>`).join('')}</select></label>` : ''}
       <div class="row"><button class="btn primary" data-act="importSave">Save to my recipes</button><a class="btn plain" href="#/">No thanks</a></div></div>`;
   } catch { return head('Shared recipe') + `<div class="empty"><span class="big">🧭</span>This share link is damaged. Ask for a fresh one.</div>`; }
 }
@@ -809,7 +817,10 @@ const acts = {
   },
   importSave() {
     const r = V.importing; if (!r) return;
-    r.id = r.id || slug(r.title);
+    let id = r.id || slug(r.title);
+    // Don't overwrite a different recipe that happens to share the id.
+    if (DATA.recipes.some(x => x.id === id && x.title !== r.title)) { const base = id; let n = 2; while (byId(id)) id = `${base}-${n++}`; }
+    r.id = id;
     S.drafts = S.drafts.filter(d => d.id !== r.id).concat(r); save(); toast('Saved'); location.hash = `#/r/${r.id}`;
   },
   timer(el) {
@@ -875,7 +886,8 @@ document.addEventListener('input', e => {
 });
 document.addEventListener('change', e => {
   const el = e.target, k = el.dataset.in;
-  if (k === 'check') (V.checked[el.dataset.id] ||= {})[el.dataset.i] = el.checked;
+  if (k === 'importCat') { if (V.importing) V.importing.category = el.value; }
+  else if (k === 'check') (V.checked[el.dataset.id] ||= {})[el.dataset.i] = el.checked;
   else if (k === 'gPickOne') { V.gPick.on[+el.dataset.i] = el.checked; render(true); }
   else if (k === 'pLoc' || k === 'pCat') { const p = S.pantry.find(p => p.item === el.dataset.item); if (p) { p[k === 'pLoc' ? 'loc' : 'cat'] = el.value; save(); render(true); } }
   else if (k === 'gDone') { const g = S.grocery.find(g => g.id === el.dataset.gid); if (g) { g.done = el.checked; save(); render(true); } }
@@ -897,6 +909,13 @@ document.addEventListener('submit', e => {
     if (k === 'gAdd') addGrocery(parseIng(text));
     else if (!S.pantry.some(p => p.item.toLowerCase() === text.toLowerCase())) S.pantry.push(pantryItem(text));
     save(); render(true); $(`[data-form="${k}"] input`).focus();
+  } else if (k === 'importLink') {
+    const raw = (d.link || '').trim(); if (!raw) return;
+    const m = raw.match(/#\/import\/([A-Za-z0-9_-]+)/);
+    let data = m && m[1];
+    if (!data) { try { const o = JSON.parse(raw); if (o && o.title) data = enc(o); } catch {} }
+    if (!data) return toast('That does not look like a shared recipe link.');
+    location.hash = `#/import/${data}`;
   } else if (k === 'recipe') {
     const list = s => (s || '').split(',').map(x => x.trim()).filter(Boolean);
     const num = s => { const n = parseFloat(s); return isNaN(n) ? undefined : n; };

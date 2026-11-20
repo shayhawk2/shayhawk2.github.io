@@ -23,6 +23,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies, no backend.
 - **Recipes and categories:** `recipes.json` in this repo. Edit, commit, push, and every device gets them.
 - **Personal data:** favorites, ratings, make-again flags, notes, grocery list, pantry and drafts live in each device's `localStorage` under the key `tasa:v1`. Settings has a backup and restore for moving between devices.
 - **Pantry items** carry a location (`Fridge`, `Freezer`, `Cabinet`, `Spice Rack`, `Counter`, `Basement Fridge`, `Garage Freezer`) and a category (the grocery departments). Older saves get both filled in on load.
+- **Shared recipes:** the 📤 button makes a link with the whole recipe in it. Settings > Import a shared recipe takes a link from any copy of this app (e.g. Kevin's The Spice Must Flow), lets you pick a category, and saves it as a draft.
 - **Drafts:** recipes added or edited in the app. Settings > Export drafts produces `snack-again-drafts.json`; merge its `recipes` array into `recipes.json` to publish them.
 
 ## Maddie Mode
