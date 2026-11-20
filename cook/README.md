@@ -61,6 +61,8 @@ Rules:
 - `id`: unique, lowercase, hyphens. It is the URL and the key for ratings and notes, so do not rename it later.
 - `category`: must match a category `id`.
 - Category `shelf`: which home-page shelf the tile sits on: `cuisines`, `meals` (Meals & Occasions) or `collections`. Left out, it lands on Cuisines. A new tile needs 3 or more recipes; anything smaller is a tag.
+- `also`: optional list of extra category ids, e.g. `["italian"]` on Crispy Chicken Cutlets (main category Dinner Party). The recipe shows on those category pages, in their tile counts and in Tonight's category filter. `category` stays the main one.
+- `sauce`: the Sauces tile group, one of `Tomato`, `Butter & Cream`, `Salsa & Dip`, `Dressing & Spread`. Set it on every `Sauce & Condiment` recipe; one without it shows under "Other sauces".
 - Category `groupBy`: set to `"meat"` to group that category's page by each recipe's `meat` before `type` (used by BBQ & Smoker). Left out, the page groups by `type`.
 - `type`: one of `Main`, `Side`, `Appetizer`, `Sauce & Condiment`, `Building Block`, `Dessert`, `Drink`. Groups the recipes inside a category page. A Building Block is made to go into another dish (fresh mozzarella, tortillas). Left out, the recipe shows under "Not sorted yet".
 - `meat`: one of `Beef`, `Pork`, `Poultry`, `Lamb`, `Seafood`. Categories with `"groupBy": "meat"` (BBQ & Smoker) group recipes by meat first, then anything without a meat by `type`. Mixed-meat dishes take their main meat (meatloaf and chili are Beef).
@@ -72,7 +74,7 @@ Rules:
 - `steps[].asWritten`: the source's original wording when a step has been rewritten to a house rule. Shown behind an "As written" toggle.
 - Times in step text ("simmer for 10 minutes") become timer buttons. Temperatures written like `425°F` convert in metric mode.
 - `placeholder: true` shows a red "stand-in" tag. Remove it once the real recipe is in.
-- Optional fields: `meat`, `tags`, `prep`, `cook`, `equipment`, `kid`, `source`, `nutrition`, `notes`, `placeholder`.
+- Optional fields: `also`, `sauce`, `meat`, `tags`, `prep`, `cook`, `equipment`, `kid`, `source`, `nutrition`, `notes`, `placeholder`.
 
 ## techniques.json format
 
