@@ -10,7 +10,8 @@
    "id": "bbq",
    "name": "BBQ & Smoker",
    "emoji": "🔥",
-   "shelf": "cuisines"
+   "shelf": "cuisines",
+   "groupBy": "meat"
   },
   {
    "id": "mexican",
@@ -1068,6 +1069,7 @@
    "emoji": "🥩",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "prep": 45,
    "cook": 450,
    "servings": 8,
@@ -1207,6 +1209,7 @@
    "emoji": "🥩",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "prep": 60,
    "cook": 510,
    "servings": 20,
@@ -1350,6 +1353,7 @@
    "emoji": "🐖",
    "category": "bbq",
    "type": "Main",
+   "meat": "Pork",
    "tags": [
     "pork",
     "smoked",
@@ -1454,6 +1458,7 @@
    "emoji": "🐖",
    "category": "bbq",
    "type": "Main",
+   "meat": "Pork",
    "tags": [
     "pork",
     "smoked"
@@ -5849,6 +5854,7 @@
    "emoji": "🐖",
    "category": "bbq",
    "type": "Main",
+   "meat": "Pork",
    "prep": 20,
    "cook": 330,
    "tags": [
@@ -5947,6 +5953,7 @@
    "emoji": "🐷",
    "category": "bbq",
    "type": "Main",
+   "meat": "Pork",
    "prep": 20,
    "cook": 960,
    "tags": [
@@ -6040,6 +6047,7 @@
    "emoji": "🍖",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "prep": 25,
    "cook": 150,
    "servings": 8,
@@ -6232,6 +6240,7 @@
    "emoji": "🍞",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "prep": 30,
    "cook": 90,
    "servings": 8,
@@ -6429,6 +6438,7 @@
    "emoji": "🌶️",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "prep": 30,
    "cook": 190,
    "servings": 10,
@@ -6701,6 +6711,7 @@
    "emoji": "🍖",
    "category": "bbq",
    "type": "Main",
+   "meat": "Pork",
    "tags": [
     "pork",
     "ribs",
@@ -6999,6 +7010,7 @@
    "emoji": "🥩",
    "category": "bbq",
    "type": "Main",
+   "meat": "Beef",
    "tags": [
     "beef",
     "brisket",
