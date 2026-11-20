@@ -7,10 +7,10 @@
 const KEY = 'tasa:v1';
 const AISLES = ['Produce', 'Meat & Seafood', 'Dairy & Eggs', 'Bakery', 'Pantry', 'Spices', 'Frozen', 'Other'];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
-const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
+const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
 const PLURAL = new Set(['cup', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig']);
-const UNIT_ALIASES = { cups: 'cup', c: 'cup', tablespoon: 'tbsp', tablespoons: 'tbsp', tbsps: 'tbsp', tbs: 'tbsp', teaspoon: 'tsp', teaspoons: 'tsp', tsps: 'tsp', ounce: 'oz', ounces: 'oz', pound: 'lb', pounds: 'lb', lbs: 'lb', cloves: 'clove', cans: 'can', slices: 'slice', pieces: 'piece', sticks: 'stick', pint: 'pt', pints: 'pt', quart: 'qt', quarts: 'qt', grams: 'g', gram: 'g', liter: 'L', liters: 'L', l: 'L' };
-const UNITS = ['cup', 'tbsp', 'tsp', 'fl oz', 'oz', 'lb', 'pt', 'qt', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig', 'g', 'kg', 'ml', 'L'];
+const UNIT_ALIASES = { cups: 'cup', c: 'cup', tablespoon: 'tbsp', tablespoons: 'tbsp', tbsps: 'tbsp', tbs: 'tbsp', teaspoon: 'tsp', teaspoons: 'tsp', tsps: 'tsp', ounce: 'oz', ounces: 'oz', pound: 'lb', pounds: 'lb', lbs: 'lb', cloves: 'clove', cans: 'can', slices: 'slice', pieces: 'piece', sticks: 'stick', pint: 'pt', pints: 'pt', quart: 'qt', quarts: 'qt', gallon: 'gal', gallons: 'gal', grams: 'g', gram: 'g', liter: 'L', liters: 'L', l: 'L' };
+const UNITS = ['cup', 'tbsp', 'tsp', 'fl oz', 'oz', 'lb', 'pt', 'qt', 'gal', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig', 'g', 'kg', 'ml', 'L'];
 const AISLE_GUESS = [
   ['Frozen', /frozen/],
   ['Spices', /salt|black pepper|cumin|paprika|oregano|powder|flakes|seasoning|cinnamon|nutmeg|thyme|bay lea|vanilla/],
@@ -21,6 +21,7 @@ const AISLE_GUESS = [
   ['Pantry', /flour|sugar|oil|rice|pasta|crumb|panko|sauce|broth|stock|vinegar|bean|paste|honey|syrup|shell|noodle|oat|nut|chip|cracker|canned|mustard|ketchup|mayo/]
 ];
 
+const GENERIC = new Set(['fresh', 'freshly', 'large', 'small', 'medium', 'ground', 'dried', 'whole', 'kosher', 'black', 'white', 'yellow', 'sweet', 'unsalted', 'sodium', 'extra', 'virgin', 'grated', 'chopped', 'minced', 'sliced', 'boneless', 'skinless', 'size', 'style', 'optional', 'soft', 'crisp', 'baby', 'plain', 'lite', 'lean', 'mild', 'aged', 'pure', 'coarse', 'mesh', 'leaves', 'neutral', 'double', 'concentrated', 'imported', 'stale', 'raw', 'thick', 'slices', 'with', 'from', 'pieces']);
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'recipe';
@@ -88,8 +89,9 @@ function stepText(t) {
 function stepUses(r, st) {
   if (Array.isArray(st.uses)) return st.uses;
   const t = st.text.toLowerCase();
+  const stem = w => w.endsWith('oes') ? w.slice(0, -2) : w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w;
   return r.ingredients.map((g, i) => i).filter(i =>
-    r.ingredients[i].item.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3).some(w => t.includes(w)));
+    r.ingredients[i].item.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && !GENERIC.has(w)).some(w => t.includes(stem(w))));
 }
 function findTimers(text) {
   const out = [], re = /(\d+)(?:\s*(?:-|–|to)\s*(\d+))?\s*(hours?|hrs?|minutes?|mins?|seconds?|secs?)\b/gi;
@@ -262,7 +264,7 @@ function viewRecipe(id) {
       </div>
       ${r.equipment.length ? `<div class="row" style="gap:6px;margin-top:10px">${r.equipment.map(e => `<span class="chip">🍳 ${esc(e)}</span>`).join('')}</div>` : ''}
       ${r.tags.length ? `<p class="muted small-text" style="margin:10px 0 0">${r.tags.map(t => '#' + esc(t)).join('  ')}</p>` : ''}
-      ${n ? `<p class="small-text" style="margin:8px 0 0">Per serving, roughly: <b>${esc(n.cal)}</b> cal, <b>${esc(n.protein)}</b> g protein, <b>${esc(n.carbs)}</b> g carbs, <b>${esc(n.fat)}</b> g fat</p>` : ''}
+      ${n ? `<p class="small-text" style="margin:8px 0 0">Per serving, roughly: ${[['cal', ' cal'], ['protein', ' g protein'], ['carbs', ' g carbs'], ['fat', ' g fat']].filter(([k]) => n[k] != null).map(([k, l]) => `<b>${esc(n[k])}</b>${l}`).join(', ')}</p>` : ''}
       ${r.source && (r.source.name || r.source.url) ? `<p class="small-text" style="margin:8px 0 0">From ${r.source.url ? `<a href="${esc(r.source.url)}" target="_blank" rel="noopener">${esc(r.source.name || r.source.url)}</a>` : esc(r.source.name)}</p>` : ''}
 
       <div class="row spread no-print" style="margin-top:16px">

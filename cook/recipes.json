@@ -1,126 +1,5147 @@
 {
-  "categories": [
-    { "id": "weeknight", "name": "Weeknight Dinners", "emoji": "🍽️" },
-    { "id": "sunday", "name": "Sunday Suppers", "emoji": "🍝" },
-    { "id": "breakfast", "name": "Breakfast", "emoji": "🥞" },
-    { "id": "grill", "name": "Grill & Smoker", "emoji": "🔥" },
-    { "id": "sides", "name": "Sides", "emoji": "🥗" },
-    { "id": "snacks", "name": "Snacks", "emoji": "🥨" },
-    { "id": "desserts", "name": "Desserts", "emoji": "🍪" }
-  ],
-  "recipes": [
+ "categories": [
+  {
+   "id": "italian",
+   "name": "Italian",
+   "emoji": "🍝"
+  },
+  {
+   "id": "bbq",
+   "name": "BBQ & Smoker",
+   "emoji": "🔥"
+  },
+  {
+   "id": "mexican",
+   "name": "Mexican",
+   "emoji": "🌮"
+  },
+  {
+   "id": "american",
+   "name": "American",
+   "emoji": "🍔"
+  },
+  {
+   "id": "breakfast",
+   "name": "Breakfast",
+   "emoji": "🥞"
+  },
+  {
+   "id": "dinner-party",
+   "name": "Dinner Party",
+   "emoji": "🥂"
+  },
+  {
+   "id": "old",
+   "name": "Old Recipes",
+   "emoji": "📜"
+  }
+ ],
+ "recipes": [
+  {
+   "id": "arancini",
+   "title": "Arancini with Calabrian Chile Sauce",
+   "emoji": "🍙",
+   "category": "italian",
+   "prep": 60,
+   "cook": 45,
+   "servings": 14,
+   "tags": [
+    "rice",
+    "fried",
+    "appetizer"
+   ],
+   "equipment": [
+    "Medium saucepan",
+    "Heavy pot",
+    "Deep-fry thermometer",
+    "Sheet pans"
+   ],
+   "source": {
+    "name": "Bon Appétit, Molly Baz",
+    "url": "https://www.bonappetit.com/recipe/mozzarella-arancini-stuffed-rice-balls"
+   },
+   "notes": "Made 12/7/2022 with sweet yellow onion and arborio. Makes about 14 balls; shaping them is the hard part. Servings here means balls.",
+   "ingredients": [
     {
-      "id": "nonnas-enhanced-meatballs",
-      "title": "Nonna's Enhanced Meatballs",
-      "emoji": "🍝",
-      "category": "sunday",
-      "tags": ["italian", "beef", "pork", "freezer-friendly"],
-      "prep": 20,
-      "cook": 25,
-      "servings": 6,
-      "equipment": ["Sheet pan", "Dutch oven"],
-      "kid": true,
-      "placeholder": true,
-      "nutrition": { "cal": 480, "protein": 32, "carbs": 22, "fat": 28 },
-      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
-      "ingredients": [
-        { "qty": 1, "unit": "cup", "item": "fresh breadcrumbs", "aisle": "Bakery" },
-        { "qty": 0.333, "unit": "cup", "item": "whole milk", "aisle": "Dairy & Eggs" },
-        { "qty": 2, "unit": "", "item": "large eggs", "aisle": "Dairy & Eggs" },
-        { "qty": 0.5, "unit": "cup", "item": "grated Parmesan", "aisle": "Dairy & Eggs" },
-        { "qty": 3, "unit": "clove", "item": "garlic", "note": "minced", "aisle": "Produce" },
-        { "qty": 0.25, "unit": "cup", "item": "flat-leaf parsley", "note": "chopped", "aisle": "Produce" },
-        { "qty": 1, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "tsp", "item": "black pepper", "aisle": "Spices" },
-        { "qty": 1, "unit": "lb", "item": "ground beef", "note": "80/20", "aisle": "Meat & Seafood" },
-        { "qty": 0.5, "unit": "lb", "item": "ground pork", "aisle": "Meat & Seafood" },
-        { "qty": 2, "unit": "tbsp", "item": "olive oil", "aisle": "Pantry" },
-        { "qty": 24, "unit": "oz", "item": "marinara sauce", "aisle": "Pantry" }
-      ],
-      "steps": [
-        { "text": "Heat the oven to 425°F and line a sheet pan with parchment.", "uses": [] },
-        { "text": "Stir the breadcrumbs into the milk in a large bowl and let them soak for 5 minutes.", "uses": [0, 1] },
-        { "text": "Add the eggs, Parmesan, garlic, parsley, salt and pepper. Mix with a fork until even.", "uses": [2, 3, 4, 5, 6, 7] },
-        { "text": "Add the beef and pork. Mix gently with your hands just until combined; overmixing makes them tough.", "uses": [8, 9] },
-        { "text": "Roll into golf-ball-size meatballs, about 24. Set them on the sheet pan and brush with the olive oil.", "uses": [10] },
-        { "text": "Bake for 15 minutes, until browned on top.", "uses": [] },
-        { "text": "Warm the marinara in a Dutch oven, add the meatballs and simmer for 10 minutes.", "uses": [11] }
-      ]
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "Calabrian chiles",
+     "note": "chopped, for the sauce",
+     "aisle": "Pantry"
     },
     {
-      "id": "crispy-chicken-cutlets",
-      "title": "Crispy Chicken Cutlets",
-      "emoji": "🍗",
-      "category": "weeknight",
-      "tags": ["chicken", "italian", "quick"],
-      "prep": 15,
-      "cook": 12,
-      "servings": 4,
-      "equipment": ["Large skillet", "Wire rack"],
-      "kid": true,
-      "placeholder": true,
-      "nutrition": { "cal": 520, "protein": 44, "carbs": 30, "fat": 24 },
-      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
-      "ingredients": [
-        { "qty": 1.5, "unit": "lb", "item": "boneless, skinless chicken breasts", "note": "about 2 large", "aisle": "Meat & Seafood" },
-        { "qty": 1, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "tsp", "item": "black pepper", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "cup", "item": "all-purpose flour", "aisle": "Pantry" },
-        { "qty": 2, "unit": "", "item": "large eggs", "aisle": "Dairy & Eggs" },
-        { "qty": 1, "unit": "cup", "item": "panko", "aisle": "Pantry" },
-        { "qty": 0.5, "unit": "cup", "item": "Italian breadcrumbs", "aisle": "Pantry" },
-        { "qty": 0.333, "unit": "cup", "item": "grated Parmesan", "aisle": "Dairy & Eggs" },
-        { "qty": 0.5, "unit": "tsp", "item": "garlic powder", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "cup", "item": "neutral oil", "note": "for frying", "aisle": "Pantry" },
-        { "qty": 1, "unit": "", "item": "lemon", "note": "cut in wedges", "aisle": "Produce" }
-      ],
-      "steps": [
-        { "text": "Slice each chicken breast in half horizontally, then pound to an even ½ inch. Season both sides with the salt and pepper.", "uses": [0, 1, 2] },
-        { "text": "Set up three shallow dishes: flour in the first, beaten eggs in the second, and the panko, breadcrumbs, Parmesan and garlic powder mixed in the third.", "uses": [3, 4, 5, 6, 7, 8] },
-        { "text": "Dredge each cutlet in flour, dip in egg, then press firmly into the crumbs. Rest on a rack for 5 minutes so the coating sets.", "uses": [] },
-        { "text": "Heat the oil in a large skillet over medium-high until a crumb sizzles on contact.", "uses": [9] },
-        { "text": "Fry the cutlets in batches, 3 minutes per side, until deep golden and 165°F inside. Drain on the rack.", "uses": [] },
-        { "text": "Serve hot with lemon wedges.", "uses": [10] }
-      ]
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "extra-virgin olive oil",
+     "note": "for the sauce",
+     "aisle": "Pantry"
     },
     {
-      "id": "ground-beef-tacos",
-      "title": "Ground Beef Tacos",
-      "emoji": "🌮",
-      "category": "weeknight",
-      "tags": ["beef", "tex-mex", "quick"],
-      "prep": 10,
-      "cook": 15,
-      "servings": 4,
-      "equipment": ["Large skillet"],
-      "kid": true,
-      "placeholder": true,
-      "nutrition": { "cal": 540, "protein": 30, "carbs": 34, "fat": 31 },
-      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
-      "ingredients": [
-        { "qty": 1, "unit": "lb", "item": "ground beef", "aisle": "Meat & Seafood" },
-        { "qty": 0.5, "unit": "", "item": "yellow onion", "note": "diced", "aisle": "Produce" },
-        { "qty": 2, "unit": "clove", "item": "garlic", "note": "minced", "aisle": "Produce" },
-        { "qty": 1, "unit": "tbsp", "item": "chili powder", "aisle": "Spices" },
-        { "qty": 1, "unit": "tsp", "item": "ground cumin", "aisle": "Spices" },
-        { "qty": 1, "unit": "tsp", "item": "paprika", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "tsp", "item": "dried oregano", "aisle": "Spices" },
-        { "qty": 0.5, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
-        { "qty": 2, "unit": "tbsp", "item": "tomato paste", "aisle": "Pantry" },
-        { "qty": 0.5, "unit": "cup", "item": "water", "aisle": "Other" },
-        { "qty": 12, "unit": "", "item": "taco shells", "aisle": "Pantry" },
-        { "qty": 1, "unit": "cup", "item": "shredded lettuce", "aisle": "Produce" },
-        { "qty": 1, "unit": "cup", "item": "shredded cheddar", "aisle": "Dairy & Eggs" },
-        { "qty": 1, "unit": "", "item": "tomato", "note": "diced", "aisle": "Produce" },
-        { "qty": null, "unit": "", "item": "sour cream", "note": "for serving", "aisle": "Dairy & Eggs" }
-      ],
-      "steps": [
-        { "text": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.", "uses": [0, 1] },
-        { "text": "Stir in the garlic, chili powder, cumin, paprika, oregano and salt. Cook for 1 minute until fragrant.", "uses": [2, 3, 4, 5, 6, 7] },
-        { "text": "Add the tomato paste and water. Simmer for 5 minutes, until saucy and thick.", "uses": [8, 9] },
-        { "text": "Warm the taco shells in a 350°F oven for 4 minutes.", "uses": [10] },
-        { "text": "Fill the shells with beef and top with lettuce, cheddar, tomato and sour cream.", "uses": [11, 12, 13, 14] }
-      ]
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "lemon zest",
+     "note": "for the sauce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "lemon juice",
+     "note": "for the sauce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "finely grated, for the sauce (usually more)",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3.5,
+     "unit": "cup",
+     "item": "low-sodium chicken stock",
+     "note": "homemade if you have it",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "divided",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "medium sweet yellow onion",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "arborio rice",
+     "note": "or carnaroli",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "plus more",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "dry white wine",
+     "aisle": "Other"
+    },
+    {
+     "qty": 2,
+     "unit": "oz",
+     "item": "Parmesan",
+     "note": "finely grated, about 1 cup",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "heavy cream",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "lemon zest",
+     "note": "for the risotto",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "lemon juice",
+     "note": "for the risotto",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "oz",
+     "item": "low-moisture mozzarella",
+     "note": "cut into ½-inch pieces",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "panko",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "all-purpose flour",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "large eggs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 6,
+     "unit": "cup",
+     "item": "canola oil",
+     "note": "for frying",
+     "aisle": "Pantry"
     }
-  ]
+   ],
+   "steps": [
+    {
+     "text": "Make the sauce: stir the chiles, olive oil, lemon zest, lemon juice and grated garlic together. It keeps covered in the fridge for up to 12 hours.",
+     "uses": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Bring the stock to a simmer in a medium pot, then keep it warm over low heat.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Melt 2 tbsp butter in a medium saucepan over medium heat. Cook the onion until soft but not browned, 4 to 5 minutes, then the sliced garlic for about 1 minute.",
+     "uses": [
+      6,
+      7,
+      8
+     ]
+    },
+    {
+     "text": "Add the rice and 1½ tsp salt. Stir until the grain edges turn translucent, about 3 minutes. Add the wine and cook until the pan is almost dry, about 2 minutes.",
+     "uses": [
+      9,
+      10,
+      11
+     ]
+    },
+    {
+     "text": "Add 1 cup warm stock and stir until absorbed, about 4 minutes. Add another cup and stir until mostly absorbed, 5 to 7 minutes.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Add the last 1½ cups stock and stir until the rice is cooked but still toothsome, 9 to 11 minutes.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Off the heat, stir in the Parmesan, cream, lemon zest and juice, pepper and the remaining 2 tbsp butter. Season with salt.",
+     "uses": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      6
+     ]
+    },
+    {
+     "text": "Spread the risotto on a parchment-lined sheet pan and chill at least 1 hour, up to 4. Cover with plastic after the first hour.",
+     "uses": []
+    },
+    {
+     "text": "Flatten about ¼ cup risotto into a 2½-inch patty, put 2 or 3 mozzarella pieces in the center, wrap the rice around it and roll into a 2-inch ball. Repeat, then freeze the balls for 10 minutes.",
+     "uses": [
+      17
+     ]
+    },
+    {
+     "text": "Set up three bowls: flour, beaten eggs, and panko crushed finer. Season each with salt and pepper. Coat each ball in flour, then egg, then panko, and chill while the oil heats.",
+     "uses": [
+      19,
+      20,
+      18
+     ]
+    },
+    {
+     "text": "Heat 2 inches of oil in a heavy pot to 350°F. Fry in two batches until deep golden, 6 to 8 minutes. Drain on paper towels, salt, and serve warm with the sauce.",
+     "uses": [
+      21
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rigatoni-vodka-sauce",
+   "title": "Rigatoni with Vodka Sauce",
+   "emoji": "🍝",
+   "category": "italian",
+   "prep": 20,
+   "cook": 50,
+   "servings": 4,
+   "tags": [
+    "pasta",
+    "pork"
+   ],
+   "equipment": [
+    "Dutch oven",
+    "Spider strainer"
+   ],
+   "source": {
+    "name": "Bon Appétit and Vincenzo's Plate",
+    "url": "https://www.bonappetit.com/recipe/rigatoni-with-easy-vodka-sauce"
+   },
+   "notes": "Amounts are the 4-serving column. Your method was written for the 8-serving batch (6 oz each cheese, 6.6 oz vodka), so double everything for 8. Shallots can stand in for the onion.",
+   "ingredients": [
+    {
+     "qty": 28,
+     "unit": "oz",
+     "item": "peeled San Marzano tomatoes",
+     "note": "one can, DiNapoli brand",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 14,
+     "unit": "oz",
+     "item": "pancetta",
+     "note": "diced",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 4.5,
+     "unit": "oz",
+     "item": "double-concentrated tomato paste",
+     "note": "the tube, not a can",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "red pepper flakes",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "yellow onion",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "shallots",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3.3,
+     "unit": "fl oz",
+     "item": "vodka",
+     "aisle": "Other"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "Calabrian chiles",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 14,
+     "unit": "oz",
+     "item": "heavy cream",
+     "note": "about 1¾ cups",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "rigatoni",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "oz",
+     "item": "Pecorino Romano",
+     "note": "grated from a block",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 3,
+     "unit": "oz",
+     "item": "Parmesan",
+     "note": "grated from a block",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fresh basil",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "chicken bouillon",
+     "note": "optional extra",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "soy sauce",
+     "note": "optional extra",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Himalayan rock salt",
+     "note": "to season",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cook the pancetta in a Dutch oven until done, 5 to 10 minutes. Set it aside and leave the fat in the pot.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Cook the tomato paste in the fat over high heat with the red pepper flakes, 10 to 15 minutes. Meanwhile chop the onion, shallots and garlic, grate the cheeses, and start a pot of water salted like the ocean.",
+     "uses": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+     ]
+    },
+    {
+     "text": "Add the onion, shallots and garlic and cook 5 to 7 minutes, until the onion edges brown. Take out about two-thirds of the aromatics.",
+     "uses": [
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Deglaze with the vodka, then lower the heat and simmer 7 to 10 minutes.",
+     "uses": [
+      7
+     ]
+    },
+    {
+     "text": "Add the Calabrian chiles and tomatoes. Bring to a boil, drop to a simmer, and add any extras (bouillon, soy sauce).",
+     "uses": [
+      8,
+      0,
+      14,
+      15
+     ]
+    },
+    {
+     "text": "Cook the rigatoni in the boiling water per the package. One minute before it is done, scoop out 1 cup of pasta water.",
+     "uses": [
+      10
+     ]
+    },
+    {
+     "text": "Warm the cream with a little of the boiling pasta water, about 3 parts cream to 1 part water, so it will not break. Slowly stir it into the sauce until smooth, then take the pot off the heat.",
+     "uses": [
+      9
+     ]
+    },
+    {
+     "text": "Set the Dutch oven over low heat. Move the rigatoni in with a spider, add ⅓ cup pasta water, then stir in half the cheese a handful at a time until glossy.",
+     "uses": [
+      10,
+      11,
+      12
+     ]
+    },
+    {
+     "text": "Season with rock salt and thin with more pasta water if needed. Serve topped with the remaining cheese, a drizzle of oil and torn basil.",
+     "uses": [
+      16,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nonnas-red-sauce",
+   "title": "Nonna's Red Sauce (Gravy)",
+   "emoji": "🍅",
+   "category": "italian",
+   "servings": 8,
+   "tags": [
+    "sauce",
+    "pork",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Dutch oven"
+   ],
+   "source": {
+    "name": "Daughters of Columbus, updated by Jim"
+   },
+   "placeholder": true,
+   "notes": "OneNote only has the ingredient lists for this one, so the order and simmer time here are a best guess. Original version: 24 oz tomato purée, 3 cans paste, 6 cups water, no stock or pork. Tallow can stand in for some frying oil.",
+   "ingredients": [
+    {
+     "qty": 24,
+     "unit": "oz",
+     "item": "crushed San Marzano tomatoes",
+     "note": "one can",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "can",
+     "item": "tomato paste",
+     "note": "6 oz each",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "bone-in pork chop",
+     "note": "about 6 oz; or guanciale or pancetta",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "onion",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "sugar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "dried basil",
+     "note": "or fresh basil at the finish",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 3,
+     "unit": "cup",
+     "item": "water",
+     "aisle": "Other"
+    },
+    {
+     "qty": 3,
+     "unit": "cup",
+     "item": "chicken stock",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "pinch",
+     "item": "red pepper flakes",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "bay leaf",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Parmesan rind",
+     "note": "optional enhancer",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fish sauce",
+     "note": "optional enhancer",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "soy sauce",
+     "note": "optional enhancer",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Better Than Bouillon",
+     "note": "optional enhancer",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "red or white miso paste",
+     "note": "optional enhancer",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "small carrot",
+     "note": "grated, optional enhancer",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Calabrian or dried chiles",
+     "note": "optional enhancer",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Sear the pork chop in the pot until well browned, then deglaze. Keep all the fond.",
+     "uses": [
+      2
+     ]
+    },
+    {
+     "text": "Add the onion and garlic and cook until soft.",
+     "uses": [
+      4,
+      3
+     ]
+    },
+    {
+     "text": "Stir in the tomato paste, then the crushed tomatoes, water, stock, sugar, basil, red pepper and bay leaf. Return the pork chop.",
+     "uses": [
+      1,
+      0,
+      7,
+      8,
+      5,
+      6,
+      9,
+      10
+     ]
+    },
+    {
+     "text": "Add any enhancers you want, bring to a simmer and cook low and slow, stirring now and then.",
+     "uses": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+     ]
+    },
+    {
+     "text": "For meatballs, drop the browned meatballs in and simmer at least 30 to 45 minutes. Remove the bay leaf, chop and rind before serving.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "nonnas-enhanced-meatballs",
+   "title": "Nonna's Enhanced Meatballs",
+   "emoji": "🧆",
+   "category": "italian",
+   "prep": 20,
+   "cook": 60,
+   "servings": 6,
+   "tags": [
+    "beef",
+    "pork",
+    "family recipe"
+   ],
+   "equipment": [
+    "Wide heavy skillet"
+   ],
+   "source": {
+    "name": "Scavuzzo family, enhanced"
+   },
+   "notes": "Makes 12 to 15 meatballs. Family original: 1 lb chuck, 1 cup breadcrumbs, ½ cup grated Italian cheese, 1 clove garlic, ¼ cup pork sausage, 4 eggs, ¼ cup parsley, ⅓ cup warm water for wet hands, ¼ cup corn oil to fry.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground chuck",
+     "note": "80/20",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "lb",
+     "item": "sweet or hot Italian sausage",
+     "note": "casings removed",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "stale Italian bread cubes",
+     "note": "crusts off, or panko",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "whole milk",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "large eggs",
+     "note": "beaten",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "Parmigiano and Pecorino",
+     "note": "freshly grated, mixed",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "fresh parsley",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced and sautéed briefly in a drop of oil",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.125,
+     "unit": "tsp",
+     "item": "ground nutmeg",
+     "note": "the secret ingredient",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "corn oil",
+     "note": "for frying",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "beef tallow",
+     "note": "for frying",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Make the panade: soak the bread or panko in the milk for 5 to 10 minutes, then mash smooth with a fork."
+    },
+    {
+     "text": "In a large chilled bowl, add the chuck, sausage, eggs, cheese, parsley, sautéed garlic, pepper, nutmeg and the panade."
+    },
+    {
+     "text": "Mix with your hands like a rake. Do not squeeze; stop as soon as everything is evenly mixed."
+    },
+    {
+     "text": "Wet your hands with warm water and roll golf-ball-size meatballs, about 2 inches. Do not pack them tight."
+    },
+    {
+     "text": "Melt the tallow into the corn oil in a wide heavy skillet over medium-high heat, about ¼ inch deep."
+    },
+    {
+     "text": "Fry in batches, 3 to 4 minutes per side, until a deep golden crust forms. They do not need to cook through."
+    },
+    {
+     "text": "Drain briefly, then simmer in red sauce at least 30 to 45 minutes until tender."
+    }
+   ]
+  },
+  {
+   "id": "fresh-mozzarella",
+   "title": "Fresh Hand-Pulled Mozzarella",
+   "emoji": "🧀",
+   "category": "italian",
+   "prep": 5,
+   "cook": 15,
+   "servings": 4,
+   "tags": [
+    "cheese",
+    "vegetarian"
+   ],
+   "equipment": [
+    "Large heatproof bowl",
+    "Instant-read thermometer",
+    "Slotted spoon",
+    "Heat-safe gloves"
+   ],
+   "notes": "Salt guide: ¾ tsp mild, 1¼ tsp recommended, 1½ deli-salty. Below 165°F it will not stretch; above 185°F it turns rubbery. Finish slices with flaky salt, olive oil and pepper. Drain 15 to 20 minutes before using on pizza.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "fresh mozzarella curd",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1.25,
+     "unit": "tsp",
+     "item": "Diamond Crystal kosher salt",
+     "note": "or ¾ tsp Morton",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 8,
+     "unit": "cup",
+     "item": "water",
+     "note": "for stretching",
+     "aisle": "Other"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "kosher salt",
+     "note": "for the stretching water",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "cold water",
+     "note": "for the brine",
+     "aisle": "Other"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "for the brine",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "ice",
+     "note": "optional",
+     "aisle": "Frozen"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cut the curd into 1- to 2-inch chunks in a large heatproof bowl. Sprinkle with 1¼ tsp salt and toss.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Heat 8 cups water to 175°F (170 to 180°F is the range, never boiling) and stir in 2 tbsp salt.",
+     "uses": [
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Pour enough hot water over the curd to cover it and let it sit 1 to 2 minutes, until glossy at the edges.",
+     "uses": []
+    },
+    {
+     "text": "With gloved hands or a slotted spoon, gather the curd and gently pull, fold and rotate. Caprese 2 to 3 folds, sandwiches 4 to 5, pizza 5 to 6 at most. Stop when smooth and glossy.",
+     "uses": []
+    },
+    {
+     "text": "Shape into one large ball, two medium balls, or a log for slicing.",
+     "uses": []
+    },
+    {
+     "text": "Set in the cold brine (2 cups cold water, 1 tsp salt, ice optional) for 10 to 15 minutes.",
+     "uses": [
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Store in fresh light brine in a sealed container. Best within 24 to 48 hours.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "mozzarella-curd",
+   "title": "Mozzarella Curd from Whole Milk",
+   "emoji": "🥛",
+   "category": "italian",
+   "prep": 10,
+   "cook": 40,
+   "servings": 4,
+   "tags": [
+    "cheese",
+    "vegetarian"
+   ],
+   "equipment": [
+    "Large stainless pot",
+    "Instant-read thermometer",
+    "Slotted spoon",
+    "Cheesecloth"
+   ],
+   "notes": "Makes about 1 lb of curd, enough for the mozzarella recipe. Only needed if you start from milk instead of store-bought curd.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "gal",
+     "item": "whole milk",
+     "note": "non-homogenized if possible, NOT ultra-pasteurized",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "citric acid",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "cool water",
+     "note": "for the citric acid",
+     "aisle": "Other"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "liquid rennet",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "cool non-chlorinated water",
+     "note": "for the rennet",
+     "aisle": "Other"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "optional",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Dissolve the citric acid in ¼ cup cool water. Separately, dissolve the rennet in ¼ cup cool water."
+    },
+    {
+     "text": "Pour the milk into a large pot, stir in the citric acid solution and slowly heat over medium-low to 90°F."
+    },
+    {
+     "text": "Off the heat, stir in the rennet with an up-and-down motion for 20 to 30 seconds. Cover and rest 5 to 10 minutes."
+    },
+    {
+     "text": "Check for a clean break: slide a knife in and lift. The curd should split cleanly from the whey."
+    },
+    {
+     "text": "Cut into 1-inch cubes and rest 5 minutes."
+    },
+    {
+     "text": "Slowly reheat to 105°F, stirring very gently."
+    },
+    {
+     "text": "Lift the curds into a bowl with a slotted spoon and drain 5 to 10 minutes. Then make Fresh Hand-Pulled Mozzarella from step 1."
+    }
+   ]
+  },
+  {
+   "id": "brisket-point",
+   "title": "Texas Brisket, Point Only",
+   "emoji": "🥩",
+   "category": "bbq",
+   "prep": 45,
+   "cook": 450,
+   "servings": 8,
+   "tags": [
+    "beef",
+    "smoked",
+    "project"
+   ],
+   "equipment": [
+    "Pit Boss vertical pellet smoker",
+    "Butcher paper",
+    "Leave-in probe",
+    "Instant-read thermometer",
+    "Spray bottle",
+    "Cooler"
+   ],
+   "source": {
+    "name": "Inspired by Meathead, AmazingRibs.com",
+    "url": "https://amazingribs.com"
+   },
+   "notes": "Timing for a 5 lb point: cook 6 to 9 hours plus 2 to 4 hours rest. Serving at 5 PM means starting 5 to 7 AM. To save 1.5 to 2.5 hours, run 275°F and wrap at 155°F. Failure points: wrapping early, skipping the rest, over-spritzing.",
+   "ingredients": [
+    {
+     "qty": 5,
+     "unit": "lb",
+     "item": "brisket point",
+     "note": "4 to 6 lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "for the dry brine",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "16-mesh coarse black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "garlic powder",
+     "note": "optional",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "low-sodium beef broth",
+     "note": "for injecting, optional",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "apple cider vinegar",
+     "note": "a splash in the spritz water",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "lb",
+     "item": "beef fat trimmings or tallow",
+     "note": "for burnt ends",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "BBQ sauce",
+     "note": "for burnt ends",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "oak or oak-hickory pellets",
+     "note": "enough for 8 to 12 hours",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Day before: trim only the hard fat and silver skin. Save the trimmings for burnt ends."
+    },
+    {
+     "text": "Salt evenly and rest uncovered in the fridge overnight."
+    },
+    {
+     "text": "Day of, optional: inject low-sodium beef broth every 1 to 1½ inches."
+    },
+    {
+     "text": "Preheat the smoker to 250°F with the water pan filled. Keep the meat cold until it goes on."
+    },
+    {
+     "text": "Season heavily with coarse pepper and a little garlic powder if you like."
+    },
+    {
+     "text": "Set it fat side toward the heat, right over the water pan. Probe the thickest part, furthest from the heat."
+    },
+    {
+     "text": "Do not open the smoker for the first 2 to 3 hours. Keep the water pan full."
+    },
+    {
+     "text": "Once bark forms, spritz with water and a splash of cider vinegar every 45 to 60 minutes. Flip only if one side is lighter."
+    },
+    {
+     "text": "At 160 to 170°F, once the bark is dark and set, wrap tight in butcher paper."
+    },
+    {
+     "text": "Cook to about 203°F, until the probe slides in like butter and it jiggles. Save the juices."
+    },
+    {
+     "text": "Rest 2 to 4 hours in a cooler with towels or a 150 to 170°F oven."
+    },
+    {
+     "text": "Slice 60 to 70% of the point and cube the rest ½ to ¾ inch for burnt ends."
+    },
+    {
+     "text": "Render the trimmings in a pan, fry the cubes until crunchy, drain the fat, add ¼ cup BBQ sauce and ¼ cup paper drippings. Cover on the cooker and stir every 5 minutes until glazed."
+    },
+    {
+     "text": "Optional: crisp the bark under the broiler for a few minutes. Slice against the grain, pencil-thick, at the last minute."
+    }
+   ]
+  },
+  {
+   "id": "brisket-full-packer",
+   "title": "Texas Brisket, Full Packer",
+   "emoji": "🥩",
+   "category": "bbq",
+   "prep": 60,
+   "cook": 510,
+   "servings": 20,
+   "tags": [
+    "beef",
+    "smoked",
+    "project",
+    "crowd"
+   ],
+   "equipment": [
+    "Pit Boss vertical pellet smoker",
+    "Butcher paper",
+    "Leave-in probe",
+    "Instant-read thermometer",
+    "Spray bottle",
+    "Cooler"
+   ],
+   "source": {
+    "name": "Inspired by Meathead, AmazingRibs.com",
+    "url": "https://amazingribs.com"
+   },
+   "notes": "Timing for 12 to 18 lb: flat 6 to 9 hours, point 7 to 10, rest 2 to 4. Serving at 5 PM means starting 5 to 7 AM. Compression option: 275°F and wrap at 155°F saves 1.5 to 2.5 hours.",
+   "ingredients": [
+    {
+     "qty": 15,
+     "unit": "lb",
+     "item": "full packer brisket",
+     "note": "12 to 18 lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "for the dry brine",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "16-mesh coarse black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "garlic powder",
+     "note": "optional",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "low-sodium beef broth",
+     "note": "for injecting",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "apple cider vinegar",
+     "note": "a splash in the spritz water",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "lb",
+     "item": "beef fat trimmings or tallow",
+     "note": "for burnt ends",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "BBQ sauce",
+     "note": "for burnt ends",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "oak or oak-hickory pellets",
+     "note": "enough for 8 to 12 hours",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Day before: separate the point and flat along the natural fat seam with long strokes."
+    },
+    {
+     "text": "Trim hard fat and silver skin. Leave about ¼ inch of fat on the flat. Save trimmings for burnt ends."
+    },
+    {
+     "text": "Salt evenly and rest uncovered in the fridge overnight."
+    },
+    {
+     "text": "Day of: inject low-sodium beef broth every 1 to 1½ inches, especially the flat."
+    },
+    {
+     "text": "Preheat the smoker to 250°F with the water pan filled. Keep the meat cold until it goes on."
+    },
+    {
+     "text": "Season heavily with coarse pepper and a little garlic powder if you like."
+    },
+    {
+     "text": "Put point and flat on separate racks, fat side toward the heat, flat further from it. Probe the thickest part of the flat."
+    },
+    {
+     "text": "Do not open the smoker for the first 2 to 3 hours. Keep the water pan full."
+    },
+    {
+     "text": "Once bark forms, spritz with water and cider vinegar every 45 to 60 minutes."
+    },
+    {
+     "text": "Wrap each piece tight in butcher paper at 160 to 170°F once its bark is set. Do not force them to stay in sync."
+    },
+    {
+     "text": "Cook each to about 203°F and probe-tender. The flat may finish first. Save the juices."
+    },
+    {
+     "text": "Rest 2 to 4 hours in a cooler with towels or a 150 to 170°F oven."
+    },
+    {
+     "text": "Split the point about half sliced, half cubed for burnt ends (or all burnt ends)."
+    },
+    {
+     "text": "Render the trimmings, fry the cubes until crunchy, drain, add ¼ cup BBQ sauce and ¼ cup paper drippings. Cover on the cooker and stir every 5 minutes until glazed."
+    },
+    {
+     "text": "Optional: crisp the bark under the broiler. Slice against the grain, pencil-thick, at the last minute."
+    }
+   ]
+  },
+  {
+   "id": "pork-butt-sous-vide",
+   "title": "Pork Butt, Sous Vide then Smoked",
+   "emoji": "🐖",
+   "category": "bbq",
+   "tags": [
+    "pork",
+    "smoked",
+    "sous vide"
+   ],
+   "equipment": [
+    "Sous vide circulator",
+    "Weber kettle",
+    "Meat injector",
+    "Spray bottle"
+   ],
+   "notes": "March 2019 run: overall B. Bark A (extra crunchy, no wrap), flavor B, smoke B-, texture B (dry because the injector failed). Next time: better injector, water pan from the start, spritz more, and try 48 hours sous vide at a higher temp.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "bone-in pork butt",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "coarse salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "yellow mustard",
+     "note": "binder",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "KC Rib Doctor rub",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Cowtown rub",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "apple juice",
+     "note": "for injecting",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "beef stock",
+     "note": "for the drip pan",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "apple wood chips",
+     "aisle": "Other"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "charcoal",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Salt the whole butt with coarse salt, bag it, and sous vide at 150°F for 24 hours."
+    },
+    {
+     "text": "As the grill heats, move the pork to an ice bath until cold, at least 30 minutes."
+    },
+    {
+     "text": "Bring the smoker to 225°F. Top vents half open and bottom vents fully open held 225 to 235°F."
+    },
+    {
+     "text": "Coat the chilled pork in yellow mustard and rub generously with KC Rib Doctor and Cowtown. Inject apple juice every inch if the pump works."
+    },
+    {
+     "text": "Set a water pan over the coals from the start and a drip pan of beef stock, water and the sous vide juices on the cool side."
+    },
+    {
+     "text": "Add apple chips to the coals and set the pork over the drip pan. Check after 30 minutes that it is not scorching."
+    },
+    {
+     "text": "Add fresh coals around the 3½-hour mark to hold temperature. Spritz once the crust forms."
+    },
+    {
+     "text": "Pull at about 195°F, when the bone slides right out. Shred, strain the drippings, and pour them over the meat."
+    }
+   ]
+  },
+  {
+   "id": "boston-butt-2015",
+   "title": "Boston Butt, First Run (2015)",
+   "emoji": "🐖",
+   "category": "bbq",
+   "tags": [
+    "pork",
+    "smoked"
+   ],
+   "equipment": [
+    "Charcoal smoker",
+    "Water pan",
+    "Foil"
+   ],
+   "notes": "Handwritten 2015 log. Meat hit 141°F at 5:30 and stalled there until about 7:00, then reached 191°F by 9:00. Smoker ran 214 to 283°F.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "pork butt",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Memphis Dust rub",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "yellow mustard",
+     "note": "binder",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "for overnight salting",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "cherry and apple wood chips",
+     "aisle": "Other"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "charcoal",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Night before: wash, thaw and salt the butt overnight."
+    },
+    {
+     "text": "Morning: bring the smoker to 225°F with a water pan on the grate for indirect two-zone heat."
+    },
+    {
+     "text": "Coat in yellow mustard and apply the Memphis Dust rub."
+    },
+    {
+     "text": "Every 30 minutes add 2 to 4 handfuls of cherry and apple chips."
+    },
+    {
+     "text": "After about 2½ hours, add fresh coals; the temp had dropped to 180°F."
+    },
+    {
+     "text": "Wrap in foil through the stall. It was done around 9:30 total time; unwrap at the end to firm the crust again."
+    }
+   ]
+  },
+  {
+   "id": "crunchwrap-supreme",
+   "title": "Crunchwrap Supreme",
+   "emoji": "🌯",
+   "category": "mexican",
+   "prep": 15,
+   "cook": 20,
+   "servings": 4,
+   "tags": [
+    "beef",
+    "copycat",
+    "tex-mex"
+   ],
+   "equipment": [
+    "Large skillet"
+   ],
+   "notes": "Copycat Taco Bell. Makes 4.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "80/20",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "neutral oil",
+     "note": "optional if the beef is lean",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "chili powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "garlic powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "onion powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "dried oregano",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "tomato paste",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "cornstarch",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "water",
+     "aisle": "Other"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "tostada shells",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "burrito-size flour tortillas",
+     "note": "10 to 12 inch",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "taco-size flour tortillas",
+     "note": "cut into quarters",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "nacho cheese sauce",
+     "note": "warmed",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "sour cream",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "shredded iceberg lettuce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "medium Roma tomato",
+     "note": "finely diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "shredded mild cheddar",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "or neutral oil, for toasting",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Brown the beef in a skillet over medium heat, breaking it up very fine.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Stir in the chili powder, paprika, cumin, garlic and onion powder, oregano, salt, pepper and tomato paste.",
+     "uses": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "text": "Mix the cornstarch into the water, pour it in and simmer 2 to 3 minutes until saucy.",
+     "uses": [
+      11,
+      12
+     ]
+    },
+    {
+     "text": "Lay out a large tortilla. In the center, layer beef, nacho cheese, a tostada, sour cream, lettuce, tomato, cheddar, then a small tortilla piece on top.",
+     "uses": [
+      14,
+      0,
+      16,
+      13,
+      17,
+      18,
+      19,
+      20,
+      15
+     ]
+    },
+    {
+     "text": "Fold the large tortilla inward in tight pleats all the way around to seal a hexagon.",
+     "uses": []
+    },
+    {
+     "text": "Toast seam side down in butter over medium heat, 2 to 3 minutes until golden. Flip and cook 1 to 2 minutes more. Serve right away.",
+     "uses": [
+      21
+     ]
+    }
+   ]
+  },
+  {
+   "id": "barbacoa",
+   "title": "Barbacoa (Clean Chuck Braise)",
+   "emoji": "🐄",
+   "category": "mexican",
+   "prep": 20,
+   "cook": 300,
+   "servings": 6,
+   "tags": [
+    "beef",
+    "braise",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Dutch oven"
+   ],
+   "source": {
+    "name": "Joshua Weissman-inspired"
+   },
+   "notes": "The cleaner, beefier version. For more depth add a chipotle in adobo or a splash of vinegar at the end. If the guajillos stay leathery, blend them with some liquid and stir back in. Best the next day.",
+   "ingredients": [
+    {
+     "qty": 4,
+     "unit": "lb",
+     "item": "chuck roast",
+     "note": "3½ to 4½ lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "to taste",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "neutral oil",
+     "note": "for searing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "beef stock",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 7,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "6 to 8, smashed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "dried guajillo chiles",
+     "note": "stemmed and seeded",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "bay leaves",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "cinnamon stick",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "water",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pat the chuck very dry and salt it well on all sides. Dry-brine uncovered in the fridge for a few hours or overnight if you can."
+    },
+    {
+     "text": "Heat a Dutch oven over medium-high to high with a thin film of oil. Sear the chuck hard on the broad sides, then the edges, until deeply browned."
+    },
+    {
+     "text": "With the chuck in the pot, add the stock, garlic, guajillos, cumin, bay leaves, cinnamon and water. Bring just to a simmer."
+    },
+    {
+     "text": "Lay parchment directly on the surface, cover, and braise in a 300°F oven 4 to 5½ hours, until fork-tender."
+    },
+    {
+     "text": "Shred the beef. Taste and reduce the liquid if needed, return the beef and salt to taste."
+    }
+   ]
+  },
+  {
+   "id": "better-barbacoa",
+   "title": "Better Barbacoa (Whole Chuck, Chile Sauce)",
+   "emoji": "🌶️",
+   "category": "mexican",
+   "prep": 30,
+   "cook": 240,
+   "servings": 7,
+   "tags": [
+    "beef",
+    "braise",
+    "make-ahead",
+    "tacos"
+   ],
+   "equipment": [
+    "Dutch oven",
+    "Blender",
+    "Skillet"
+   ],
+   "notes": "Use for tacos, bowls, burritos, quesadillas, nachos. More guajillo is brighter, more ancho is darker, more chipotle is smokier. Crisp some shredded beef on a hot sheet pan for taco edges. Even better the next day. Pair with the Salsa Verde.",
+   "ingredients": [
+    {
+     "qty": 3.5,
+     "unit": "lb",
+     "item": "boneless chuck roast",
+     "note": "3 to 4 lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2.25,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "2 to 2½ tsp",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "neutral oil",
+     "note": "if needed",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "dried guajillo chiles",
+     "note": "stemmed and seeded",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "dried ancho chiles",
+     "note": "stemmed and seeded",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "chipotle in adobo",
+     "note": "1 or 2",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "adobo sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "medium white or yellow onion",
+     "note": "roughly chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 5,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "4 to 6, smashed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "beef stock",
+     "note": "or water",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "apple cider vinegar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "lime juice",
+     "note": "1 to 2 tbsp, plus more to finish",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "Worcestershire sauce",
+     "note": "or soy sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "Mexican oregano",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "ground cloves",
+     "note": "¼ to ½ tsp",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "bay leaves",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "cinnamon stick",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "fish sauce",
+     "note": "optional",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "brown sugar",
+     "note": "only if the chiles taste harsh",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2.5,
+     "unit": "tbsp",
+     "item": "cilantro",
+     "note": "chopped, to finish",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pat the chuck very dry and season all over with salt and pepper. Dry-brine overnight if you have time.",
+     "uses": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "text": "Toast the guajillos and anchos in a dry skillet until fragrant, then soak in hot water 10 to 15 minutes.",
+     "uses": [
+      4,
+      5
+     ]
+    },
+    {
+     "text": "Blend the soaked chiles with the chipotle, adobo, onion, garlic, stock, vinegar, lime juice, Worcestershire, cumin, oregano, cloves, cinnamon stick and fish sauce until smooth. Add brown sugar only if it tastes harsh.",
+     "uses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+     ]
+    },
+    {
+     "text": "Sear the chuck whole in a Dutch oven over medium-high to high until dark brown on every side. Do not rush it.",
+     "uses": [
+      0,
+      3
+     ]
+    },
+    {
+     "text": "Lower the heat, pour in the sauce scraping up the fond, and add the bay leaves. The liquid should come partway up the roast.",
+     "uses": [
+      17
+     ]
+    },
+    {
+     "text": "Cover with parchment and the lid and braise at 300°F for 3½ to 4½ hours, until a fork twists easily. Or slow cooker low 8 to 10 hours, or pressure cook 60 to 75 minutes with natural release.",
+     "uses": []
+    },
+    {
+     "text": "Rest the roast briefly, then shred.",
+     "uses": []
+    },
+    {
+     "text": "Simmer the sauce until slightly thick and glossy. Toss the beef back in with the cilantro and more lime. Adjust salt.",
+     "uses": [
+      21,
+      12,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "salsa-verde",
+   "title": "Salsa Verde",
+   "emoji": "🟢",
+   "category": "mexican",
+   "prep": 10,
+   "cook": 10,
+   "servings": 12,
+   "tags": [
+    "salsa",
+    "vegetarian",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Medium pot",
+    "Blender"
+   ],
+   "source": {
+    "name": "Joshua Weissman style"
+   },
+   "notes": "Makes about 3 cups. Keep the jalapeño seeds for more heat, or swap one for a serrano for a rounder flavor.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "sweet onion",
+     "note": "roughly chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "jalapeños",
+     "note": "roughly chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 5,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1.5,
+     "unit": "lb",
+     "item": "tomatillos",
+     "note": "husked, rinsed and quartered",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "bunch",
+     "item": "cilantro",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "to taste",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "lime juice",
+     "note": "to taste",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Put the onion, jalapeños, garlic and tomatillos in a medium pot, cover with water and salt lightly."
+    },
+    {
+     "text": "Boil 5 to 8 minutes, until soft."
+    },
+    {
+     "text": "Blend smooth, adding a splash of cooking water only if needed."
+    },
+    {
+     "text": "Add the cilantro and blend again until bright green."
+    },
+    {
+     "text": "Cool quickly and season with salt and fresh lime juice."
+    }
+   ]
+  },
+  {
+   "id": "smash-burgers",
+   "title": "Smash Burgers with Special Sauce",
+   "emoji": "🍔",
+   "category": "american",
+   "tags": [
+    "beef",
+    "griddle"
+   ],
+   "equipment": [
+    "Flat top griddle",
+    "Burger smasher",
+    "Mandoline",
+    "Parchment"
+   ],
+   "source": {
+    "name": "Chef Donny"
+   },
+   "notes": "No proportions, everything to taste. The OneNote page cuts off at the flip. Jim liked the Burger Sauce better than this kimchi version.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "ground beef",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "potato buns",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "yellow onion",
+     "note": "sliced paper-thin on a mandoline",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Kewpie mayo",
+     "note": "for the sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "sesame oil",
+     "note": "for the sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "soy sauce",
+     "note": "for the sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "chili crisp",
+     "note": "for the sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kimchi",
+     "note": "for the sauce",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Stir the Kewpie, sesame oil, soy sauce, chili crisp and kimchi together to taste."
+    },
+    {
+     "text": "Loosely pack the beef into balls. Do not overpack."
+    },
+    {
+     "text": "Heat the flat top with no oil so the patties almost stick."
+    },
+    {
+     "text": "Set a ball on the grill, top with thin onion slices, cover with parchment and smash flat."
+    },
+    {
+     "text": "Flip once the edges are deeply crusted, then build on potato buns with the sauce."
+    }
+   ]
+  },
+  {
+   "id": "burger-sauce",
+   "title": "Burger Sauce",
+   "emoji": "🥫",
+   "category": "american",
+   "prep": 5,
+   "tags": [
+    "sauce",
+    "burgers"
+   ],
+   "notes": "Way better than the kimchi version from Chef Donny. No amounts written down yet.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "mayo",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "yellow mustard",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "ketchup",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "sweet relish or chopped gherkins",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "white wine vinegar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "cayenne",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "garlic and onion powder",
+     "note": "optional",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Worcestershire sauce",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Stir everything together to taste and chill until the burgers are ready."
+    }
+   ]
+  },
+  {
+   "id": "chicken-broccoli-potatoes",
+   "title": "Chicken, Broccoli & Potatoes",
+   "emoji": "🥦",
+   "category": "american",
+   "prep": 20,
+   "cook": 35,
+   "tags": [
+    "chicken",
+    "sheet pan",
+    "weeknight"
+   ],
+   "equipment": [
+    "Oven",
+    "Sheet pans"
+   ],
+   "notes": "Timeline for lining up all three to finish together. Oven temperature and seasoning are not written down.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "chicken",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "broccoli",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "potatoes",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "8:00 PM: prep the potatoes, about 10 minutes."
+    },
+    {
+     "text": "8:10 PM: start the potatoes in the oven (30 minutes total). Prep the broccoli and chicken, 5 minutes each."
+    },
+    {
+     "text": "8:20 PM: flip the potatoes and put the broccoli in (20 minutes total)."
+    },
+    {
+     "text": "8:25 PM: put the chicken in (20 minutes total)."
+    },
+    {
+     "text": "8:30 PM: flip the broccoli."
+    },
+    {
+     "text": "8:35 PM: flip the chicken."
+    },
+    {
+     "text": "8:40 PM: broccoli and potatoes are done."
+    },
+    {
+     "text": "8:45 PM: chicken is done."
+    }
+   ]
+  },
+  {
+   "id": "goat-cheese-arugula-salad",
+   "title": "Goat Cheese & Arugula Salad",
+   "emoji": "🥗",
+   "category": "american",
+   "prep": 15,
+   "servings": 4,
+   "tags": [
+    "salad",
+    "vegetarian",
+    "side"
+   ],
+   "source": {
+    "name": "A Couple Cooks",
+    "url": "https://www.acouplecooks.com/goat-cheese-salad-arugula/"
+   },
+   "notes": "The page gives 1×/2×/3× batches; 4 servings is my estimate for 1×, so use the scaler. Swap pears for apples, or add roasted beets. Dressing keeps a week. Slice apples just before serving.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "aged balsamic vinegar",
+     "note": "dressing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "Dijon mustard",
+     "note": "dressing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "maple syrup or honey",
+     "note": "1 to 2 tbsp, dressing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "dressing",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 6,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "dressing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "crisp apple",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "shallot",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 5,
+     "unit": "oz",
+     "item": "baby arugula",
+     "note": "or mixed greens",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "pecans",
+     "note": "roughly chopped; plain, toasted or glazed",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "oz",
+     "item": "soft goat cheese",
+     "note": "crumbled",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "sea salt",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Whisk the balsamic, Dijon, maple syrup, salt and olive oil until emulsified."
+    },
+    {
+     "text": "Thinly slice the apple and shallot."
+    },
+    {
+     "text": "Put the arugula in a bowl and top with the shallot, apple, pecans and goat cheese."
+    },
+    {
+     "text": "Drizzle with dressing and finish with a pinch of sea salt."
+    }
+   ]
+  },
+  {
+   "id": "white-castle-sliders",
+   "title": "White Castle Sliders",
+   "emoji": "🍔",
+   "category": "american",
+   "prep": 10,
+   "cook": 6,
+   "servings": 8,
+   "tags": [
+    "beef",
+    "sliders",
+    "copycat"
+   ],
+   "equipment": [
+    "Griddle",
+    "Parchment"
+   ],
+   "source": {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/watch?v=zk8E3SeJWPM"
+   },
+   "notes": "Plus 1 hour in the freezer. Makes 8; servings means sliders.",
+   "ingredients": [
+    {
+     "qty": 0.75,
+     "unit": "lb",
+     "item": "ground beef chuck",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "minced onion",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "water",
+     "aisle": "Other"
+    },
+    {
+     "qty": 8,
+     "unit": "",
+     "item": "soft slider rolls",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 8,
+     "unit": "slice",
+     "item": "cheese",
+     "note": "optional",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "dill pickle slices",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Press the beef between parchment into a thin, even rectangle."
+    },
+    {
+     "text": "Score into 8 squares and poke 5 small holes in each with a spoon handle. Freeze 1 hour."
+    },
+    {
+     "text": "Separate the frozen squares."
+    },
+    {
+     "text": "Mix the onions and water and spread them over a griddle or large pan on medium heat."
+    },
+    {
+     "text": "Set the frozen patties on the onions and season. Put the bottom buns cut side down on the patties, then the tops on those."
+    },
+    {
+     "text": "Steam together 5 to 6 minutes, adding cheese to the patties if using."
+    },
+    {
+     "text": "Assemble each with a pickle slice."
+    }
+   ]
+  },
+  {
+   "id": "french-onion-beef-sliders",
+   "title": "French Onion Beef Sliders",
+   "emoji": "🧅",
+   "category": "american",
+   "prep": 10,
+   "cook": 55,
+   "servings": 8,
+   "tags": [
+    "beef",
+    "sliders",
+    "party"
+   ],
+   "equipment": [
+    "Skillet",
+    "Sheet pan"
+   ],
+   "notes": "Scaled from 24 sliders to 8. Fully caramelized onions make the flavor.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "divided",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.667,
+     "unit": "",
+     "item": "large sweet onion",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 10.5,
+     "unit": "oz",
+     "item": "ground beef",
+     "note": "about ⅔ lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "beef base",
+     "note": "divided",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "Worcestershire sauce",
+     "note": "divided",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt and black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 8,
+     "unit": "",
+     "item": "slider buns",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 4.5,
+     "unit": "oz",
+     "item": "Gruyère or Swiss",
+     "note": "shredded",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "sesame seeds",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "fresh thyme",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.333,
+     "unit": "tsp",
+     "item": "onion powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.333,
+     "unit": "tsp",
+     "item": "garlic powder",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Melt 1 tbsp butter in a skillet over medium, add the onion, drop to medium-low and cook 25 to 30 minutes until caramelized. Add a tablespoon of water if it dries out."
+    },
+    {
+     "text": "Mix the beef with half the beef base and half the Worcestershire, and season well."
+    },
+    {
+     "text": "Add the beef to the onions, raise to medium-high and brown, breaking it up. Drain the grease."
+    },
+    {
+     "text": "Heat the oven to 350°F. Arrange the bottom buns tightly on a greased sheet."
+    },
+    {
+     "text": "Spread the beef and onions over the buns, top with the cheese, then the top buns."
+    },
+    {
+     "text": "Melt the remaining 1 tbsp butter with the rest of the beef base and Worcestershire. Brush over the tops and sprinkle with sesame seeds, thyme, onion and garlic powder."
+    },
+    {
+     "text": "Bake 20 minutes until the cheese melts and the tops are golden. Broil 1 to 2 minutes for crispier tops."
+    }
+   ]
+  },
+  {
+   "id": "prosciutto-goat-cheese-sliders",
+   "title": "Prosciutto & Goat Cheese Sliders",
+   "emoji": "🥓",
+   "category": "american",
+   "prep": 10,
+   "cook": 30,
+   "servings": 8,
+   "tags": [
+    "pork",
+    "sliders",
+    "party"
+   ],
+   "equipment": [
+    "Baking dish",
+    "Sheet pan",
+    "Foil"
+   ],
+   "notes": "Makes 8. The 50/50 cheese blend keeps the goat cheese tang with fontina meltiness. Honey is optional but worth it.",
+   "ingredients": [
+    {
+     "qty": 8,
+     "unit": "",
+     "item": "slider buns or Hawaiian rolls",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 5,
+     "unit": "slice",
+     "item": "prosciutto",
+     "note": "4 to 5",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2.5,
+     "unit": "oz",
+     "item": "fontina or Swiss",
+     "note": "shredded",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2.5,
+     "unit": "oz",
+     "item": "goat cheese",
+     "note": "crumbled",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "fresh thyme leaves",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "honey",
+     "note": "for drizzling, optional",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2.333,
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "melted (2 tbsp + 1 tsp)",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "Dijon mustard",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "fresh thyme",
+     "note": "chopped, for the topping",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "sesame seeds",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.333,
+     "unit": "tsp",
+     "item": "onion powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.333,
+     "unit": "tsp",
+     "item": "garlic powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt and black pepper",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Heat the oven to 425°F. Bake the prosciutto on parchment 8 to 10 minutes until crisp, then cool and crumble.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Drop the oven to 350°F. Arrange the bottom buns tightly in a greased dish.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Layer the fontina, crispy prosciutto and goat cheese, drizzle with honey if using, and add the top buns.",
+     "uses": [
+      2,
+      1,
+      3,
+      5,
+      0
+     ]
+    },
+    {
+     "text": "Mix the melted butter, Dijon, thyme, sesame seeds, onion and garlic powder, salt and pepper. Brush over the tops.",
+     "uses": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+     ]
+    },
+    {
+     "text": "Bake covered with foil 10 minutes, then uncovered 10 minutes until golden. Broil 1 to 2 minutes for a crisper top.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "mcconaughey-tuna-salad",
+   "title": "McConaughey Tuna Salad",
+   "emoji": "🐟",
+   "category": "american",
+   "prep": 10,
+   "servings": 4,
+   "tags": [
+    "fish",
+    "no-cook",
+    "lunch"
+   ],
+   "notes": "Serves 3 to 4. The apple and corn crunch and cold peas make this one.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "can",
+     "item": "tuna",
+     "note": "drained well, about 10 oz",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "mayonnaise",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "white wine vinegar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "lemon juice",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "wasabi paste",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "Italian dressing",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "agave",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "red onion",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "dill pickles or gherkins",
+     "note": "finely chopped",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.333,
+     "unit": "cup",
+     "item": "crispy jalapeño chips",
+     "note": "crushed",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "apple",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "corn kernels",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "frozen peas",
+     "note": "thawed",
+     "aisle": "Frozen"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and black pepper",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Stir the mayo, vinegar, lemon juice, wasabi, Italian dressing and agave until smooth."
+    },
+    {
+     "text": "Add the red onion, pickles, apple, corn, peas and crushed jalapeño chips."
+    },
+    {
+     "text": "Fold in the tuna until coated. Adjust with more mayo, wasabi or agave."
+    },
+    {
+     "text": "Chill 15 to 30 minutes. Serve on toasted sourdough, with crackers or pita chips, or in lettuce cups."
+    }
+   ]
+  },
+  {
+   "id": "classic-french-toast",
+   "title": "Classic French Toast",
+   "emoji": "🍞",
+   "category": "breakfast",
+   "prep": 10,
+   "cook": 20,
+   "servings": 4,
+   "tags": [
+    "breakfast",
+    "vegetarian"
+   ],
+   "equipment": [
+    "Nonstick skillet",
+    "Wire rack",
+    "Sheet pan"
+   ],
+   "source": {
+    "name": "Basics with Babish"
+   },
+   "notes": "Fancy custard: 1½ cups half & half or cream, 3 to 4 yolks, 3 to 4 tbsp dark brown sugar, vanilla paste, nutmeg, lemon or orange zest and a splash of bourbon. Babka spread: 8 oz cream cheese whipped with 3 tbsp sugar and a pinch of salt. Servings is an estimate.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "thick bread slices",
+     "note": "country loaf, challah, brioche or chocolate babka",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "whole milk",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "large eggs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "granulated sugar",
+     "note": "3 to 4",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "vanilla extract",
+     "note": "1 to 2",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ground cinnamon",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "nutmeg",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "melted, for the pan",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "maple syrup and butter",
+     "note": "for serving",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Dry the bread slices on a rack overnight, or in the oven at its lowest setting for 15 to 20 minutes, flipping halfway."
+    },
+    {
+     "text": "Whisk the milk, eggs, sugar, vanilla, cinnamon and nutmeg until no egg streaks remain. Pour into a pie plate."
+    },
+    {
+     "text": "Soak each slice 20 to 30 seconds per side."
+    },
+    {
+     "text": "Fry in melted butter in a nonstick skillet over medium heat, 3 to 5 minutes per side, until golden."
+    },
+    {
+     "text": "Hold on a rack in a 350°F oven while you cook the rest. Serve with butter and maple syrup."
+    }
+   ]
+  },
+  {
+   "id": "french-toast-casserole",
+   "title": "French Toast Casserole",
+   "emoji": "🥘",
+   "category": "breakfast",
+   "prep": 15,
+   "cook": 40,
+   "servings": 8,
+   "tags": [
+    "breakfast",
+    "make-ahead",
+    "crowd"
+   ],
+   "equipment": [
+    "Casserole dish"
+   ],
+   "source": {
+    "name": "Basics with Babish"
+   },
+   "notes": "Servings is an estimate. Make it the night before for an easy morning.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "brioche loaf",
+     "note": "cut into 1-inch cubes",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "whole milk",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 5,
+     "unit": "",
+     "item": "large eggs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "granulated sugar",
+     "note": "3 to 4",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "vanilla extract",
+     "note": "1 to 2",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ground cinnamon",
+     "note": "for the custard",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "nutmeg",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "melted, plus more for the dish",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "brown sugar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "cinnamon",
+     "note": "for the topping",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "pinch",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "pecans",
+     "note": "a handful, chopped",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "turbinado sugar",
+     "note": "a few pinches",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "maple syrup and butter",
+     "note": "for serving",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Butter a casserole dish generously and fill it with the brioche cubes.",
+     "uses": [
+      7,
+      0
+     ]
+    },
+    {
+     "text": "Whisk the milk, eggs, sugar, vanilla, cinnamon and nutmeg until smooth.",
+     "uses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Pour over the bread so every piece is soaked and toss. Cover and refrigerate overnight, or bake now.",
+     "uses": []
+    },
+    {
+     "text": "Mix the melted butter, brown sugar, cinnamon and salt for the topping.",
+     "uses": [
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "text": "Scatter the pecans on top, drizzle with the topping and finish with turbinado sugar.",
+     "uses": [
+      11,
+      12
+     ]
+    },
+    {
+     "text": "Bake at 350°F for 35 to 45 minutes, rotating halfway, until golden. Rest 10 minutes and serve with butter and syrup.",
+     "uses": [
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "id": "breakfast-sandwiches",
+   "title": "Make-Ahead Breakfast Sandwiches",
+   "emoji": "🥪",
+   "category": "breakfast",
+   "tags": [
+    "breakfast",
+    "make-ahead",
+    "meal prep"
+   ],
+   "notes": "From a January 2022 meal plan. No amounts or bake temperature written down.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "English muffins",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "sliced cheese",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Canadian bacon or sausage",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "eggs",
+     "note": "baked",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Bake the eggs."
+    },
+    {
+     "text": "Build each sandwich on an English muffin with cheese, meat and egg."
+    },
+    {
+     "text": "Wrap each one and keep in the fridge for grab-and-go mornings."
+    }
+   ]
+  },
+  {
+   "id": "clever-dripper-coffee",
+   "title": "Clever Dripper Coffee",
+   "emoji": "☕",
+   "category": "breakfast",
+   "prep": 2,
+   "cook": 4,
+   "servings": 1,
+   "tags": [
+    "coffee",
+    "drink"
+   ],
+   "equipment": [
+    "Clever Dripper",
+    "Timemore Chestnut C grinder"
+   ],
+   "notes": "Timemore clicks: espresso 5 to 9, pour-over 12 to 16, steep 18 to 24, French press 24 to 30, cold brew 30+. Ratio 1 g coffee to 15 g water: a 12 oz bag makes about 14 twelve-ounce cups.",
+   "ingredients": [
+    {
+     "qty": 20,
+     "unit": "g",
+     "item": "coffee beans",
+     "note": "16 to 24 g per cup",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "water",
+     "note": "just off the boil, about 200°F",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Grind medium, 16 to 20 clicks on the Timemore Chestnut C."
+    },
+    {
+     "text": "Add the grounds to the Clever Dripper and pour 200°F water evenly over them."
+    },
+    {
+     "text": "Steep 3 to 4 minutes: closer to 3 for lighter, up to 4½ for bolder."
+    },
+    {
+     "text": "Set the dripper on your cup to release."
+    }
+   ]
+  },
+  {
+   "id": "crispy-chicken-cutlets",
+   "title": "Crispy Chicken Cutlets",
+   "emoji": "🍗",
+   "category": "dinner-party",
+   "prep": 30,
+   "cook": 25,
+   "servings": 6,
+   "tags": [
+    "chicken",
+    "italian",
+    "weeknight",
+    "party"
+   ],
+   "equipment": [
+    "Meat mallet",
+    "Cast iron skillet",
+    "Wire rack",
+    "Sheet pan",
+    "Thermometer"
+   ],
+   "notes": "Crispier: 1 part cornstarch to 3 parts flour, a little Dijon in the egg wash, or double-dip. Serve with the Lemon-Caper Butter Sauce and Mushroom-Shallot Cream Sauce. From the 3/29/2025 dinner party.",
+   "ingredients": [
+    {
+     "qty": 3,
+     "unit": "lb",
+     "item": "boneless, skinless chicken breasts",
+     "note": "or cutlets, for 6 adults",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "all-purpose flour",
+     "note": "for dredging",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "large eggs",
+     "note": "2 to 3",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "Italian breadcrumbs or panko",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Parmesan",
+     "note": "finely grated, mixed into the crumbs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "corn oil",
+     "note": "for frying",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "beef tallow",
+     "note": "for frying",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "lemon",
+     "note": "for serving",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Night before: butterfly or pound the chicken to an even ¼ inch. Pat dry and season lightly with salt and pepper."
+    },
+    {
+     "text": "Dredge in flour only, set on a rack or parchment, cover loosely and refrigerate."
+    },
+    {
+     "text": "Before frying: dip each cutlet in beaten egg, then press into the crumbs mixed with Parmesan."
+    },
+    {
+     "text": "Rest on a wire rack 10 to 15 minutes so the coating sets while the fat heats."
+    },
+    {
+     "text": "Heat ¼ to ½ inch of corn oil and tallow in a heavy pan to 350 to 375°F."
+    },
+    {
+     "text": "Fry in batches without crowding, 3 to 4 minutes per side, until deep golden and 165°F inside."
+    },
+    {
+     "text": "Drain on a wire rack, never paper towels. Hold in a 200°F oven on the rack. Finish with flaky salt and lemon."
+    }
+   ]
+  },
+  {
+   "id": "lemon-caper-butter-sauce",
+   "title": "Lemon-Caper Butter Sauce",
+   "emoji": "🍋",
+   "category": "dinner-party",
+   "prep": 5,
+   "cook": 10,
+   "servings": 6,
+   "tags": [
+    "sauce",
+    "make-ahead",
+    "piccata"
+   ],
+   "notes": "Lemon goes in at the end because it goes flat when cooked and stored. Upgrades: shallots with the garlic, a dab of anchovy paste, a Parmesan rind while it simmers, a pinch of red pepper flakes.",
+   "ingredients": [
+    {
+     "qty": 5,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "note": "4 to 6, some kept cold to finish",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "dry white wine",
+     "note": "optional",
+     "aisle": "Other"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "chicken stock",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "capers",
+     "note": "drained",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "lemon",
+     "note": "zested, plus juice of 1 to 2 lemons",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fresh parsley",
+     "note": "chopped, to finish",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Melt most of the butter over medium heat and sauté the garlic until fragrant. Brown the butter first for a nuttier sauce."
+    },
+    {
+     "text": "Add the wine and reduce, then the stock and capers. Reduce until it lightly coats a spoon."
+    },
+    {
+     "text": "If making ahead, stop here, cool and refrigerate. Reheat gently over low, never boiling."
+    },
+    {
+     "text": "Off the heat, stir in the lemon juice and zest, whisk in a knob of cold butter, and finish with parsley."
+    }
+   ]
+  },
+  {
+   "id": "mushroom-shallot-cream-sauce",
+   "title": "Mushroom-Shallot Cream Sauce",
+   "emoji": "🍄",
+   "category": "dinner-party",
+   "prep": 10,
+   "cook": 15,
+   "servings": 6,
+   "tags": [
+    "sauce",
+    "vegetarian",
+    "make-ahead"
+   ],
+   "notes": "Sherry or Marsala makes it richer. A ½ tsp soy sauce or a Parmesan rind adds depth. For steak or chicken, reduce until it coats a spoon.",
+   "ingredients": [
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "shiitake mushrooms",
+     "note": "or cremini, sliced thin",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "small shallots",
+     "note": "or 1 large, finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "dry white wine or sherry",
+     "aisle": "Other"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "heavy cream",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fresh thyme",
+     "note": "or a pinch of dried",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "crème fraîche",
+     "note": "optional, to finish",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Heat the butter and oil over medium-high. Sear the mushrooms undisturbed until browned, then stir."
+    },
+    {
+     "text": "Add the shallots and garlic and cook until soft."
+    },
+    {
+     "text": "Deglaze with the wine or sherry and reduce."
+    },
+    {
+     "text": "Stir in the cream and thyme and simmer gently. Do not reduce too far if making ahead."
+    },
+    {
+     "text": "Season. To reheat, warm slowly over medium-low, stirring, and loosen with a splash of stock if thick."
+    },
+    {
+     "text": "Off the heat, stir in the crème fraîche or a little lemon juice."
+    }
+   ]
+  },
+  {
+   "id": "whipped-ricotta",
+   "title": "Whipped Ricotta with Chili Oil & Lemon",
+   "emoji": "🫙",
+   "category": "dinner-party",
+   "prep": 10,
+   "servings": 6,
+   "tags": [
+    "appetizer",
+    "vegetarian",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Food processor"
+   ],
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "whole milk ricotta",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "heavy cream or milk",
+     "note": "1 to 2 tbsp",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "lemon",
+     "note": "zested",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "olive oil",
+     "note": "for drizzling",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "red chili flakes or chili crisp",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "honey",
+     "note": "optional",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "microgreens, mint or basil",
+     "note": "optional garnish",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "bread or crackers",
+     "note": "for serving",
+     "aisle": "Bakery"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Blend the ricotta, cream, lemon zest and salt in a food processor until smooth."
+    },
+    {
+     "text": "Store sealed in the fridge if making ahead."
+    },
+    {
+     "text": "Spread on a serving dish and top with olive oil, chili oil or chili crisp, more zest and herbs. Serve with bread or crackers."
+    }
+   ]
+  },
+  {
+   "id": "antipasto-skewers",
+   "title": "Antipasto Skewers",
+   "emoji": "🍢",
+   "category": "dinner-party",
+   "prep": 20,
+   "servings": 6,
+   "tags": [
+    "appetizer",
+    "make-ahead",
+    "no-cook"
+   ],
+   "notes": "Truffle salami or soppressata and aged balsamic dress these up.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "pt",
+     "item": "cherry or grape tomatoes",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "marinated mozzarella balls",
+     "note": "or cubed mozzarella",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salami or soppressata",
+     "note": "sliced and folded",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fresh basil leaves",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Kalamata or Castelvetrano olives",
+     "note": "pitted",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "balsamic glaze",
+     "note": "optional",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "toothpicks or short skewers",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Thread a cherry tomato, basil leaf, mozzarella ball, folded salami and an olive onto each skewer."
+    },
+    {
+     "text": "Cover tightly and refrigerate."
+    },
+    {
+     "text": "Plate and drizzle with balsamic glaze before serving."
+    }
+   ]
+  },
+  {
+   "id": "grilled-asparagus",
+   "title": "Grilled Asparagus with Lemon Zest",
+   "emoji": "🌿",
+   "category": "dinner-party",
+   "prep": 10,
+   "cook": 6,
+   "servings": 6,
+   "tags": [
+    "side",
+    "vegetarian",
+    "grill"
+   ],
+   "equipment": [
+    "Grill"
+   ],
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "bunch",
+     "item": "asparagus",
+     "note": "trimmed",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "olive oil",
+     "note": "to coat",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "lemon",
+     "note": "zested",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Parmesan",
+     "note": "shaved, optional",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "pistachios or almonds",
+     "note": "crushed, optional",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Trim the asparagus and toss with olive oil, salt and pepper. It can wait in the fridge."
+    },
+    {
+     "text": "Heat the grill to medium-high."
+    },
+    {
+     "text": "Grill 5 to 6 minutes, turning, until charred and tender."
+    },
+    {
+     "text": "Finish with lemon zest, shaved Parmesan and crushed pistachios. Cover loosely with foil to keep warm."
+    }
+   ]
+  },
+  {
+   "id": "chia-pudding",
+   "title": "Blackberry Chia Pudding",
+   "emoji": "🫐",
+   "category": "old",
+   "prep": 5,
+   "servings": 1,
+   "tags": [
+    "breakfast",
+    "vegetarian",
+    "make-ahead"
+   ],
+   "source": {
+    "name": "BuzzFeed"
+   },
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "blackberries",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "chia seeds",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "unsweetened almond milk",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "vanilla extract",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "unsweetened shredded coconut",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 10,
+     "unit": "",
+     "item": "raw unsalted pistachios",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Crush the blackberries with a fork into a thick jam."
+    },
+    {
+     "text": "Stir in the chia seeds, almond milk, vanilla and coconut. Refrigerate overnight in a sealed container."
+    },
+    {
+     "text": "In the morning, top with chopped pistachios."
+    }
+   ]
+  },
+  {
+   "id": "mason-jar-taco-salad",
+   "title": "Mason Jar Taco Salad",
+   "emoji": "🫙",
+   "category": "old",
+   "prep": 10,
+   "cook": 20,
+   "servings": 2,
+   "tags": [
+    "chicken",
+    "meal prep",
+    "lunch"
+   ],
+   "equipment": [
+    "Two quart wide-mouth mason jars"
+   ],
+   "nutrition": {
+    "cal": 455
+   },
+   "source": {
+    "name": "Food Faith Fitness",
+    "url": "https://www.foodfaithfitness.com/mason-jar-healthy-taco-salad-recipe/"
+   },
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "divided",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "chicken breast",
+     "note": "bite-size pieces",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "sliced carrots",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large red bell pepper",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "onion",
+     "note": "roughly chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "cumin seed",
+     "note": "not ground",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large avocado",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large lime",
+     "note": "juiced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "salsa",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "Roma tomatoes",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "cucumber",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "cilantro",
+     "note": "roughly chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "fresh spinach",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cook the chicken in ½ tbsp oil over medium heat until golden. Set aside."
+    },
+    {
+     "text": "Add the rest of the oil and cook the carrots over medium-high about 3 minutes. Add the pepper, onion and garlic and cook until charred at the edges."
+    },
+    {
+     "text": "Toast the cumin seeds in a dry pan about 2 minutes, crush them, and stir into the veggies with salt."
+    },
+    {
+     "text": "Blend or mash the avocado with the lime juice."
+    },
+    {
+     "text": "Layer two quart jars: salsa, avocado, veggies, chicken, tomatoes, cucumber, cilantro, then pack in spinach."
+    },
+    {
+     "text": "Seal and refrigerate until lunch."
+    }
+   ]
+  },
+  {
+   "id": "pollo-in-potacchio",
+   "title": "Pollo in Potacchio",
+   "emoji": "🍗",
+   "category": "old",
+   "prep": 15,
+   "cook": 75,
+   "servings": 5,
+   "tags": [
+    "chicken",
+    "italian",
+    "braise"
+   ],
+   "equipment": [
+    "Dutch oven"
+   ],
+   "nutrition": {
+    "cal": 221
+   },
+   "source": {
+    "name": "Skinnytaste",
+    "url": "https://www.skinnytaste.com/pollo-in-potacchio/"
+   },
+   "notes": "Serve over pasta, polenta or spaghetti squash. Slow cooker: do steps 1 to 3 with 1 cup broth, then cook on low 8 hours. Servings assume 2 thighs each.",
+   "ingredients": [
+    {
+     "qty": 10,
+     "unit": "",
+     "item": "skinless bone-in chicken thighs",
+     "note": "about 5 oz each",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt and black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "sprig",
+     "item": "fresh rosemary",
+     "note": "3 to 4 small",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1.333,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "1 tbsp + 1 tsp",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large yellow onion",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "celery stalk",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "carrot",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "pinch",
+     "item": "red pepper flakes",
+     "note": "optional",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "crushed tomatoes",
+     "note": "Tuttorosso",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "dried marjoram",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "dry white wine",
+     "aisle": "Other"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "low-sodium chicken broth",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Season the chicken. Sear in 1 tbsp oil in a Dutch oven over medium-high, 6 to 7 minutes per side. Set aside."
+    },
+    {
+     "text": "Sauté the garlic, onion and red pepper flakes in the remaining oil until golden, about 3 minutes. Add the celery and carrot for 2 to 3 minutes."
+    },
+    {
+     "text": "Add the wine and broth, scraping up the browned bits."
+    },
+    {
+     "text": "Add the tomatoes and marjoram, season, and simmer on low 30 minutes."
+    },
+    {
+     "text": "Add the chicken and rosemary, partly cover, and cook on low 25 to 30 minutes more, adding water if needed."
+    }
+   ]
+  },
+  {
+   "id": "stuffed-pepper-soup",
+   "title": "Stuffed Pepper Soup",
+   "emoji": "🫑",
+   "category": "old",
+   "prep": 10,
+   "cook": 40,
+   "servings": 6,
+   "tags": [
+    "beef",
+    "soup"
+   ],
+   "equipment": [
+    "Dutch oven or Instant Pot"
+   ],
+   "nutrition": {
+    "cal": 261
+   },
+   "source": {
+    "name": "Skinnytaste",
+    "url": "https://www.skinnytaste.com/stuffed-pepper-soup/"
+   },
+   "notes": "Instant Pot: sauté the beef, then the veggies, add the rest, and cook 15 minutes on high with natural release.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "lean ground beef",
+     "note": "95%",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "green bell pepper",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "red bell pepper",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "onion",
+     "note": "finely diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "can",
+     "item": "petite diced tomatoes",
+     "note": "14.5 oz each",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1.75,
+     "unit": "cup",
+     "item": "tomato sauce",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "low-sodium chicken broth",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "dried marjoram",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 3,
+     "unit": "cup",
+     "item": "cooked brown rice",
+     "note": "for serving",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Brown the beef in a large pot over high heat and season with salt."
+    },
+    {
+     "text": "Drain any fat, lower to medium-low, and cook the peppers, onion and garlic about 5 minutes."
+    },
+    {
+     "text": "Add the tomatoes, tomato sauce, broth and marjoram. Season, cover and simmer on low 30 minutes."
+    },
+    {
+     "text": "Serve 1½ cups soup per bowl topped with ½ cup brown rice."
+    }
+   ]
+  },
+  {
+   "id": "indian-shrimp-curry",
+   "title": "Indian Shrimp Curry",
+   "emoji": "🍤",
+   "category": "old",
+   "prep": 5,
+   "cook": 10,
+   "servings": 4,
+   "tags": [
+    "shrimp",
+    "curry",
+    "quick"
+   ],
+   "equipment": [
+    "Large skillet"
+   ],
+   "nutrition": {
+    "cal": 224,
+    "protein": 28,
+    "carbs": 10.9,
+    "fat": 7.9
+   },
+   "source": {
+    "name": "Skinnytaste",
+    "url": "https://www.skinnytaste.com/indian-shrimp-curry/"
+   },
+   "notes": "Make a double batch of sauce with the whole can of coconut milk and freeze half. It also works over rotisserie chicken.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "canola oil",
+     "note": "divided",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "shrimp",
+     "note": "peeled and deveined",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "",
+     "item": "yellow onion",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground ginger",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground coriander",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tsp",
+     "item": "ground turmeric",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "curry powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "chili powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 15,
+     "unit": "oz",
+     "item": "tomato sauce",
+     "note": "one can",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.75,
+     "unit": "cup",
+     "item": "lite coconut milk",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "cilantro and chili peppers",
+     "note": "for garnish",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Heat 2 tsp oil in a large skillet over high heat. Cook the shrimp 1 minute per side, then remove."
+    },
+    {
+     "text": "Add the last 1 tsp oil and the onion. Cook 5 minutes over medium, stirring now and then."
+    },
+    {
+     "text": "Add the ginger, cumin, coriander, turmeric, curry powder, paprika, chili powder and garlic. Cook 30 seconds."
+    },
+    {
+     "text": "Stir in the tomato sauce, then the coconut milk and shrimp."
+    },
+    {
+     "text": "Garnish with cilantro and chili peppers."
+    }
+   ]
+  },
+  {
+   "id": "garlic-dijon-salmon",
+   "title": "Grilled Garlic Dijon Herb Salmon",
+   "emoji": "🐟",
+   "category": "old",
+   "prep": 5,
+   "cook": 10,
+   "servings": 4,
+   "tags": [
+    "fish",
+    "grill",
+    "quick"
+   ],
+   "equipment": [
+    "Grill or grill pan"
+   ],
+   "nutrition": {
+    "cal": 233.5,
+    "protein": 35,
+    "carbs": 3,
+    "fat": 8
+   },
+   "source": {
+    "name": "Skinnytaste",
+    "url": "https://www.skinnytaste.com/grilled-garlic-dijon-herb-salmon/"
+   },
+   "notes": "Total cook time is about 9 to 10 minutes per inch of thickness.",
+   "ingredients": [
+    {
+     "qty": 4,
+     "unit": "clove",
+     "item": "garlic",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "dried herbes de Provence",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "red wine vinegar",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "olive oil",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "Dijon mustard",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "olive oil spray",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "wild salmon fillets",
+     "note": "6 oz each, 1 inch thick",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "lemon wedges",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Mash the garlic, herbs, vinegar, oil and Dijon into a paste."
+    },
+    {
+     "text": "Season the salmon. Heat a grill or grill pan on high, spray lightly, and drop to medium-low."
+    },
+    {
+     "text": "Cook the salmon without moving for 5 minutes."
+    },
+    {
+     "text": "Turn, cook 3 to 4 minutes more, and spoon on half the paste."
+    },
+    {
+     "text": "Turn again, spread the rest of the paste, cook 1 minute, then turn once more for a final minute."
+    },
+    {
+     "text": "Serve with lemon wedges."
+    }
+   ]
+  },
+  {
+   "id": "paleo-stuffed-peppers",
+   "title": "Stuffed Peppers",
+   "emoji": "🫑",
+   "category": "old",
+   "prep": 15,
+   "cook": 45,
+   "servings": 3,
+   "tags": [
+    "beef",
+    "paleo"
+   ],
+   "equipment": [
+    "9x13 baking dish",
+    "Large skillet"
+   ],
+   "source": {
+    "name": "Our Paleo Life",
+    "url": "https://www.ourpaleolife.com/paleo-stuffed-peppers/"
+   },
+   "notes": "Makes 6 pepper halves; servings assume 2 halves each.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "medium yellow onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "avocado or olive oil",
+     "note": "plus more for the dish",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground beef or bison",
+     "note": "grass-fed",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tsp",
+     "item": "dried parsley",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "smoked paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 14.5,
+     "unit": "oz",
+     "item": "diced tomatoes",
+     "note": "one can",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 4,
+     "unit": "oz",
+     "item": "diced jalapeños or mild green chiles",
+     "note": "one can, drained",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "can",
+     "item": "black olives",
+     "note": "drained and sliced",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "large bell peppers",
+     "note": "halved and seeded",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Heat the oven to 350°F and oil a 9x13 glass dish."
+    },
+    {
+     "text": "Sauté the onion and garlic in 1 tsp oil over medium until translucent."
+    },
+    {
+     "text": "Add the beef, cumin, parsley, paprika, salt and pepper and cook until browned, breaking it up."
+    },
+    {
+     "text": "Stir in the tomatoes, chiles and half the olives. Take off the heat."
+    },
+    {
+     "text": "Scoop the filling into the pepper halves, set them cut side up in the dish, and top with the rest of the olives."
+    },
+    {
+     "text": "Bake 30 minutes. Serve with guacamole and ranch if you like."
+    }
+   ]
+  },
+  {
+   "id": "chicken-avocado-salad",
+   "title": "Chicken & Avocado Salad with Lime",
+   "emoji": "🥑",
+   "category": "old",
+   "prep": 15,
+   "servings": 4,
+   "tags": [
+    "chicken",
+    "no-cook",
+    "lunch"
+   ],
+   "source": {
+    "name": "Kalyn's Kitchen",
+    "url": "https://kalynskitchen.com/recipe-for-chicken-and-avocado-salad/"
+   },
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "cooked chicken",
+     "note": "shredded into large pieces",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "medium avocados",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "lime juice",
+     "note": "divided",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "green onion",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "fresh cilantro",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "mayo",
+     "aisle": "Pantry"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Toss the diced avocado with 1 tbsp lime juice and a little salt."
+    },
+    {
+     "text": "Mix the mayo with the other 1 tbsp lime juice for the dressing."
+    },
+    {
+     "text": "Toss the chicken with the green onion and dressing."
+    },
+    {
+     "text": "Gently fold in the avocado, then the cilantro. Serve right away or chilled, as a salad, in pita or in lettuce cups."
+    }
+   ]
+  },
+  {
+   "id": "salmon-avocado-salsa",
+   "title": "Grilled Salmon with Avocado Salsa",
+   "emoji": "🐟",
+   "category": "old",
+   "prep": 10,
+   "cook": 5,
+   "servings": 4,
+   "tags": [
+    "fish",
+    "grill",
+    "whole30"
+   ],
+   "equipment": [
+    "Grill"
+   ],
+   "nutrition": {
+    "cal": 366,
+    "protein": 21,
+    "carbs": 19,
+    "fat": 22
+   },
+   "source": {
+    "name": "The Cookie Rookie",
+    "url": "https://www.thecookierookie.com/salmon-with-avocado/"
+   },
+   "notes": "Plus 30 minutes to marinate.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "lb",
+     "item": "salmon",
+     "note": "cut into 4 pieces",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "onion powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ancho chili powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "avocado",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "",
+     "item": "small red onion",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "limes",
+     "note": "juiced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "cilantro",
+     "note": "finely chopped",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Mix the salt, chili powder, cumin, paprika, onion powder and pepper. Rub the salmon with oil, then the spice mix.",
+     "uses": [
+      2,
+      6,
+      3,
+      4,
+      5,
+      7,
+      1,
+      0
+     ]
+    },
+    {
+     "text": "Refrigerate at least 30 minutes.",
+     "uses": []
+    },
+    {
+     "text": "Heat the grill. Toss the avocado, onion, cilantro, lime juice and salt and chill.",
+     "uses": [
+      8,
+      9,
+      11,
+      10
+     ]
+    },
+    {
+     "text": "Grill the salmon to your liking, about 5 minutes, and top with the salsa.",
+     "uses": [
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chicken-avocado-burger",
+   "title": "Chicken Avocado Burgers",
+   "emoji": "🍔",
+   "category": "old",
+   "prep": 10,
+   "cook": 10,
+   "servings": 4,
+   "tags": [
+    "chicken",
+    "paleo",
+    "whole30"
+   ],
+   "equipment": [
+    "Skillet"
+   ],
+   "source": {
+    "name": "Pink When",
+    "url": "http://www.pinkwhen.com/chicken-avocado-burger/"
+   },
+   "notes": "Servings is an estimate (four patties from 1 lb). They can go on the grill too.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground chicken",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "almond meal",
+     "note": "or crushed crackers",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "egg",
+     "note": "beaten",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "large avocado",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "cilantro",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "purple onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "extra-virgin olive oil",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "romaine leaves",
+     "note": "for buns, optional",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "diced tomato, avocado and purple onion",
+     "note": "for the salsa",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Mix the almond meal, egg, chicken, avocado, cilantro, onion, salt and pepper and form medium-thick patties."
+    },
+    {
+     "text": "Warm a skillet over medium heat, add the olive oil and swirl."
+    },
+    {
+     "text": "Cook the burgers 5 minutes per side until cooked through. Finish thick ones in a 350°F oven for 10 minutes."
+    },
+    {
+     "text": "Serve on romaine with a quick salsa of diced avocado, tomato and onion."
+    }
+   ]
+  },
+  {
+   "id": "ground-beef-tacos",
+   "title": "Ground Beef Tacos",
+   "emoji": "🌮",
+   "category": "mexican",
+   "tags": [
+    "beef",
+    "tex-mex",
+    "quick"
+   ],
+   "prep": 10,
+   "cook": 15,
+   "servings": 4,
+   "equipment": [
+    "Large skillet"
+   ],
+   "kid": true,
+   "placeholder": true,
+   "notes": "Stand-in recipe. Your real ground beef tacos are not in the OneNote export; send them over and I will swap them in.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground beef",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "",
+     "item": "yellow onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "chili powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "paprika",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "dried oregano",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "tomato paste",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "water",
+     "aisle": "Other"
+    },
+    {
+     "qty": 12,
+     "unit": "",
+     "item": "taco shells",
+     "aisle": "Pantry"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "shredded lettuce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "shredded cheddar",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "tomato",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "sour cream",
+     "note": "for serving",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Stir in the garlic, chili powder, cumin, paprika, oregano and salt. Cook for 1 minute until fragrant.",
+     "uses": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Add the tomato paste and water. Simmer for 5 minutes, until saucy and thick.",
+     "uses": [
+      8,
+      9
+     ]
+    },
+    {
+     "text": "Warm the taco shells in a 350°F oven for 4 minutes.",
+     "uses": [
+      10
+     ]
+    },
+    {
+     "text": "Fill the shells with beef and top with lettuce, cheddar, tomato and sour cream.",
+     "uses": [
+      11,
+      12,
+      13,
+      14
+     ]
+    }
+   ]
+  }
+ ]
 }
