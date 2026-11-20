@@ -25,6 +25,16 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies, no backend.
 - **Pantry items** carry a location (`Fridge`, `Freezer`, `Cabinet`, `Spice Rack`, `Counter`, `Basement Fridge`, `Garage Freezer`) and a category (the grocery departments). Older saves get both filled in on load.
 - **Drafts:** recipes added or edited in the app. Settings > Export drafts produces `snack-again-drafts.json`; merge its `recipes` array into `recipes.json` to publish them.
 
+## Maddie Mode
+
+A simpler view of the same app and the same `recipes.json`, saved per device as `maddie` in `tasa:v1`.
+
+- **Recipe card:** one scrolling page with bigger text: title, ready-in time, servings, a "Cook it step by step" button, the ingredient checklist (no notes), Add to grocery list, and the steps. Tabs, equipment, tags, tips, "As written", per-step ingredient chips, nutrition, Jim's sticky note, rating and notes are hidden. Steps show Jim's version (house rules applied).
+- **Cook mode:** same as usual, without the tip stickies.
+- **Home:** an "Our go-tos" shelf on top (Favorites, Kids love it, Under 30 min, Breakfast), then every usual shelf. Go-to tiles leave their usual shelf so nothing shows twice.
+- **Menu:** Recipes, Tonight, Grocery list, Pantry, Favorites. "Full app" at the bottom turns it off.
+- **Turning it on:** Settings > Maddie Mode, or open `cook/?mode=maddie`. That link swaps in `manifest-maddie.webmanifest` (start URL `./?mode=maddie`), so a home-screen icon added from it always opens in Maddie Mode. `?mode=full` turns it off.
+
 ## recipes.json format
 
 ```json
