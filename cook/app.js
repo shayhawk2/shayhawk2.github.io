@@ -29,8 +29,8 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'recipe';
 
 let S = load();
-let DATA = { categories: [], recipes: [] };
-const V = { serv: {}, tab: {}, checked: {}, timers: [], q: '', tonight: { max: 0, cat: '', kid: false, again: false }, cook: null, sheet: false, autoRead: false, pick: null };
+let DATA = { categories: [], recipes: [], sections: [], tips: [] };
+const V = { serv: {}, tab: {}, checked: {}, timers: [], q: '', tq: '', tkind: '', tipsOpen: {}, tonight: { max: 0, cat: '', kid: false, again: false }, cook: null, sheet: false, autoRead: false, pick: null };
 
 function load() {
   try { return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return { ...DEFAULTS }; }
@@ -136,6 +136,30 @@ const pantryHas = item => S.pantry.find(p => p.status !== 'out' && (item.toLower
 function pantryMatch(r) {
   if (!S.pantry.length || !r.ingredients.length) return null;
   return Math.round(100 * r.ingredients.filter(g => pantryHas(g.item)).length / r.ingredients.length);
+}
+
+/* ---------- techniques ---------- */
+const KIND = { house: "Jim's way", method: 'Technique', optional: 'Optional' };
+const tipById = id => DATA.tips.find(t => t.id === id);
+const rich = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+// Every tip on a recipe: step tips first (with their step number), then recipe-wide ones.
+function recipeTips(r) {
+  const out = [];
+  r.steps.forEach((st, i) => (st.tips || []).forEach(id => { const t = tipById(id); if (t) out.push({ t, step: i }); }));
+  (r.tips || []).forEach(id => { const t = tipById(id); if (t && !out.some(x => x.t.id === id)) out.push({ t, step: null }); });
+  return out;
+}
+function tipsUsing(id) {
+  return all().filter(r => (r.tips || []).includes(id) || r.steps.some(st => (st.tips || []).includes(id)));
+}
+function tipNote(t, open) {
+  return `<details class="tip ${esc(t.kind)}" ${open ? 'open' : ''}><summary><span class="tip-kind">${KIND[t.kind] || KIND.method}</span> ${esc(t.title)}</summary>
+    <p>${rich(t.text)}</p><a class="small-text" href="#/tips/${esc(t.id)}">Open in Techniques</a></details>`;
+}
+function stepExtras(st, open) {
+  const tips = (st.tips || []).map(tipById).filter(Boolean);
+  return tips.map(t => tipNote(t, open || t.kind === 'house')).join('')
+    + (st.asWritten ? `<details class="as-written"><summary>As written</summary><p>${esc(stepText(st.asWritten))}</p></details>` : '');
 }
 
 /* ---------- small UI helpers ---------- */
@@ -256,7 +280,7 @@ function viewRecipe(id) {
   const r = byId(id);
   if (!r) return head('Not found') + `<div class="empty"><span class="big">🧭</span>That recipe is not in the book. <a href="#/">Back to recipes</a>.</div>`;
   const serv = V.serv[id] || r.servings || 1, f = serv / (r.servings || 1);
-  const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition;
+  const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition, rt = recipeTips(r);
   return `<div class="page-head no-print">
       <a class="back" href="#/c/${esc(r.category || 'all')}" aria-label="Back">←</a><span style="flex:1"></span>
       <button class="icon-btn" data-act="fav" data-id="${esc(id)}" aria-label="Favorite" aria-pressed="${S.favs.includes(id)}">${S.favs.includes(id) ? '❤️' : '🤍'}</button>
@@ -298,10 +322,12 @@ function viewRecipe(id) {
       <div class="tabs no-print" role="tablist">
         <button role="tab" aria-selected="${tab === 'ing'}" data-act="tab" data-id="${esc(id)}" data-t="ing">Ingredients</button>
         <button role="tab" aria-selected="${tab === 'steps'}" data-act="tab" data-id="${esc(id)}" data-t="steps">Steps</button>
+        ${rt.length ? `<button role="tab" aria-selected="${tab === 'tips'}" data-act="tab" data-id="${esc(id)}" data-t="tips">Tips <span class="tab-count">${rt.length}</span></button>` : ''}
       </div>
       <div style="padding-top:8px">
         ${tab === 'ing' ? ingListHTML(r, f)
-          : `<ol class="steps">${r.steps.map(st => `<li>${esc(stepText(st.text))}${usesHTML(r, st, f)}</li>`).join('')}</ol>`}
+          : tab === 'tips' && rt.length ? `<div class="tip-list">${rt.map(x => `<div class="tip-row"><span class="pill ${x.step == null ? '' : 'sage'}">${x.step == null ? 'Whole recipe' : 'Step ' + (x.step + 1)}</span>${tipNote(x.t, true)}</div>`).join('')}</div>`
+          : `<ol class="steps">${r.steps.map(st => `<li>${esc(stepText(st.text))}${usesHTML(r, st, f)}${stepExtras(st)}</li>`).join('')}</ol>`}
       </div>
     </article>
 
@@ -334,7 +360,7 @@ function viewCook(id) {
   const st = r.steps[i];
   const body = i < 0
     ? `<div><div class="cook-count">Before you start</div><p class="cook-text" style="font-size:1.5rem">Gather everything for ${V.serv[id] || r.servings} servings.</p></div>${ingListHTML(r, f)}`
-    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}`;
+    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}<div class="cook-tips">${stepExtras(st, true)}</div>`;
   return `<div class="cook">
     <div class="cook-top">
       <a class="icon-btn" style="display:grid;place-items:center;text-decoration:none" href="#/r/${esc(id)}" aria-label="Leave cook mode">✕</a>
@@ -417,6 +443,36 @@ function viewPantry() {
       : `<div class="empty"><span class="big">🫙</span>Nothing on the shelves yet. Start with the staples: olive oil, salt, garlic, eggs.</div>`}`;
 }
 
+function tipsBody() {
+  const q = V.tq.toLowerCase().trim();
+  const match = t => (!V.tkind || t.kind === V.tkind) && (!q || [t.title, t.text, t.where].join(' ').toLowerCase().includes(q));
+  const out = DATA.sections.map(sec => {
+    const list = DATA.tips.filter(t => t.section === sec.id && match(t));
+    if (!list.length) return '';
+    return `<h2 class="group-name">${esc(sec.emoji || '')} ${esc(sec.name)} <span class="group-count">${list.length}</span></h2>
+      ${list.map(t => {
+        const rs = tipsUsing(t.id);
+        return `<article class="card tip-card ${esc(t.kind)}" id="tip-${esc(t.id)}">
+          <h3>${esc(t.title)}</h3>
+          <div class="row" style="gap:6px;margin:6px 0 8px"><span class="pill ${t.kind === 'house' ? 'red' : t.kind === 'optional' ? '' : 'sage'}">${KIND[t.kind] || KIND.method}</span></div>
+          <p>${rich(t.text)}</p>
+          ${t.where ? `<p class="muted small-text"><b>Where:</b> ${esc(t.where)}</p>` : ''}
+          ${rs.length ? `<div class="row" style="gap:6px">${rs.map(r => `<a class="chip" href="#/r/${esc(r.id)}">${esc(r.emoji || '🍴')} ${esc(r.title)}</a>`).join('')}</div>` : ''}
+          ${t.sources && t.sources.length ? `<p class="small-text" style="margin:10px 0 0">Backed by: ${t.sources.map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join(' · ')}</p>` : ''}
+        </article>`;
+      }).join('')}`;
+  }).join('');
+  return out || `<div class="empty"><span class="big">🧭</span>No techniques match. Try another word or clear the filter.</div>`;
+}
+function viewTips() {
+  const chip = (k, label) => `<button class="chip" data-act="tKind" data-k="${k}" aria-pressed="${V.tkind === k}">${label}</button>`;
+  return head('Techniques') + `
+    <p class="muted small-text">${DATA.tips.length} tips, tricks and flavor enhancers. They also show on the recipe steps where they matter.</p>
+    <div class="search" style="margin:0 0 10px"><input type="search" data-in="tipSearch" value="${esc(V.tq)}" placeholder="Search techniques" aria-label="Search techniques"></div>
+    <div class="row" style="gap:8px;margin-bottom:6px">${chip('', 'All')}${chip('house', "Jim's way")}${chip('method', 'Techniques')}${chip('optional', 'Optional')}</div>
+    <div id="tipsBody">${tipsBody()}</div>`;
+}
+
 function viewForm(id) {
   const r = id ? byId(id) : null;
   const v = r || { title: '', emoji: '', category: (DATA.categories[0] || {}).id, tags: [], equipment: [], ingredients: [], steps: [], servings: 4 };
@@ -482,7 +538,7 @@ function render(keepScroll) {
   const [name = '', arg, arg2] = location.hash.replace(/^#\/?/, '').split('/');
   const views = {
     '': viewHome, c: () => viewCat(arg), r: () => viewRecipe(arg), cook: () => viewCook(arg), tonight: viewTonight, list: viewList,
-    pantry: viewPantry, favorites: viewFavs, add: () => viewForm(), edit: () => viewForm(arg), settings: viewSettings, import: () => viewImport(arg)
+    pantry: viewPantry, favorites: viewFavs, add: () => viewForm(), edit: () => viewForm(arg), settings: viewSettings, import: () => viewImport(arg), tips: viewTips
   };
   const cooking = name === 'cook';
   document.body.classList.toggle('cooking', cooking);
@@ -492,6 +548,7 @@ function render(keepScroll) {
   $('#app').classList.remove('menu-open');
   updateBadge();
   if (!keepScroll) window.scrollTo(0, 0);
+  if (name === 'tips' && arg && !keepScroll) { const el = document.getElementById('tip-' + arg); if (el) { el.classList.add('flash'); el.scrollIntoView({ block: 'start' }); } }
 }
 
 /* ---------- wake lock, speech, timers ---------- */
@@ -580,6 +637,7 @@ const acts = {
   speak: speakStep,
   autoRead() { V.autoRead = !V.autoRead; render(true); if (V.autoRead) speakStep(); else if (window.speechSynthesis) speechSynthesis.cancel(); },
   sheet() { V.sheet = !V.sheet; render(true); },
+  tKind(el) { V.tkind = el.dataset.k; render(true); },
   tMax(el) { V.tonight.max = +el.dataset.m; V.pick = null; render(true); },
   tCat(el) { V.tonight.cat = el.dataset.c; V.pick = null; render(true); },
   tFlag(el) { V.tonight[el.dataset.k] = !V.tonight[el.dataset.k]; V.pick = null; render(true); },
@@ -612,6 +670,7 @@ document.addEventListener('click', e => {
 document.addEventListener('input', e => {
   const el = e.target, k = el.dataset.in;
   if (k === 'search') { V.q = el.value; $('#homeBody').innerHTML = homeBody(); }
+  else if (k === 'tipSearch') { V.tq = el.value; $('#tipsBody').innerHTML = tipsBody(); }
   else if (k === 'note') { S.notes[el.dataset.id] = el.value; save(); }
 });
 document.addEventListener('change', e => {
@@ -643,6 +702,12 @@ document.addEventListener('submit', e => {
     let id = form.dataset.id;
     if (!id) { id = slug(d.title); let n = 2; const base = id; while (byId(id)) id = `${base}-${n++}`; }
     const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const old = byId(id);
+    if (old) {
+      if (old.tips) r.tips = old.tips;
+      if (old.placeholder) r.placeholder = true;
+      r.steps = r.steps.map(st => { const o = old.steps.find(x => x.text === st.text); return o ? { ...o } : st; });
+    }
     if (d.sname || d.surl) r.source = { name: d.sname.trim(), url: d.surl.trim() };
     if (num(d.cal) != null) r.nutrition = { cal: num(d.cal), protein: num(d.protein) || 0, carbs: num(d.carbs) || 0, fat: num(d.fat) || 0 };
     S.drafts = S.drafts.filter(x => x.id !== id).concat(r); save(); toast('Recipe saved'); location.hash = `#/r/${id}`;
@@ -654,9 +719,9 @@ window.addEventListener('keydown', e => { if (e.key === 'Escape') $('#app').clas
 
 /* ---------- start ---------- */
 applyTheme();
-fetch('recipes.json', { cache: 'no-cache' })
-  .then(r => r.json())
-  .then(d => { DATA = { categories: d.categories || [], recipes: d.recipes || [] }; })
+const getJSON = f => fetch(f, { cache: 'no-cache' }).then(r => r.json());
+Promise.all([getJSON('recipes.json'), getJSON('techniques.json').catch(() => ({}))])
+  .then(([d, t]) => { DATA = { categories: d.categories || [], recipes: d.recipes || [], sections: t.sections || [], tips: t.techniques || [] }; })
   .catch(() => toast('Could not load the recipe book. Check your connection and reopen.'))
   .finally(() => render());
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});

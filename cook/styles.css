@@ -274,3 +274,27 @@ textarea.hand { background: transparent; border-style: dashed; }
 .group-name { color: var(--red); margin: 22px 2px 10px; }
 .group-name:first-of-type { margin-top: 6px; }
 .group-count { font: italic .9rem var(--serif); color: var(--soft); margin-left: 4px; }
+
+/* ---------- techniques ---------- */
+.tip { margin-top: 10px; padding: 8px 12px; background: color-mix(in srgb, var(--mustard) 22%, var(--card)); border-left: 4px solid var(--mustard); border-radius: 2px 2px 12px 2px; box-shadow: 1px 3px 8px var(--shadow); font-size: .95rem; }
+.tip.house { border-left-color: var(--red); }
+.tip.optional { background: var(--paper); border-left-color: var(--sage); box-shadow: none; border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tip summary, .as-written summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; font-weight: 600; list-style: none; }
+.tip summary::-webkit-details-marker, .as-written summary::-webkit-details-marker { display: none; }
+.tip summary::after, .as-written summary::after { content: "+"; margin-left: auto; font: 700 1.3rem var(--hand); color: var(--soft); }
+.tip[open] summary::after, .as-written[open] summary::after { content: "–"; }
+.tip-kind { font: 700 1.25rem var(--hand); color: var(--red); white-space: nowrap; }
+.tip.optional .tip-kind { color: var(--sage); }
+.tip p { margin: 2px 0 8px; }
+.as-written { margin-top: 6px; font-size: .9rem; color: var(--soft); }
+.as-written summary { min-height: 36px; font-weight: 400; font-style: italic; }
+.as-written p { margin: 0 0 6px; padding-left: 10px; border-left: 2px solid var(--line); }
+.tab-count { font: 600 .75rem system-ui, sans-serif; background: var(--mustard); color: var(--paper); border-radius: 99px; padding: 1px 7px; margin-left: 2px; vertical-align: middle; }
+.tip-row { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.tip-row .tip { margin-top: 6px; }
+.tip-card { border-left: 4px solid var(--sage); }
+.tip-card.house { border-left-color: var(--red); }
+.tip-card.optional { border-left-color: var(--line); }
+.tip-card.flash { outline: 3px solid var(--mustard); outline-offset: 3px; }
+.tip-card { scroll-margin-top: 70px; }
+.cook-tips .tip { font-size: 1.05rem; }

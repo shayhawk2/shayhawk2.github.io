@@ -457,6 +457,9 @@
       6,
       11,
       12
+     ],
+     "tips": [
+      "tomato-paste-brick-red"
      ]
     },
     {
@@ -471,6 +474,9 @@
      "text": "Deglaze with the vodka, then lower the heat and simmer 7 to 10 minutes.",
      "uses": [
       7
+     ],
+     "tips": [
+      "vodka-before-cream"
      ]
     },
     {
@@ -658,6 +664,9 @@
      "text": "Sear the pork chop in the pot until well browned, then deglaze. Keep all the fond.",
      "uses": [
       2
+     ],
+     "tips": [
+      "sauce-on-a-pork-chop"
      ]
     },
     {
@@ -678,6 +687,9 @@
       6,
       9,
       10
+     ],
+     "tips": [
+      "tomato-paste-brick-red"
      ]
     },
     {
@@ -690,12 +702,23 @@
       15,
       16,
       17
+     ],
+     "tips": [
+      "sauce-head-start",
+      "savory-enhancer"
      ]
     },
     {
      "text": "For meatballs, drop the browned meatballs in and simmer at least 30 to 45 minutes. Remove the bay leaf, chop and rind before serving.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "fry-meatballs-keep-pan",
+      "sausage-steaming-water"
+     ]
     }
+   ],
+   "tips": [
+    "aromatic-profile"
    ]
   },
   {
@@ -820,11 +843,17 @@
      "text": "Melt the tallow into the corn oil in a wide heavy skillet over medium-high heat, about ¼ inch deep."
     },
     {
-     "text": "Fry in batches, 3 to 4 minutes per side, until a deep golden crust forms. They do not need to cook through."
+     "text": "Fry in batches, 3 to 4 minutes per side, until a deep golden crust forms. They do not need to cook through.",
+     "tips": [
+      "fry-meatballs-keep-pan"
+     ]
     },
     {
      "text": "Drain briefly, then simmer in red sauce at least 30 to 45 minutes until tender."
     }
+   ],
+   "tips": [
+    "aromatic-profile"
    ]
   },
   {
@@ -910,6 +939,9 @@
      "uses": [
       2,
       3
+     ],
+     "tips": [
+      "stretch-bath-vs-seasoning"
      ]
     },
     {
@@ -918,7 +950,10 @@
     },
     {
      "text": "With gloved hands or a slotted spoon, gather the curd and gently pull, fold and rotate. Caprese 2 to 3 folds, sandwiches 4 to 5, pizza 5 to 6 at most. Stop when smooth and glossy.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "fold-count"
+     ]
     },
     {
      "text": "Shape into one large ball, two medium balls, or a log for slicing.",
@@ -936,6 +971,9 @@
      "text": "Store in fresh light brine in a sealed container. Best within 24 to 48 hours.",
      "uses": []
     }
+   ],
+   "tips": [
+    "season-a-slice"
    ]
   },
   {
@@ -1144,7 +1182,10 @@
      "text": "At 160 to 170°F, once the bark is dark and set, wrap tight in butcher paper."
     },
     {
-     "text": "Cook to about 203°F, until the probe slides in like butter and it jiggles. Save the juices."
+     "text": "Cook to about 203°F, until the probe slides in like butter and it jiggles. Save the juices.",
+     "tips": [
+      "brisket-bark-and-probe"
+     ]
     },
     {
      "text": "Rest 2 to 4 hours in a cooler with towels or a 150 to 170°F oven."
@@ -1254,7 +1295,10 @@
    ],
    "steps": [
     {
-     "text": "Day before: separate the point and flat along the natural fat seam with long strokes."
+     "text": "Day before: separate the point and flat along the natural fat seam with long strokes.",
+     "tips": [
+      "point-and-flat-apart"
+     ]
     },
     {
      "text": "Trim hard fat and silver skin. Leave about ¼ inch of fat on the flat. Save trimmings for burnt ends."
@@ -1642,10 +1686,14 @@
    ],
    "steps": [
     {
-     "text": "Brown the beef in a skillet over medium heat, breaking it up very fine.",
+     "text": "Press the beef into a hot skillet as one big patty over medium-high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip, sear the second side, then break it up very fine.",
      "uses": [
       0,
       1
+     ],
+     "asWritten": "Brown the beef in a skillet over medium heat, breaking it up very fine.",
+     "tips": [
+      "big-beef-patty"
      ]
     },
     {
@@ -1667,6 +1715,9 @@
      "uses": [
       11,
       12
+     ],
+     "tips": [
+      "cornstarch-slurry"
      ]
     },
     {
@@ -1788,7 +1839,10 @@
      "text": "Pat the chuck very dry and salt it well on all sides. Dry-brine uncovered in the fridge for a few hours or overnight if you can."
     },
     {
-     "text": "Heat a Dutch oven over medium-high to high with a thin film of oil. Sear the chuck hard on the broad sides, then the edges, until deeply browned."
+     "text": "Heat a Dutch oven over medium-high to high with a thin film of oil. Sear the chuck hard on the broad sides, then the edges, until deeply browned.",
+     "tips": [
+      "barbacoa-whole-chuck"
+     ]
     },
     {
      "text": "With the chuck in the pot, add the stock, garlic, guajillos, cumin, bay leaves, cinnamon and water. Bring just to a simmer."
@@ -1797,8 +1851,14 @@
      "text": "Lay parchment directly on the surface, cover, and braise in a 300°F oven 4 to 5½ hours, until fork-tender."
     },
     {
-     "text": "Shred the beef. Taste and reduce the liquid if needed, return the beef and salt to taste."
+     "text": "Shred the beef. Taste and reduce the liquid if needed, return the beef and salt to taste.",
+     "tips": [
+      "reduce-after-lifting-meat"
+     ]
     }
+   ],
+   "tips": [
+    "braise-in-layers"
    ]
   },
   {
@@ -1985,6 +2045,9 @@
      "uses": [
       4,
       5
+     ],
+     "tips": [
+      "toast-soften-blend-chiles"
      ]
     },
     {
@@ -2006,6 +2069,9 @@
       18,
       19,
       20
+     ],
+     "tips": [
+      "each-chile-a-job"
      ]
     },
     {
@@ -2013,6 +2079,9 @@
      "uses": [
       0,
       3
+     ],
+     "tips": [
+      "barbacoa-whole-chuck"
      ]
     },
     {
@@ -2027,7 +2096,10 @@
     },
     {
      "text": "Rest the roast briefly, then shred.",
-     "uses": []
+     "uses": [],
+     "tips": [
+      "crisp-the-shreds"
+     ]
     },
     {
      "text": "Simmer the sauce until slightly thick and glossy. Toss the beef back in with the cilantro and more lime. Adjust salt.",
@@ -2035,8 +2107,15 @@
       21,
       12,
       1
+     ],
+     "tips": [
+      "reduce-after-lifting-meat",
+      "split-the-acid"
      ]
     }
+   ],
+   "tips": [
+    "braise-in-layers"
    ]
   },
   {
@@ -2468,7 +2547,10 @@
    ],
    "steps": [
     {
-     "text": "Whisk the balsamic, Dijon, maple syrup, salt and olive oil until emulsified."
+     "text": "Whisk the balsamic, Dijon, maple syrup, salt and olive oil until emulsified.",
+     "tips": [
+      "dijon-binds-dressing"
+     ]
     },
     {
      "text": "Thinly slice the apple and shallot."
@@ -2674,13 +2756,20 @@
    ],
    "steps": [
     {
-     "text": "Melt 1 tbsp butter in a skillet over medium, add the onion, drop to medium-low and cook 25 to 30 minutes until caramelized. Add a tablespoon of water if it dries out."
+     "text": "Melt 1 tbsp butter in a skillet over medium, add the onion, drop to medium-low and cook 25 to 30 minutes until caramelized. Add a tablespoon of water if it dries out.",
+     "tips": [
+      "water-for-browning-onions"
+     ]
     },
     {
      "text": "Mix the beef with half the beef base and half the Worcestershire, and season well."
     },
     {
-     "text": "Add the beef to the onions, raise to medium-high and brown, breaking it up. Drain the grease."
+     "text": "Move the onions to a bowl. Raise the heat to medium-high, press the beef in as one big patty and sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Break it up, drain the grease and stir the onions back in.",
+     "asWritten": "Add the beef to the onions, raise to medium-high and brown, breaking it up. Drain the grease.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Heat the oven to 350°F. Arrange the bottom buns tightly on a greased sheet."
@@ -2807,6 +2896,9 @@
      "text": "Heat the oven to 425°F. Bake the prosciutto on parchment 8 to 10 minutes until crisp, then cool and crumble.",
      "uses": [
       1
+     ],
+     "tips": [
+      "crisp-the-prosciutto"
      ]
     },
     {
@@ -2823,6 +2915,9 @@
       3,
       5,
       0
+     ],
+     "tips": [
+      "goat-plus-melting-cheese"
      ]
     },
     {
@@ -2841,6 +2936,9 @@
      "text": "Bake covered with foil 10 minutes, then uncovered 10 minutes until golden. Broil 1 to 2 minutes for a crisper top.",
      "uses": []
     }
+   ],
+   "tips": [
+    "prosciutto-with-fruit"
    ]
   },
   {
@@ -2951,7 +3049,10 @@
    ],
    "steps": [
     {
-     "text": "Stir the mayo, vinegar, lemon juice, wasabi, Italian dressing and agave until smooth."
+     "text": "Stir the mayo, vinegar, lemon juice, wasabi, Italian dressing and agave until smooth.",
+     "tips": [
+      "dressing-before-fillings"
+     ]
     },
     {
      "text": "Add the red onion, pickles, apple, corn, peas and crushed jalapeño chips."
@@ -2962,6 +3063,10 @@
     {
      "text": "Chill 15 to 30 minutes. Serve on toasted sourdough, with crackers or pita chips, or in lettuce cups."
     }
+   ],
+   "tips": [
+    "rebalance-for-chicken",
+    "pack-by-sogginess"
    ]
   },
   {
@@ -3440,8 +3545,14 @@
      "text": "Fry in batches without crowding, 3 to 4 minutes per side, until deep golden and 165°F inside."
     },
     {
-     "text": "Drain on a wire rack, never paper towels. Hold in a 200°F oven on the rack. Finish with flaky salt and lemon."
+     "text": "Drain on a wire rack, never paper towels. Hold in a 200°F oven on the rack. Finish with flaky salt and lemon.",
+     "tips": [
+      "cutlet-sauce-on-the-side"
+     ]
     }
+   ],
+   "tips": [
+    "reheat-by-surface"
    ]
   },
   {
@@ -3514,7 +3625,10 @@
      "text": "Melt most of the butter over medium heat and sauté the garlic until fragrant. Brown the butter first for a nuttier sauce."
     },
     {
-     "text": "Add the wine and reduce, then the stock and capers. Reduce until it lightly coats a spoon."
+     "text": "Add the wine and reduce, then the stock and capers. Reduce until it lightly coats a spoon.",
+     "tips": [
+      "cornstarch-slurry"
+     ]
     },
     {
      "text": "If making ahead, stop here, cool and refrigerate. Reheat gently over low, never boiling."
@@ -3787,7 +3901,10 @@
      "text": "Cover tightly and refrigerate."
     },
     {
-     "text": "Plate and drizzle with balsamic glaze before serving."
+     "text": "Plate and drizzle with balsamic glaze before serving.",
+     "tips": [
+      "reduce-balsamic-lightly"
+     ]
     }
    ]
   },
@@ -4312,7 +4429,11 @@
    ],
    "steps": [
     {
-     "text": "Brown the beef in a large pot over high heat and season with salt."
+     "text": "Press the beef into a hot large pot as one big patty over high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip, season with salt and sear the second side, then break it up.",
+     "asWritten": "Brown the beef in a large pot over high heat and season with salt.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Drain any fat, lower to medium-low, and cook the peppers, onion and garlic about 5 minutes."
@@ -4693,7 +4814,11 @@
      "text": "Sauté the onion and garlic in 1 tsp oil over medium until translucent."
     },
     {
-     "text": "Add the beef, cumin, parsley, paprika, salt and pepper and cook until browned, breaking it up."
+     "text": "Scoop the onion and garlic out of the pan. Raise the heat to medium-high, press the beef in as one big patty and sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Break it up and stir in the onion, garlic, cumin, parsley, paprika, salt and pepper.",
+     "asWritten": "Add the beef, cumin, parsley, paprika, salt and pepper and cook until browned, breaking it up.",
+     "tips": [
+      "big-beef-patty"
+     ]
     },
     {
      "text": "Stir in the tomatoes, chiles and half the olives. Take off the heat."
@@ -5152,10 +5277,14 @@
    ],
    "steps": [
     {
-     "text": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.",
+     "text": "Press the beef into a hot large skillet as one big patty over medium-high heat. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side. Add the onion, break the beef up and cook until the onion softens. Drain off most of the fat.",
      "uses": [
       0,
       1
+     ],
+     "asWritten": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.",
+     "tips": [
+      "big-beef-patty"
      ]
     },
     {
