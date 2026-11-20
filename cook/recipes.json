@@ -3,37 +3,44 @@
   {
    "id": "italian",
    "name": "Italian",
-   "emoji": "🍝"
+   "emoji": "🍝",
+   "shelf": "cuisines"
   },
   {
    "id": "bbq",
    "name": "BBQ & Smoker",
-   "emoji": "🔥"
+   "emoji": "🔥",
+   "shelf": "cuisines"
   },
   {
    "id": "mexican",
    "name": "Mexican",
-   "emoji": "🌮"
+   "emoji": "🌮",
+   "shelf": "cuisines"
   },
   {
    "id": "american",
    "name": "American",
-   "emoji": "🍔"
+   "emoji": "🍔",
+   "shelf": "cuisines"
   },
   {
    "id": "breakfast",
    "name": "Breakfast",
-   "emoji": "🥞"
+   "emoji": "🥞",
+   "shelf": "meals"
   },
   {
    "id": "dinner-party",
    "name": "Dinner Party",
-   "emoji": "🥂"
+   "emoji": "🥂",
+   "shelf": "meals"
   },
   {
    "id": "old",
    "name": "Old Recipes",
-   "emoji": "📜"
+   "emoji": "📜",
+   "shelf": "collections"
   }
  ],
  "recipes": [
@@ -42,6 +49,7 @@
    "title": "Arancini with Calabrian Chile Sauce",
    "emoji": "🍙",
    "category": "italian",
+   "type": "Appetizer",
    "prep": 60,
    "cook": 45,
    "servings": 14,
@@ -299,6 +307,7 @@
    "title": "Rigatoni with Vodka Sauce",
    "emoji": "🍝",
    "category": "italian",
+   "type": "Main",
    "prep": 20,
    "cook": 50,
    "servings": 4,
@@ -507,6 +516,7 @@
    "title": "Nonna's Red Sauce (Gravy)",
    "emoji": "🍅",
    "category": "italian",
+   "type": "Sauce & Condiment",
    "servings": 8,
    "tags": [
     "sauce",
@@ -693,6 +703,7 @@
    "title": "Nonna's Enhanced Meatballs",
    "emoji": "🧆",
    "category": "italian",
+   "type": "Main",
    "prep": 20,
    "cook": 60,
    "servings": 6,
@@ -821,6 +832,7 @@
    "title": "Fresh Hand-Pulled Mozzarella",
    "emoji": "🧀",
    "category": "italian",
+   "type": "Building Block",
    "prep": 5,
    "cook": 15,
    "servings": 4,
@@ -931,6 +943,7 @@
    "title": "Mozzarella Curd from Whole Milk",
    "emoji": "🥛",
    "category": "italian",
+   "type": "Building Block",
    "prep": 10,
    "cook": 40,
    "servings": 4,
@@ -1016,6 +1029,7 @@
    "title": "Texas Brisket, Point Only",
    "emoji": "🥩",
    "category": "bbq",
+   "type": "Main",
    "prep": 45,
    "cook": 450,
    "servings": 8,
@@ -1151,6 +1165,7 @@
    "title": "Texas Brisket, Full Packer",
    "emoji": "🥩",
    "category": "bbq",
+   "type": "Main",
    "prep": 60,
    "cook": 510,
    "servings": 20,
@@ -1290,6 +1305,7 @@
    "title": "Pork Butt, Sous Vide then Smoked",
    "emoji": "🐖",
    "category": "bbq",
+   "type": "Main",
    "tags": [
     "pork",
     "smoked",
@@ -1393,6 +1409,7 @@
    "title": "Boston Butt, First Run (2015)",
    "emoji": "🐖",
    "category": "bbq",
+   "type": "Main",
    "tags": [
     "pork",
     "smoked"
@@ -1469,6 +1486,7 @@
    "title": "Crunchwrap Supreme",
    "emoji": "🌯",
    "category": "mexican",
+   "type": "Main",
    "prep": 15,
    "cook": 20,
    "servings": 4,
@@ -1682,6 +1700,7 @@
    "title": "Barbacoa (Clean Chuck Braise)",
    "emoji": "🐄",
    "category": "mexican",
+   "type": "Main",
    "prep": 20,
    "cook": 300,
    "servings": 6,
@@ -1787,6 +1806,7 @@
    "title": "Better Barbacoa (Whole Chuck, Chile Sauce)",
    "emoji": "🌶️",
    "category": "mexican",
+   "type": "Main",
    "prep": 30,
    "cook": 240,
    "servings": 7,
@@ -2024,6 +2044,7 @@
    "title": "Salsa Verde",
    "emoji": "🟢",
    "category": "mexican",
+   "type": "Sauce & Condiment",
    "prep": 10,
    "cook": 10,
    "servings": 12,
@@ -2113,6 +2134,7 @@
    "title": "Smash Burgers with Special Sauce",
    "emoji": "🍔",
    "category": "american",
+   "type": "Main",
    "tags": [
     "beef",
     "griddle"
@@ -2206,6 +2228,7 @@
    "title": "Burger Sauce",
    "emoji": "🥫",
    "category": "american",
+   "type": "Sauce & Condiment",
    "prep": 5,
    "tags": [
     "sauce",
@@ -2287,6 +2310,7 @@
    "title": "Chicken, Broccoli & Potatoes",
    "emoji": "🥦",
    "category": "american",
+   "type": "Main",
    "prep": 20,
    "cook": 35,
    "tags": [
@@ -2351,6 +2375,7 @@
    "title": "Goat Cheese & Arugula Salad",
    "emoji": "🥗",
    "category": "american",
+   "type": "Side",
    "prep": 15,
    "servings": 4,
    "tags": [
@@ -2461,6 +2486,7 @@
    "title": "White Castle Sliders",
    "emoji": "🍔",
    "category": "american",
+   "type": "Main",
    "prep": 10,
    "cook": 6,
    "servings": 8,
@@ -2552,6 +2578,7 @@
    "title": "French Onion Beef Sliders",
    "emoji": "🧅",
    "category": "american",
+   "type": "Appetizer",
    "prep": 10,
    "cook": 55,
    "servings": 8,
@@ -2674,6 +2701,7 @@
    "title": "Prosciutto & Goat Cheese Sliders",
    "emoji": "🥓",
    "category": "american",
+   "type": "Appetizer",
    "prep": 10,
    "cook": 30,
    "servings": 8,
@@ -2820,6 +2848,7 @@
    "title": "McConaughey Tuna Salad",
    "emoji": "🐟",
    "category": "american",
+   "type": "Main",
    "prep": 10,
    "servings": 4,
    "tags": [
@@ -2940,6 +2969,7 @@
    "title": "Classic French Toast",
    "emoji": "🍞",
    "category": "breakfast",
+   "type": "Main",
    "prep": 10,
    "cook": 20,
    "servings": 4,
@@ -3040,6 +3070,7 @@
    "title": "French Toast Casserole",
    "emoji": "🥘",
    "category": "breakfast",
+   "type": "Main",
    "prep": 15,
    "cook": 40,
    "servings": 8,
@@ -3202,6 +3233,7 @@
    "title": "Make-Ahead Breakfast Sandwiches",
    "emoji": "🥪",
    "category": "breakfast",
+   "type": "Main",
    "tags": [
     "breakfast",
     "make-ahead",
@@ -3252,6 +3284,7 @@
    "title": "Clever Dripper Coffee",
    "emoji": "☕",
    "category": "breakfast",
+   "type": "Drink",
    "prep": 2,
    "cook": 4,
    "servings": 1,
@@ -3300,6 +3333,7 @@
    "title": "Crispy Chicken Cutlets",
    "emoji": "🍗",
    "category": "dinner-party",
+   "type": "Main",
    "prep": 30,
    "cook": 25,
    "servings": 6,
@@ -3415,6 +3449,7 @@
    "title": "Lemon-Caper Butter Sauce",
    "emoji": "🍋",
    "category": "dinner-party",
+   "type": "Sauce & Condiment",
    "prep": 5,
    "cook": 10,
    "servings": 6,
@@ -3494,6 +3529,7 @@
    "title": "Mushroom-Shallot Cream Sauce",
    "emoji": "🍄",
    "category": "dinner-party",
+   "type": "Sauce & Condiment",
    "prep": 10,
    "cook": 15,
    "servings": 6,
@@ -3596,6 +3632,7 @@
    "title": "Whipped Ricotta with Chili Oil & Lemon",
    "emoji": "🫙",
    "category": "dinner-party",
+   "type": "Appetizer",
    "prep": 10,
    "servings": 6,
    "tags": [
@@ -3685,6 +3722,7 @@
    "title": "Antipasto Skewers",
    "emoji": "🍢",
    "category": "dinner-party",
+   "type": "Appetizer",
    "prep": 20,
    "servings": 6,
    "tags": [
@@ -3758,6 +3796,7 @@
    "title": "Grilled Asparagus with Lemon Zest",
    "emoji": "🌿",
    "category": "dinner-party",
+   "type": "Side",
    "prep": 10,
    "cook": 6,
    "servings": 6,
@@ -3832,6 +3871,7 @@
    "title": "Blackberry Chia Pudding",
    "emoji": "🫐",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "servings": 1,
    "tags": [
@@ -3897,6 +3937,7 @@
    "title": "Mason Jar Taco Salad",
    "emoji": "🫙",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 20,
    "servings": 2,
@@ -4043,6 +4084,7 @@
    "title": "Pollo in Potacchio",
    "emoji": "🍗",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "cook": 75,
    "servings": 5,
@@ -4174,6 +4216,7 @@
    "title": "Stuffed Pepper Soup",
    "emoji": "🫑",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 40,
    "servings": 6,
@@ -4287,6 +4330,7 @@
    "title": "Indian Shrimp Curry",
    "emoji": "🍤",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "cook": 10,
    "servings": 4,
@@ -4430,6 +4474,7 @@
    "title": "Grilled Garlic Dijon Herb Salmon",
    "emoji": "🐟",
    "category": "old",
+   "type": "Main",
    "prep": 5,
    "cook": 10,
    "servings": 4,
@@ -4535,6 +4580,7 @@
    "title": "Stuffed Peppers",
    "emoji": "🫑",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "cook": 45,
    "servings": 3,
@@ -4665,6 +4711,7 @@
    "title": "Chicken & Avocado Salad with Lime",
    "emoji": "🥑",
    "category": "old",
+   "type": "Main",
    "prep": 15,
    "servings": 4,
    "tags": [
@@ -4745,6 +4792,7 @@
    "title": "Grilled Salmon with Avocado Salsa",
    "emoji": "🐟",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 5,
    "servings": 4,
@@ -4886,6 +4934,7 @@
    "title": "Chicken Avocado Burgers",
    "emoji": "🍔",
    "category": "old",
+   "type": "Main",
    "prep": 10,
    "cook": 10,
    "servings": 4,
@@ -4990,6 +5039,7 @@
    "title": "Ground Beef Tacos",
    "emoji": "🌮",
    "category": "mexican",
+   "type": "Main",
    "tags": [
     "beef",
     "tex-mex",

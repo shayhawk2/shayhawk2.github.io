@@ -27,12 +27,13 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies, no backend.
 
 ```json
 {
-  "categories": [{ "id": "weeknight", "name": "Weeknight Dinners", "emoji": "🍽️" }],
+  "categories": [{ "id": "weeknight", "name": "Weeknight Dinners", "emoji": "🍽️", "shelf": "meals" }],
   "recipes": [{
     "id": "crispy-chicken-cutlets",
     "title": "Crispy Chicken Cutlets",
     "emoji": "🍗",
     "category": "weeknight",
+    "type": "Main",
     "tags": ["chicken", "quick"],
     "prep": 15,
     "cook": 12,
@@ -57,6 +58,8 @@ Rules:
 
 - `id`: unique, lowercase, hyphens. It is the URL and the key for ratings and notes, so do not rename it later.
 - `category`: must match a category `id`.
+- Category `shelf`: which home-page shelf the tile sits on: `cuisines`, `meals` (Meals & Occasions) or `collections`. Left out, it lands on Cuisines. A new tile needs 3 or more recipes; anything smaller is a tag.
+- `type`: one of `Main`, `Side`, `Appetizer`, `Sauce & Condiment`, `Building Block`, `Dessert`, `Drink`. Groups the recipes inside a category page. A Building Block is made to go into another dish (fresh mozzarella, tortillas). Left out, the recipe shows under "Not sorted yet".
 - `qty`: a number (`0.5`, not `"1/2"`), or `null` for "to taste". The app shows fractions and scales by servings.
 - `unit`: one of `cup tbsp tsp "fl oz" oz lb pt qt gal clove can slice piece pinch stick bunch sprig g kg ml L`, or `""` for counted items like eggs.
 - `aisle`: one of `Produce`, `Meat & Seafood`, `Dairy & Eggs`, `Bakery`, `Pantry`, `Spices`, `Frozen`, `Other`. Groups the grocery list.

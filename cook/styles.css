@@ -267,3 +267,10 @@ textarea.hand { background: transparent; border-style: dashed; }
   .side, .top, .no-print { display: none !important; }
   body { background: #fff; }
 }
+
+/* ---------- home shelves, dish-type groups ---------- */
+.shelf + .shelf { margin-top: 26px; padding-top: 18px; border-top: 3px dotted var(--mustard); }
+.shelf-name { color: var(--red); margin: 0 4px 12px; }
+.group-name { color: var(--red); margin: 22px 2px 10px; }
+.group-name:first-of-type { margin-top: 6px; }
+.group-count { font: italic .9rem var(--serif); color: var(--soft); margin-left: 4px; }

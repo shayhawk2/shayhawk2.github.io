@@ -6,6 +6,8 @@
 
 const KEY = 'tasa:v1';
 const AISLES = ['Produce', 'Meat & Seafood', 'Dairy & Eggs', 'Bakery', 'Pantry', 'Spices', 'Frozen', 'Other'];
+const TYPES = [['Main', 'Mains'], ['Side', 'Sides'], ['Appetizer', 'Appetizers'], ['Sauce & Condiment', 'Sauces & Condiments'], ['Building Block', 'Building Blocks'], ['Dessert', 'Desserts'], ['Drink', 'Drinks']];
+const SHELVES = [['cuisines', 'Cuisines'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
 const PLURAL = new Set(['cup', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig']);
@@ -205,11 +207,16 @@ function searchList(q) {
 function homeBody() {
   if (V.q.trim()) return rowsHTML(searchList(V.q), `No recipes match “${esc(V.q)}”. Try an ingredient or a tag.`);
   const rs = all();
-  const tiles = DATA.categories.map(c => ({ href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => r.category === c.id).length }));
-  tiles.push({ href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
-  tiles.push({ href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
-  tiles.push({ href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
-  return `<div class="tiles">${tiles.map(t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`).join('')}</div>`;
+  const tile = t => `<a class="tile" href="${t.href}"><span class="tile-emoji">${t.e}</span><span class="tile-name">${esc(t.n)}</span><span class="tile-count">${t.k} ${t.k === 1 ? 'recipe' : 'recipes'}</span></a>`;
+  const known = new Set(SHELVES.map(s => s[0]));
+  const tiles = DATA.categories.map(c => ({ shelf: known.has(c.shelf) ? c.shelf : 'cuisines', href: `#/c/${c.id}`, e: c.emoji, n: c.name, k: rs.filter(r => r.category === c.id).length }));
+  tiles.push({ shelf: 'collections', href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
+  tiles.push({ shelf: 'collections', href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
+  tiles.push({ shelf: 'collections', href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
+  return SHELVES.map(([id, name]) => {
+    const list = tiles.filter(t => t.shelf === id);
+    return list.length ? `<section class="shelf"><h2 class="shelf-name">${name}</h2><div class="tiles">${list.map(tile).join('')}</div></section>` : '';
+  }).join('');
 }
 function viewHome() {
   return `<div class="hero">
@@ -224,7 +231,12 @@ function viewCat(id) {
   const rs = all();
   const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])] };
   const [title, list] = special[id] || [catName(id), rs.filter(r => r.category === id)];
-  return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
+  if (special[id] || !list.length) return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
+  const groups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) => {
+    const rows = list.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type));
+    return rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
+  }).join('');
+  return head(title) + groups;
 }
 function viewFavs() {
   return head('Favorites') + rowsHTML(all().filter(r => S.favs.includes(r.id)), 'No favorites yet. Tap the heart on a recipe to keep it here.');
@@ -255,7 +267,7 @@ function viewRecipe(id) {
       <div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span>
         <div><h1>${esc(r.title)}</h1>
         <div class="row" style="gap:6px;margin-top:6px">
-          <span class="pill">${esc(catName(r.category))}</span>
+          <span class="pill">${esc(catName(r.category))}</span>${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
           ${r.kid ? '<span class="pill sage">kid-approved</span>' : ''}${r._draft ? '<span class="pill">my draft</span>' : ''}${r.placeholder ? '<span class="pill red">stand-in recipe</span>' : ''}
         </div></div></div>
       <hr class="redline">
@@ -417,6 +429,7 @@ function viewForm(id) {
       <div class="grid2">
         ${f('Emoji', 'emoji', v.emoji, 'placeholder="🍲" maxlength="8"')}
         <label class="field"><span>Category</span><select name="category">${DATA.categories.map(c => `<option value="${esc(c.id)}" ${v.category === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
+        <label class="field"><span>Type</span><select name="type"><option value="">Not sorted yet</option>${TYPES.map(([t]) => `<option ${v.type === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label>
         ${f('Prep minutes', 'prep', v.prep, 'inputmode="numeric"')}
         ${f('Cook minutes', 'cook', v.cook, 'inputmode="numeric"')}
         ${f('Servings', 'servings', v.servings, 'inputmode="numeric"')}
@@ -629,7 +642,7 @@ document.addEventListener('submit', e => {
     const lines = s => (s || '').split('\n').map(x => x.trim()).filter(Boolean);
     let id = form.dataset.id;
     if (!id) { id = slug(d.title); let n = 2; const base = id; while (byId(id)) id = `${base}-${n++}`; }
-    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
     if (d.sname || d.surl) r.source = { name: d.sname.trim(), url: d.surl.trim() };
     if (num(d.cal) != null) r.nutrition = { cal: num(d.cal), protein: num(d.protein) || 0, carbs: num(d.carbs) || 0, fat: num(d.fat) || 0 };
     S.drafts = S.drafts.filter(x => x.id !== id).concat(r); save(); toast('Recipe saved'); location.hash = `#/r/${id}`;
