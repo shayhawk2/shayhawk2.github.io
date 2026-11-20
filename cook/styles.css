@@ -298,3 +298,21 @@ textarea.hand { background: transparent; border-style: dashed; }
 .tip-card.flash { outline: 3px solid var(--mustard); outline-offset: 3px; }
 .tip-card { scroll-margin-top: 70px; }
 .cook-tips .tip { font-size: 1.05rem; }
+
+/* ---------- grocery picker, pantry locations ---------- */
+.pick-results { display: grid; gap: 6px; margin-bottom: 10px; }
+.pick-result { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 6px 12px; text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.pick-result > span:nth-child(2) { flex: 1; font-weight: 600; }
+.sheet-scrim { position: fixed; inset: 0; z-index: 45; background: rgba(30, 20, 10, .45); }
+.pick-sheet { max-width: 720px; margin: 0 auto; }
+.pick-sheet h2 { font-size: 1.7rem; }
+.pick-foot { position: sticky; bottom: calc(-18px - env(safe-area-inset-bottom)); padding: 12px 0 calc(18px + env(safe-area-inset-bottom)); background: var(--paper); }
+.pick-foot .btn { flex: 1; justify-content: center; }
+.pantry-warn { margin: 0 0 8px; padding: 8px 12px; font-size: .92rem; background: color-mix(in srgb, var(--mustard) 22%, var(--card)); border-left: 4px solid var(--mustard); border-radius: 2px 2px 12px 2px; }
+.pantry-cat { margin: 12px 0 0; font: 600 .78rem system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--soft); }
+.pantry-item button.name { flex: 1; min-height: 44px; padding: 0; text-align: left; background: none; border: 0; }
+.pantry-move { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 8px 0 12px; border-bottom: 1px solid var(--rule); font-size: .85rem; color: var(--soft); }
+.pantry-move select { display: block; width: 100%; min-height: 44px; margin-top: 2px; }
+.pick-sheet .ruled input:checked + span { text-decoration: none; color: inherit; }
+.pick-sheet .ruled input:not(:checked) + span { color: var(--soft); }
+.pick-sheet .ruled { padding-bottom: 6px; }

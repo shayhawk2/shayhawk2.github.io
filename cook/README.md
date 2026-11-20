@@ -22,6 +22,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies, no backend.
 
 - **Recipes and categories:** `recipes.json` in this repo. Edit, commit, push, and every device gets them.
 - **Personal data:** favorites, ratings, make-again flags, notes, grocery list, pantry and drafts live in each device's `localStorage` under the key `tasa:v1`. Settings has a backup and restore for moving between devices.
+- **Pantry items** carry a location (`Fridge`, `Freezer`, `Cabinet`, `Spice Rack`, `Counter`, `Basement Fridge`, `Garage Freezer`) and a category (the grocery departments). Older saves get both filled in on load.
 - **Drafts:** recipes added or edited in the app. Settings > Export drafts produces `snack-again-drafts.json`; merge its `recipes` array into `recipes.json` to publish them.
 
 ## recipes.json format
@@ -63,7 +64,7 @@ Rules:
 - `type`: one of `Main`, `Side`, `Appetizer`, `Sauce & Condiment`, `Building Block`, `Dessert`, `Drink`. Groups the recipes inside a category page. A Building Block is made to go into another dish (fresh mozzarella, tortillas). Left out, the recipe shows under "Not sorted yet".
 - `qty`: a number (`0.5`, not `"1/2"`), or `null` for "to taste". The app shows fractions and scales by servings.
 - `unit`: one of `cup tbsp tsp "fl oz" oz lb pt qt gal clove can slice piece pinch stick bunch sprig g kg ml L`, or `""` for counted items like eggs.
-- `aisle`: one of `Produce`, `Meat & Seafood`, `Dairy & Eggs`, `Bakery`, `Pantry`, `Spices`, `Frozen`, `Other`. Groups the grocery list.
+- `aisle`: the store department, one of `Produce`, `Bakery`, `Deli & Cheese`, `Meat & Seafood`, `Dairy & Eggs`, `Canned & Jarred`, `Pasta, Rice & Grains`, `Baking`, `Oils, Vinegars & Condiments`, `Spices`, `Frozen`, `Beverages`, `Other`. The grocery list groups by these in this order (store-walk order). The old `Pantry` value still loads and is sorted into a department by the item name.
 - `steps[].uses`: indexes into `ingredients` (starting at 0) shown under that step. Leave `uses` out and the app guesses by matching words.
 - `steps[].tips`: ids from `techniques.json` shown as a sticky under that step, in the Steps tab and cook mode. A recipe-level `tips` list holds tips for the whole recipe; both appear in the recipe's Tips tab.
 - `steps[].asWritten`: the source's original wording when a step has been rewritten to a house rule. Shown behind an "As written" toggle.
