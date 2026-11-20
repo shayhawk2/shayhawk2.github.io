@@ -20,6 +20,8 @@
     var t = JSON.parse(localStorage.getItem('tasa:v1') || '{}').theme;
     if (t) document.documentElement.dataset.theme = t;
   } catch (e) {}
+  // Her link: point "Add to Home Screen" at the Maddie Mode manifest so the icon opens in Maddie Mode.
+  if (/[?&]mode=maddie\b/.test(location.search)) document.querySelector('link[rel="manifest"]').href = 'manifest-maddie.webmanifest';
 </script>
 </head>
 <body>
@@ -27,7 +29,7 @@
   <aside class="side" id="side" aria-label="Menu">
     <a class="brand" href="#/">
       <img src="icons/icon.svg" alt="" width="44" height="44">
-      <span class="brand-text"><span class="brand-name">There and Snack Again</span><span class="brand-tag">a cook's tale</span></span>
+      <span class="brand-text"><span class="brand-name">There and Snack Again</span><span class="brand-tag" id="brandTag">a cook's tale</span></span>
     </a>
     <nav class="nav" id="nav">
       <a href="#/" data-nav=""><span class="ni">📖</span><span class="nl">Recipes</span></a>
@@ -41,6 +43,7 @@
     </nav>
     <div class="side-foot">
       <button class="side-btn" data-act="theme" aria-label="Switch light or dark"><span class="ni" id="themeIcon">🌙</span><span class="nl" id="themeLabel">Dark mode</span></button>
+      <button class="side-btn mm-only" data-act="fullApp" aria-label="Switch to the full app"><span class="ni">🔓</span><span class="nl">Full app</span></button>
       <button class="side-btn rail-btn" data-act="rail" aria-label="Collapse menu"><span class="ni" id="railIcon">⇤</span><span class="nl">Collapse menu</span></button>
     </div>
   </aside>

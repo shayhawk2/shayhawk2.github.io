@@ -13,7 +13,7 @@ const SAUCES = [['Tomato', 'Tomato sauces'], ['Butter & Cream', 'Butter & cream 
 // Techniques that are really small sauces; shown at the bottom of the Sauces page.
 const QUICK_SAUCES = ['cutlet-sauce-on-the-side', 'tartar-without-brine', 'ancho-ranch', 'dijon-binds-dressing', 'reduce-balsamic-lightly', 'cornstarch-slurry'];
 const SHELVES = [['cuisines', 'Cuisines'], ['courses', 'Courses'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
-const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
+const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false, maddie: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
 const PLURAL = new Set(['cup', 'clove', 'can', 'slice', 'piece', 'pinch', 'stick', 'bunch', 'sprig']);
 const UNIT_ALIASES = { cups: 'cup', c: 'cup', tablespoon: 'tbsp', tablespoons: 'tbsp', tbsps: 'tbsp', tbs: 'tbsp', teaspoon: 'tsp', teaspoons: 'tsp', tsps: 'tsp', ounce: 'oz', ounces: 'oz', pound: 'lb', pounds: 'lb', lbs: 'lb', cloves: 'clove', cans: 'can', slices: 'slice', pieces: 'piece', sticks: 'stick', pint: 'pt', pints: 'pt', quart: 'qt', quarts: 'qt', gallon: 'gal', gallons: 'gal', grams: 'g', gram: 'g', liter: 'L', liters: 'L', l: 'L' };
@@ -52,6 +52,12 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'recipe';
 
 let S = load();
+// Maddie Mode: a simpler recipe card and a shorter menu. Saved per device in tasa:v1 as `maddie`.
+// Her home-screen link carries ?mode=maddie, so it opens in Maddie Mode every launch; ?mode=full turns it off.
+const MODE = new URLSearchParams(location.search).get('mode');
+if (MODE === 'maddie' || MODE === 'full') { S.maddie = MODE === 'maddie'; save(); }
+const MADDIE_LINK = () => `${location.origin}${location.pathname}?mode=maddie`;
+const quick = r => total(r) > 0 && total(r) <= 30;
 let DATA = { categories: [], recipes: [], sections: [], tips: [] };
 const V = { serv: {}, tab: {}, checked: {}, timers: [], q: '', gq: '', gPick: null, pEdit: '', tq: '', tkind: '', tipsOpen: {}, tonight: { max: 0, cat: '', kid: false, again: false }, cook: null, sheet: false, autoRead: false, pick: null };
 
@@ -245,6 +251,8 @@ function applyTheme() {
   $('meta[name="theme-color"]').content = dark ? '#1D1814' : '#FBF4E4';
   $('#app').classList.toggle('rail', !!S.rail);
   $('#railIcon').textContent = S.rail ? '⇥' : '⇤';
+  document.documentElement.classList.toggle('maddie', !!S.maddie);
+  $('#brandTag').textContent = S.maddie ? 'Maddie Mode' : "a cook's tale";
 }
 function updateBadge() {
   const n = S.grocery.filter(g => !g.done).length, b = $('#listBadge');
@@ -307,7 +315,20 @@ function homeBody() {
   tiles.push({ shelf: 'collections', href: '#/c/kids', e: '⭐', n: 'Kid-approved', k: rs.filter(r => r.kid).length });
   tiles.push({ shelf: 'collections', href: '#/c/again', e: '🔁', n: 'Make again', k: rs.filter(r => S.again[r.id]).length });
   tiles.push({ shelf: 'collections', href: '#/c/all', e: '📚', n: 'Everything', k: rs.length });
-  return SHELVES.map(([id, name]) => {
+  // Maddie Mode puts a go-tos shelf on top. Those tiles leave their usual shelf so nothing shows twice.
+  const shelves = S.maddie ? [['gotos', 'Our go-tos'], ...SHELVES] : SHELVES;
+  if (S.maddie) {
+    const go = [
+      { href: '#/favorites', e: '❤️', n: 'Favorites', k: rs.filter(r => S.favs.includes(r.id)).length },
+      { href: '#/c/kids', e: '⭐', n: 'Kids love it', k: rs.filter(r => r.kid).length },
+      { href: '#/c/quick', e: '⏱️', n: 'Under 30 min', k: rs.filter(quick).length },
+      ...tiles.filter(t => t.href === '#/c/breakfast')
+    ];
+    const hrefs = new Set(go.map(t => t.href));
+    for (let i = tiles.length - 1; i >= 0; i--) if (hrefs.has(tiles[i].href)) tiles.splice(i, 1);
+    tiles.unshift(...go.map(t => ({ ...t, shelf: 'gotos' })));
+  }
+  return shelves.map(([id, name]) => {
     const list = tiles.filter(t => t.shelf === id);
     return list.length ? `<section class="shelf"><h2 class="shelf-name">${name}</h2><div class="tiles">${list.map(tile).join('')}</div></section>` : '';
   }).join('');
@@ -315,15 +336,15 @@ function homeBody() {
 function viewHome() {
   return `<div class="hero">
       <h1><span>There and</span> <span class="snack">Snack</span> <span>Again</span></h1>
-      <p class="tag">a cook's tale</p>
-      <div class="search"><input type="search" data-in="search" value="${esc(V.q)}" placeholder="Search recipes, ingredients, tags" aria-label="Search recipes"></div>
+      <p class="tag">${S.maddie ? '<span class="mm-badge">Maddie Mode</span>' : "a cook's tale"}</p>
+      <div class="search"><input type="search" data-in="search" value="${esc(V.q)}" placeholder="${S.maddie ? 'What are we making?' : 'Search recipes, ingredients, tags'}" aria-label="Search recipes"></div>
     </div>
     <hr class="trail">
     <div id="homeBody">${homeBody()}</div>`;
 }
 function viewCat(id) {
   const rs = all();
-  const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])] };
+  const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])], quick: ['Under 30 min', rs.filter(quick)] };
   if (id === 'sauces') return viewSauces(rs.filter(isSauce));
   const [title, list] = special[id] || [catName(id), rs.filter(r => inCat(r, id))];
   if (special[id] || !list.length) return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
@@ -364,6 +385,7 @@ function ingListHTML(r, f) {
 function viewRecipe(id) {
   const r = byId(id);
   if (!r) return head('Not found') + `<div class="empty"><span class="big">🧭</span>That recipe is not in the book. <a href="#/">Back to recipes</a>.</div>`;
+  if (S.maddie) return viewRecipeSimple(r);
   const serv = V.serv[id] || r.servings || 1, f = serv / (r.servings || 1);
   const tab = V.tab[id] || 'ing', rating = S.ratings[id] || 0, n = r.nutrition, rt = recipeTips(r);
   return `<div class="page-head no-print">
@@ -429,6 +451,31 @@ function viewRecipe(id) {
     ${gPickHTML()}`;
 }
 
+// Maddie Mode card: one page, bigger text. Leaves out tabs, equipment, tags, tips, "As written",
+// per-step ingredient chips, nutrition, ingredient notes, Jim's sticky note, rating and notes.
+function viewRecipeSimple(r) {
+  const id = r.id, ck = V.checked[id] || (V.checked[id] = {});
+  const amt = g => { const { q, u } = qtyUnit(g); return [q, u].filter(Boolean).join(' '); };
+  return `<div class="page-head no-print">
+      <a class="back" href="${esc(V.from || '#/c/' + (r.category || 'all'))}" aria-label="Back">←</a><span style="flex:1"></span>
+      <span class="mm-badge">Maddie Mode</span>
+      <button class="icon-btn" data-act="fav" data-id="${esc(id)}" aria-label="Favorite" aria-pressed="${S.favs.includes(id)}">${S.favs.includes(id) ? '❤️' : '🤍'}</button>
+    </div>
+    <article class="card index simple">
+      <div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span>
+        <div><h1>${esc(r.title)}</h1>${r.placeholder ? '<div class="row" style="margin-top:6px"><span class="pill red">stand-in recipe</span></div>' : ''}</div></div>
+      <hr class="redline">
+      <div class="facts">${total(r) ? `<span><b>Ready in</b>${mins(total(r))}</span>` : ''}${r.servings ? `<span><b>Serves</b>${esc(r.servings)}</span>` : ''}</div>
+      <a class="btn primary cta no-print" href="#/cook/${esc(id)}">👩‍🍳 Cook it step by step</a>
+      <h2 class="sec-h">You'll need</h2>
+      <ul class="ruled">${r.ingredients.map((g, i) => { const a = amt(g); return `<li><label><input type="checkbox" data-in="check" data-id="${esc(id)}" data-i="${i}" ${ck[i] ? 'checked' : ''}><span>${a ? `<b>${esc(a)}</b> ` : ''}${esc(g.item)}</span></label></li>`; }).join('')}</ul>
+      <button class="btn small plain no-print" style="margin-top:12px" data-act="gPick" data-id="${esc(id)}">🧺 Add to grocery list</button>
+      <h2 class="sec-h">Steps</h2>
+      <ol class="steps">${r.steps.map(st => `<li>${esc(stepText(st.text))}</li>`).join('')}</ol>
+    </article>
+    ${gPickHTML()}`;
+}
+
 function timersHTML() {
   return V.timers.length ? `<div class="timers">${V.timers.map(t => `<span class="timer${t.done ? ' done' : ''}" data-timer="${t.id}"><span>${fmtLeft(t)}</span><button data-act="timerX" data-tid="${t.id}" aria-label="Dismiss timer">✕</button></span>`).join('')}</div>` : '';
 }
@@ -446,7 +493,7 @@ function viewCook(id) {
   const st = r.steps[i];
   const body = i < 0
     ? `<div><div class="cook-count">Before you start</div><p class="cook-text" style="font-size:1.5rem">Gather everything for ${V.serv[id] || r.servings} servings.</p></div>${ingListHTML(r, f)}`
-    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}<div class="cook-tips">${stepExtras(st, true)}</div>`;
+    : `<div><div class="muted small-text">${esc(r.title)}</div><div class="cook-count">Step ${i + 1} of ${nSteps}</div></div><p class="cook-text">${esc(stepText(st.text))}</p>${usesHTML(r, st, f)}<div class="cook-tips">${S.maddie ? '' : stepExtras(st, true)}</div>`;
   return `<div class="cook">
     <div class="cook-top">
       <a class="icon-btn" style="display:grid;place-items:center;text-decoration:none" href="#/r/${esc(id)}" aria-label="Leave cook mode">✕</a>
@@ -644,6 +691,11 @@ function viewSettings() {
         <div class="seg"><button data-act="setTheme" data-t="light" aria-pressed="${S.theme === 'light'}">☀️ Light</button><button data-act="setTheme" data-t="dark" aria-pressed="${S.theme === 'dark'}">🌙 Dark</button></div>
         <div class="seg"><button data-act="units" data-u="us" aria-pressed="${S.units === 'us'}">US</button><button data-act="units" data-u="metric" aria-pressed="${S.units === 'metric'}">Metric</button></div>
       </div></div>
+    <div class="card"><h2>Maddie Mode</h2>
+      <p>A simpler recipe card: one page with bigger text, and no tips, tags or equipment. The menu keeps Recipes, Tonight, Grocery list, Pantry and Favorites, and the home page gets an “Our go-tos” shelf.</p>
+      <p class="muted small-text">For Maddie's iPhone: send her the link, open it in Safari, tap Share, then “Add to Home Screen”. That icon always opens in Maddie Mode. “Full app” at the bottom of the menu switches back.</p>
+      <div class="row"><button class="btn" data-act="maddieOn">Turn on Maddie Mode here</button>
+      <button class="btn" data-act="maddieLink">📤 Send Maddie's link</button></div></div>
     <div class="card"><h2>My drafts</h2>
       <p>${S.drafts.length} ${S.drafts.length === 1 ? 'recipe' : 'recipes'} added or edited on this device. Export them to merge into <code>recipes.json</code> in the repo, which makes them appear on every device.</p>
       <button class="btn" data-act="exportDrafts" ${S.drafts.length ? '' : 'disabled style="opacity:.4"'}>Export drafts</button></div>
@@ -738,6 +790,13 @@ const acts = {
   theme() { S.theme = S.theme === 'dark' ? 'light' : 'dark'; save(); applyTheme(); if (location.hash.startsWith('#/settings')) render(true); },
   setTheme(el) { S.theme = el.dataset.t; save(); applyTheme(); render(true); },
   rail() { S.rail = !S.rail; save(); applyTheme(); },
+  maddieOn() { S.maddie = true; save(); applyTheme(); location.hash = '#/'; toast('Maddie Mode is on'); },
+  fullApp() {
+    S.maddie = false; save(); applyTheme();
+    if (location.search) history.replaceState(null, '', location.pathname + location.hash);
+    render(); toast('Full app. Settings turns Maddie Mode back on.');
+  },
+  maddieLink: () => shareOrCopy('There and Snack Again', 'Your simple recipe box', MADDIE_LINK()),
   units(el) { S.units = el.dataset.u; save(); render(true); },
   fav(el) { toggle(S.favs, el.dataset.id); save(); render(true); },
   again(el) { S.again[el.dataset.id] = !S.again[el.dataset.id]; save(); render(true); },
