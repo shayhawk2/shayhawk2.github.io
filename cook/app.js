@@ -369,7 +369,7 @@ function viewRecipe(id) {
       </div>
       <div class="row no-print" style="margin-top:16px">
         <a class="btn primary" href="#/cook/${esc(id)}">👩‍🍳 Start cooking</a>
-        <button class="btn" data-act="addToList" data-id="${esc(id)}">🧺 Add to grocery list</button>
+        <button class="btn" data-act="gPick" data-id="${esc(id)}">🧺 Add to grocery list</button>
       </div>
 
       <div class="tabs no-print" role="tablist">
@@ -393,7 +393,8 @@ function viewRecipe(id) {
       <label class="field"><span>My notes and tweaks</span>
         <textarea class="hand" data-in="note" data-id="${esc(id)}" placeholder="Less salt next time, double the garlic…">${esc(S.notes[id] || '')}</textarea>
         <small>Saved on this device as you type.</small></label>
-    </section>`;
+    </section>
+    ${gPickHTML()}`;
 }
 
 function timersHTML() {
@@ -639,7 +640,7 @@ function render(keepScroll) {
   };
   const cooking = name === 'cook';
   document.body.classList.toggle('cooking', cooking);
-  if (cooking) wakeOn(); else { wakeOff(); V.cook = null; V.sheet = false; if (name !== 'list') V.gPick = null; if (window.speechSynthesis) speechSynthesis.cancel(); }
+  if (cooking) wakeOn(); else { wakeOff(); V.cook = null; V.sheet = false; if (window.speechSynthesis) speechSynthesis.cancel(); }
   $('#main').innerHTML = (views[name] || viewHome)();
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === (['c', 'r', 'edit', 'import'].includes(name) ? '' : name)));
   $('#app').classList.remove('menu-open');
@@ -707,11 +708,6 @@ const acts = {
   rate(el) { const id = el.dataset.id, n = +el.dataset.n; S.ratings[id] = S.ratings[id] === n ? 0 : n; save(); render(true); },
   tab(el) { V.tab[el.dataset.id] = el.dataset.t; render(true); },
   serv(el) { const id = el.dataset.id, r = byId(id); V.serv[id] = Math.max(1, (V.serv[id] || r.servings || 1) + +el.dataset.d); render(true); },
-  addToList(el) {
-    const r = byId(el.dataset.id), f = (V.serv[r.id] || r.servings || 1) / (r.servings || 1);
-    r.ingredients.forEach(g => addGrocery({ ...g, qty: g.qty != null ? +(g.qty * f).toFixed(3) : null }, r.title));
-    save(); updateBadge(); toast(`Added ${r.ingredients.length} items to the grocery list`);
-  },
   shareRecipe(el) {
     const r = byId(el.dataset.id), { _draft, ...clean } = r;
     shareOrCopy(r.title, '', `${location.origin}${location.pathname}#/import/${enc(clean)}`);
@@ -825,7 +821,7 @@ document.addEventListener('submit', e => {
   }
 });
 
-window.addEventListener('hashchange', () => render());
+window.addEventListener('hashchange', () => { V.gPick = null; render(); });
 window.addEventListener('keydown', e => { if (e.key === 'Escape') { $('#app').classList.remove('menu-open'); if (V.gPick) { V.gPick = null; render(true); } } });
 
 /* ---------- start ---------- */
