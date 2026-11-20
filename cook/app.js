@@ -6,6 +6,8 @@
 
 const KEY = 'tasa:v1';
 const TYPES = [['Main', 'Mains'], ['Side', 'Sides'], ['Appetizer', 'Appetizers'], ['Sauce & Condiment', 'Sauces & Condiments'], ['Building Block', 'Building Blocks'], ['Dessert', 'Desserts'], ['Drink', 'Drinks']];
+// Categories with "groupBy": "meat" (BBQ) group recipes by their meat first, then by type.
+const MEATS = [['Beef', 'Beef'], ['Pork', 'Pork'], ['Poultry', 'Poultry'], ['Lamb', 'Lamb'], ['Seafood', 'Seafood']];
 const SHELVES = [['cuisines', 'Cuisines'], ['meals', 'Meals & Occasions'], ['collections', 'Collections']];
 const DEFAULTS = { theme: 'light', units: 'us', favs: [], ratings: {}, again: {}, notes: {}, grocery: [], pantry: [], drafts: [], rail: false };
 const METRIC = { cup: [240, 'ml'], tbsp: [15, 'ml'], tsp: [5, 'ml'], 'fl oz': [30, 'ml'], pt: [473, 'ml'], qt: [946, 'ml'], gal: [3785, 'ml'], oz: [28.35, 'g'], lb: [453.6, 'g'] };
@@ -309,11 +311,15 @@ function viewCat(id) {
   const special = { all: ['Everything', rs], kids: ['Kid-approved', rs.filter(r => r.kid)], again: ['Make again', rs.filter(r => S.again[r.id])] };
   const [title, list] = special[id] || [catName(id), rs.filter(r => r.category === id)];
   if (special[id] || !list.length) return head(title) + rowsHTML(list, `Nothing filed here yet. <a href="#/add">Add a recipe</a>.`);
-  const groups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) => {
-    const rows = list.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type));
-    return rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
-  }).join('');
-  return head(title) + groups;
+  const group = (label, rows) => rows.length ? `<h2 class="group-name">${label} <span class="group-count">${rows.length}</span></h2>${rowsHTML(rows)}` : '';
+  const cat = DATA.categories.find(c => c.id === id) || {};
+  const byMeat = cat.groupBy === 'meat';
+  const isMeat = r => byMeat && MEATS.some(([m]) => m === r.meat);
+  const meatGroups = byMeat ? MEATS.map(([m, label]) => group(label, list.filter(r => r.meat === m))).join('') : '';
+  const rest = list.filter(r => !isMeat(r));
+  const typeGroups = [...TYPES, ['', 'Not sorted yet']].map(([t, label]) =>
+    group(label, rest.filter(r => t ? r.type === t : !TYPES.some(x => x[0] === r.type)))).join('');
+  return head(title) + meatGroups + typeGroups;
 }
 function viewFavs() {
   return head('Favorites') + rowsHTML(all().filter(r => S.favs.includes(r.id)), 'No favorites yet. Tap the heart on a recipe to keep it here.');
@@ -344,7 +350,7 @@ function viewRecipe(id) {
       <div class="rhead"><span class="blob">${esc(r.emoji || '🍴')}</span>
         <div><h1>${esc(r.title)}</h1>
         <div class="row" style="gap:6px;margin-top:6px">
-          <span class="pill">${esc(catName(r.category))}</span>${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
+          <span class="pill">${esc(catName(r.category))}</span>${r.meat ? `<span class="pill">${esc(r.meat)}</span>` : ''}${r.type ? `<span class="pill">${esc(r.type)}</span>` : ''}
           ${r.kid ? '<span class="pill sage">kid-approved</span>' : ''}${r._draft ? '<span class="pill">my draft</span>' : ''}${r.placeholder ? '<span class="pill red">stand-in recipe</span>' : ''}
         </div></div></div>
       <hr class="redline">
@@ -584,6 +590,7 @@ function viewForm(id) {
         ${f('Emoji', 'emoji', v.emoji, 'placeholder="🍲" maxlength="8"')}
         <label class="field"><span>Category</span><select name="category">${DATA.categories.map(c => `<option value="${esc(c.id)}" ${v.category === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
         <label class="field"><span>Type</span><select name="type"><option value="">Not sorted yet</option>${TYPES.map(([t]) => `<option ${v.type === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label>
+        <label class="field"><span>Meat</span><select name="meat"><option value="">None</option>${MEATS.map(([m]) => `<option ${v.meat === m ? 'selected' : ''}>${esc(m)}</option>`).join('')}</select><small>Groups BBQ & Smoker by meat.</small></label>
         ${f('Prep minutes', 'prep', v.prep, 'inputmode="numeric"')}
         ${f('Cook minutes', 'cook', v.cook, 'inputmode="numeric"')}
         ${f('Servings', 'servings', v.servings, 'inputmode="numeric"')}
@@ -808,7 +815,7 @@ document.addEventListener('submit', e => {
     const lines = s => (s || '').split('\n').map(x => x.trim()).filter(Boolean);
     let id = form.dataset.id;
     if (!id) { id = slug(d.title); let n = 2; const base = id; while (byId(id)) id = `${base}-${n++}`; }
-    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
+    const r = { id, title: d.title.trim(), emoji: d.emoji.trim() || '🍴', category: d.category, type: d.type || undefined, meat: d.meat || undefined, tags: list(d.tags), prep: num(d.prep), cook: num(d.cook), servings: num(d.servings) || 4, equipment: list(d.equipment), kid: !!d.kid, notes: d.notes.trim() || undefined, ingredients: lines(d.ingredients).map(parseIng), steps: lines(d.steps).map(t => ({ text: t.replace(/^\d+[.)]\s*/, '') })) };
     const old = byId(id);
     if (old) {
       if (old.tips) r.tips = old.tips;
