@@ -1086,7 +1086,7 @@
    ],
    "source": {
     "name": "Inspired by Meathead, AmazingRibs.com",
-    "url": "https://amazingribs.com"
+    "url": "https://amazingribs.com/tested-recipes/beef-and-bison-recipes/smoked-brisket-texas-style/"
    },
    "notes": "Timing for a 5 lb point: cook 6 to 9 hours plus 2 to 4 hours rest. Serving at 5 PM means starting 5 to 7 AM. To save 1.5 to 2.5 hours, run 275°F and wrap at 155°F. Failure points: wrapping early, skipping the rest, over-spritzing.",
    "ingredients": [
@@ -1226,7 +1226,7 @@
    ],
    "source": {
     "name": "Inspired by Meathead, AmazingRibs.com",
-    "url": "https://amazingribs.com"
+    "url": "https://amazingribs.com/tested-recipes/beef-and-bison-recipes/smoked-brisket-texas-style/"
    },
    "notes": "Timing for 12 to 18 lb: flat 6 to 9 hours, point 7 to 10, rest 2 to 4. Serving at 5 PM means starting 5 to 7 AM. Compression option: 275°F and wrap at 155°F saves 1.5 to 2.5 hours.",
    "ingredients": [
@@ -5739,8 +5739,7 @@
     "Pellet smoker or Hasty Bake",
     "Rubber gloves",
     "Paring knife",
-    "Jalapeño rack (optional)",
-    "Pastry bag (optional)"
+    "Spatula"
    ],
    "source": {
     "name": "AmazingRibs",
@@ -5753,13 +5752,13 @@
     "fat": 9
    },
    "placeholder": true,
-   "notes": "Missing: the source's ingredient list is blank, so there are no amounts for the bacon, Boursin-style spread, cheddar or pineapple. 12 jalapeños = the 24 halves it yields. Servings means halves; nutrition is per half. Cook time is a guide: pull them when the cheese melts and the peppers just soften, before they go limp. Store-bought Boursin works. Swaps: pulled pork for bacon; mango for pineapple; blue, jack or mozzarella for cheddar; habaneros for more heat. Keep the ribs for more heat. Good warm, room temp or cold.",
+   "notes": "Jim's way: halves as boats, bacon always chopped into the cheese filling, never wrapped around the pepper. Missing: the source's ingredient list is blank, so there are no amounts for the bacon, Boursin, cheddar or pineapple. 12 jalapeños = 24 boats. Servings means boats; nutrition is per boat. Pull them when the cheese melts and the peppers just soften, before they go limp. Store-bought Boursin works. Swaps: pulled pork for bacon; mango for pineapple; blue, jack or mozzarella for cheddar; habaneros for more heat. Keep the ribs for more heat. Good warm, room temp or cold.",
    "ingredients": [
     {
      "qty": 12,
      "unit": "",
      "item": "jalapeños",
-     "note": "halved lengthwise, seeds and ribs scraped out",
+     "note": "halved lengthwise into boats, seeds and ribs scraped out",
      "aisle": "Produce"
     },
     {
@@ -5791,13 +5790,6 @@
      "aisle": "Produce"
     },
     {
-     "qty": 24,
-     "unit": "",
-     "item": "green olives with pimento",
-     "note": "optional, for one-eyed poppers",
-     "aisle": "Canned & Jarred"
-    },
-    {
      "qty": null,
      "unit": "",
      "item": "paprika",
@@ -5807,7 +5799,7 @@
    ],
    "steps": [
     {
-     "text": "Cook the bacon, let it cool, then chop.",
+     "text": "Cook the bacon, let it cool, then chop it.",
      "uses": [
       1
      ],
@@ -5816,7 +5808,7 @@
      ]
     },
     {
-     "text": "Mix the Boursin spread with the bacon, cheddar and pineapple.",
+     "text": "Mix the chopped bacon into the Boursin, cheddar and pineapple.",
      "uses": [
       1,
       2,
@@ -5825,21 +5817,16 @@
      ]
     },
     {
-     "text": "Wearing gloves, stem and halve the jalapeños, then scrape out the seeds and ribs.",
+     "text": "Wearing gloves, halve the jalapeños lengthwise into boats and scrape out the seeds and ribs.",
      "uses": [
       0
      ]
     },
     {
-     "text": "Optional: plug the stem end of each half with an olive.",
+     "text": "Fill each boat without overfilling and dust with paprika.",
      "uses": [
+      0,
       5
-     ]
-    },
-    {
-     "text": "Fill each half without overfilling and dust with paprika.",
-     "uses": [
-      6
      ]
     },
     {
@@ -6704,6 +6691,459 @@
      "text": "Remove the bay leaves and dried chiles, season with salt and pepper, and serve.",
      "uses": [
       24
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smoked-ribs-2-1-1",
+   "title": "Smoked Ribs, 2-1-1",
+   "emoji": "🍖",
+   "category": "bbq",
+   "type": "Main",
+   "tags": [
+    "pork",
+    "ribs",
+    "smoker"
+   ],
+   "prep": 30,
+   "cook": 250,
+   "servings": 3,
+   "equipment": [
+    "Pellet smoker or Hasty Bake",
+    "Heavy-duty foil",
+    "Butter knife and paper towel",
+    "Tongs"
+   ],
+   "source": {
+    "name": "Meathead, AmazingRibs.com",
+    "url": "https://amazingribs.com/best-barbecue-ribs-recipe/"
+   },
+   "notes": "Jim's 2-1-1: 2 hours unwrapped, 1 hour wrapped, 1 hour unwrapped, then crank the heat, sauce and sear. Meathead's card is the base (rub, salt, 225°F, bend test). 2-1-1 timing fits baby backs; Meathead gives spares and St. Louis 5 to 7 hours. On the Hasty Bake, add 4 oz wood once the temp is stable and 4 oz more after 20 to 30 minutes, then no more. With a salted or bottled rub, skip the salt; store ribs labeled enhanced are already brined. Pink under the surface is smoke ring.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "slab pork ribs",
+     "note": "baby back, spare or St. Louis cut",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "Memphis Dust rub",
+     "note": "homemade or bottled",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "about ¼ tsp per lb; skip with a salted rub",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "fl oz",
+     "item": "water",
+     "note": "for the wrap",
+     "aisle": "Other"
+    },
+    {
+     "qty": 6,
+     "unit": "tbsp",
+     "item": "BBQ sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "wood chunks",
+     "note": "apple, oak or hickory; Hasty Bake only",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Remove the membrane from the bone side with a butter knife and paper towel. Trim excess fat.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Optional: salt the ribs 1 to 2 hours ahead.",
+     "uses": [
+      2
+     ]
+    },
+    {
+     "text": "Wet the meat lightly and rub about 2 tbsp per side.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Set the smoker to 225°F. On the Hasty Bake, set up two-zone and add the first wood once stable.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Smoke meat side up, unwrapped, for 2 hours.",
+     "uses": [],
+     "asWritten": "Smoke meat side up over indirect heat, lid closed, without flipping. Baby backs take 3 to 5 hours total, spares and St. Louis 5 to 7."
+    },
+    {
+     "text": "Wrap tightly in foil with the water and cook 1 hour.",
+     "uses": [
+      3
+     ],
+     "asWritten": "Optional Texas Crutch: wrap in foil with about 1 oz water for up to an hour. Meathead recommends skipping it for backyard cooking because it can soften the bark."
+    },
+    {
+     "text": "Unwrap and cook 1 hour more, until the surface cracks when you bounce the slab with tongs.",
+     "uses": []
+    },
+    {
+     "text": "Crank the heat, paint both sides with sauce and sear over the hottest spot, lid open, a minute or so per side.",
+     "uses": [
+      4
+     ],
+     "asWritten": "Sauce only in the last 15 minutes, one light coat. For a sizzle, move over the hottest part of the grill for a minute or so per side with the lid open."
+    },
+    {
+     "text": "Slice between the bones.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "diner-burgers",
+   "title": "Diner Burgers (Quarter Pounders)",
+   "emoji": "🍔",
+   "category": "american",
+   "type": "Main",
+   "tags": [
+    "beef",
+    "burger",
+    "griddle",
+    "quick"
+   ],
+   "prep": 30,
+   "cook": 6,
+   "servings": 4,
+   "equipment": [
+    "Cast iron griddle or 12-inch skillet",
+    "2 solid spatulas",
+    "#8 scoop or kitchen scale",
+    "Dinner plate"
+   ],
+   "source": {
+    "name": "Meathead, AmazingRibs.com",
+    "url": "https://amazingribs.com/tested-recipes/hamburger-sloppy-joe-salisbury-steak-recipes/diner-burgers-recipe-aka-quarter-pounder/"
+   },
+   "nutrition": {
+    "cal": 676,
+    "protein": 30,
+    "carbs": 48,
+    "fat": 40
+   },
+   "notes": "1 lb of beef is the four 4 oz balls the recipe yields; the source names no weight or fat ratio beyond 20 to 30% fat. Grind twice (or use the small plate) if grinding your own. Use one spatula for smashing raw meat and a clean one for flipping and serving. Meathead tops them with his burger glop, which isn't on the page; the Burger Sauce card fits. A 12-inch skillet holds 2 at a time. Nutrition is per burger.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "20 to 30% fat",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "freshly ground",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "onion powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "garlic powder",
+     "note": "not garlic salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "beef fat, bacon fat or vegetable oil",
+     "note": "not butter",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "kosher salt",
+     "note": "for the tops",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "",
+     "item": "hamburger buns",
+     "aisle": "Bakery"
+    },
+    {
+     "qty": 4,
+     "unit": "tsp",
+     "item": "butter",
+     "note": "1 tsp per bun",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 4,
+     "unit": "slice",
+     "item": "American cheese",
+     "note": "optional, 1 per burger",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "onion",
+     "note": "sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "lettuce",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "burger sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Mix the pepper, onion powder and garlic powder into the beef with a fork.",
+     "uses": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Form four 2-inch balls, about 4 oz each, and refrigerate 20 minutes.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Heat the griddle as hot as it gets, at least 350°F.",
+     "uses": []
+    },
+    {
+     "text": "Butter the buns and toast them cut side down, pressed under a plate, until golden. Wipe the griddle.",
+     "uses": [
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Add the fat and heat until it just starts to smoke.",
+     "uses": [
+      4
+     ]
+    },
+    {
+     "text": "Set a ball down and smash it flat right away, working the edges thin and ragged. Don't press again.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Salt the tops and leave them alone 3 to 5 minutes, until the bottoms are dark brown.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Flip with the clean spatula and press gently. Add cheese and cover to melt, about 2 minutes.",
+     "uses": [
+      8
+     ]
+    },
+    {
+     "text": "Stack on the buns with onion, lettuce and burger sauce.",
+     "uses": [
+      6,
+      9,
+      10,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "id": "meathead-texas-brisket",
+   "title": "Texas Brisket (Meathead's Original)",
+   "emoji": "🥩",
+   "category": "bbq",
+   "type": "Main",
+   "tags": [
+    "beef",
+    "brisket",
+    "smoker",
+    "overnight"
+   ],
+   "prep": 10,
+   "cook": 720,
+   "servings": 12,
+   "equipment": [
+    "Smoker with water pan",
+    "Remote probe thermometer",
+    "Heavy-duty foil or butcher paper",
+    "Meat injector (optional)",
+    "Cooler"
+   ],
+   "source": {
+    "name": "Meathead, AmazingRibs.com",
+    "url": "https://amazingribs.com/tested-recipes/beef-and-bison-recipes/smoked-brisket-texas-style/"
+   },
+   "nutrition": {
+    "cal": 704,
+    "protein": 94,
+    "carbs": 0,
+    "fat": 34
+   },
+   "notes": "The source your two brisket cards build on. Plan on about 1 lb raw per person. Salt is ½ tsp Morton coarse kosher per lb (2 tbsp for 12 lb); skip it if you inject or use the bottled rub. The card says 12 hours, but the article's timeline is 14 to 18 hours plus the hold. Crisp a soft bark by unwrapping and searing briefly over a hot grill or under the broiler. Burnt ends: cube the point, crisp in rendered fat, then sauce. On the pellet smoker the pellets cover the wood.",
+   "ingredients": [
+    {
+     "qty": 12,
+     "unit": "lb",
+     "item": "whole packer brisket",
+     "note": "12 to 15 lb",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "Morton coarse kosher salt",
+     "note": "½ tsp per lb",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Big Bad Beef Rub",
+     "note": "applied liberally",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "beef broth",
+     "note": "optional, for injecting, about 1 oz per lb",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "beef broth",
+     "note": "for the wrap",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "Texas mop sauce",
+     "note": "optional",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 8,
+     "unit": "oz",
+     "item": "wood chunks or chips",
+     "note": "about 4 cups",
+     "aisle": "Other"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Trim the fat cap to ¼ inch and remove the silverskin. Note the grain direction.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Salt 12 to 24 hours ahead, or at least 2 to 4 hours before smoking.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Optional: inject about 1 oz broth per pound instead of salting.",
+     "uses": [
+      3
+     ]
+    },
+    {
+     "text": "Rub liberally and keep it chilled until it goes on.",
+     "uses": [
+      2
+     ]
+    },
+    {
+     "text": "Stabilize the smoker at 235°F, then cook at about 225°F with the water pan full.",
+     "uses": []
+    },
+    {
+     "text": "Probe the thickest part. Add 4 oz wood as it goes on and 4 oz more over the first 2 hours.",
+     "uses": [
+      6
+     ]
+    },
+    {
+     "text": "After 3 hours, flip it if the top and bottom colors differ.",
+     "uses": []
+    },
+    {
+     "text": "When the bark is set and it stalls at 150°F to 165°F, usually 6 to 8 hours in, wrap tight in double foil or butcher paper with the broth.",
+     "uses": [
+      4
+     ]
+    },
+    {
+     "text": "Keep cooking at 225°F. Start probing at 195°F; it's done around 203°F when the probe slides in and it wobbles.",
+     "uses": [],
+     "tips": [
+      "brisket-bark-and-probe"
+     ]
+    },
+    {
+     "text": "Hold it wrapped in a cooler for 2 to 4 hours.",
+     "uses": []
+    },
+    {
+     "text": "At the last minute, trim the ends, separate the point and flat, and slice the flat across the grain pencil-thick.",
+     "uses": [],
+     "tips": [
+      "point-and-flat-apart"
+     ]
+    },
+    {
+     "text": "Taste the juices. Dilute with water if salty or mix with mop sauce, and serve.",
+     "uses": [
+      5
      ]
     }
    ]
