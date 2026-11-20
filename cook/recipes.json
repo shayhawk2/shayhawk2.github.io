@@ -5424,6 +5424,1289 @@
      "uses": []
     }
    ]
+  },
+  {
+   "id": "oven-baked-meatballs",
+   "title": "Oven-Baked Meatballs",
+   "emoji": "🧆",
+   "category": "italian",
+   "type": "Main",
+   "prep": 15,
+   "cook": 22,
+   "servings": 28,
+   "tags": [
+    "beef",
+    "baked",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Large bowl",
+    "Baking sheet",
+    "Parchment paper"
+   ],
+   "source": {
+    "name": "The Black Peppercorn",
+    "url": "https://www.theblackpeppercorn.com/how-to-bake-meatballs-in-the-oven/"
+   },
+   "nutrition": {
+    "cal": 69,
+    "protein": 8,
+    "carbs": 2,
+    "fat": 3
+   },
+   "notes": "Servings here means meatballs (about 28 at 1½ inches). Nutrition is per meatball.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "lb",
+     "item": "ground beef",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "Parmesan",
+     "note": "grated",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": 0.33,
+     "unit": "cup",
+     "item": "milk",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "eggs",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.75,
+     "unit": "cup",
+     "item": "bread crumbs",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "garlic powder",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Preheat the oven to 400°F and line a baking sheet with parchment.",
+     "uses": []
+    },
+    {
+     "text": "Combine everything in a large bowl and knead by hand until fully blended.",
+     "uses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Shape into 1½-inch balls and set them on the sheet.",
+     "uses": []
+    },
+    {
+     "text": "Bake at 400°F for 20 minutes, up to 24, until cooked through.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "roast-any-vegetable",
+   "title": "Roast (Almost) Any Vegetable",
+   "emoji": "🥕",
+   "category": "american",
+   "type": "Side",
+   "prep": 10,
+   "cook": 25,
+   "servings": 4,
+   "tags": [
+    "side",
+    "vegetarian",
+    "technique",
+    "sheet pan"
+   ],
+   "equipment": [
+    "Rimmed baking sheet",
+    "Parchment paper",
+    "Large bowl"
+   ],
+   "source": {
+    "name": "Emily Zanotti",
+    "url": "https://emilyzanotti.substack.com/p/how-to-roast-almost-any-vegetable"
+   },
+   "placeholder": true,
+   "notes": "A method, not a measured recipe: the source gives no amounts for oil or seasoning (\"coat generously\", \"a good pinch\") and no batch size, so servings is a guess. Times at 425°F: peppers, asparagus, green beans, pea pods ~15 min; broccoli, cauliflower, Brussels sprouts 20–25 min; zucchini ~25 min; carrots, beets, radishes 30–45 min; butternut squash up to 45 min. Not for potatoes. Optional: whole garlic cloves or cubed pancetta (good with Brussels sprouts or carrots). Finish: lemon juice, balsamic (Brussels sprouts), shredded Parmesan (broccoli), or sweet vinegar or soy with pancetta sprouts.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "vegetables",
+     "note": "cut into bite-size pieces",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "olive oil",
+     "note": "generous coat",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt",
+     "note": "a good pinch",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "black pepper",
+     "note": "a good pinch",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "granulated garlic",
+     "note": "a good pinch",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "lemon juice",
+     "note": "optional, to finish",
+     "aisle": "Produce"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Preheat the oven to 425°F and line a rimmed sheet with parchment to the edges.",
+     "uses": []
+    },
+    {
+     "text": "Wash, dry and cut the vegetables into bite-size pieces.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Toss by hand in a large bowl with oil, salt, pepper and garlic until shiny and evenly coated.",
+     "uses": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Spread in a single layer with space between pieces.",
+     "uses": []
+    },
+    {
+     "text": "Roast 15 minutes, then flip.",
+     "uses": []
+    },
+    {
+     "text": "Keep roasting, checking every 5 minutes, until tender with some char.",
+     "uses": []
+    },
+    {
+     "text": "Finish with a splash of lemon juice or balsamic if you like.",
+     "uses": [
+      5
+     ]
+    }
+   ]
+  },
+  {
+   "id": "balsamic-vinaigrette",
+   "title": "Balsamic Vinaigrette",
+   "emoji": "🫙",
+   "category": "american",
+   "type": "Sauce & Condiment",
+   "prep": 5,
+   "servings": 4,
+   "tags": [
+    "dressing",
+    "vegan",
+    "quick",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Medium bowl and whisk, or a mason jar"
+   ],
+   "source": {
+    "name": "A Couple Cooks",
+    "url": "https://www.acouplecooks.com/balsamic-vinaigrette-recipe/"
+   },
+   "notes": "Makes about ½ cup; servings is an estimate. Same dressing as the Goat Cheese & Arugula Salad. Use 1 tbsp maple for savory, 2 for sweeter salads. Or shake everything in a sealed jar for 30 seconds. Keeps 2 weeks in the fridge; let it sit a few minutes and re-shake before using. Don't freeze.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "aged balsamic vinegar",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "Dijon mustard",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "maple syrup or honey",
+     "note": "1 to 2 tbsp",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 0.25,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 6,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Whisk the balsamic, Dijon, maple syrup and salt in a medium bowl.",
+     "uses": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "tips": [
+      "dijon-binds-dressing"
+     ]
+    },
+    {
+     "text": "Whisk in the olive oil 1 tbsp at a time until emulsified.",
+     "uses": [
+      4
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smoked-jalapeno-poppers",
+   "title": "Smoked Jalapeño Poppers",
+   "emoji": "🌶️",
+   "category": "bbq",
+   "type": "Appetizer",
+   "prep": 30,
+   "cook": 20,
+   "servings": 24,
+   "tags": [
+    "appetizer",
+    "smoker",
+    "game day",
+    "pepper"
+   ],
+   "equipment": [
+    "Pellet smoker or Hasty Bake",
+    "Rubber gloves",
+    "Paring knife",
+    "Jalapeño rack (optional)",
+    "Pastry bag (optional)"
+   ],
+   "source": {
+    "name": "AmazingRibs",
+    "url": "https://amazingribs.com/tested-recipes/snacks-and-munchies-recipes/smoked-jalapeno-poppers-recipe/"
+   },
+   "nutrition": {
+    "cal": 98,
+    "protein": 3,
+    "carbs": 1,
+    "fat": 9
+   },
+   "placeholder": true,
+   "notes": "Missing: the source's ingredient list is blank, so there are no amounts for the bacon, Boursin-style spread, cheddar or pineapple. 12 jalapeños = the 24 halves it yields. Servings means halves; nutrition is per half. Cook time is a guide: pull them when the cheese melts and the peppers just soften, before they go limp. Store-bought Boursin works. Swaps: pulled pork for bacon; mango for pineapple; blue, jack or mozzarella for cheddar; habaneros for more heat. Keep the ribs for more heat. Good warm, room temp or cold.",
+   "ingredients": [
+    {
+     "qty": 12,
+     "unit": "",
+     "item": "jalapeños",
+     "note": "halved lengthwise, seeds and ribs scraped out",
+     "aisle": "Produce"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "bacon",
+     "note": "cooked, cooled and chopped",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Boursin cheese spread",
+     "note": "store-bought or homemade",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "cheddar",
+     "note": "shredded",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "pineapple",
+     "note": "finely diced, or mango",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 24,
+     "unit": "",
+     "item": "green olives with pimento",
+     "note": "optional, for one-eyed poppers",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "paprika",
+     "note": "for topping",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Cook the bacon, let it cool, then chop.",
+     "uses": [
+      1
+     ],
+     "tips": [
+      "precooked-bacon-poppers"
+     ]
+    },
+    {
+     "text": "Mix the Boursin spread with the bacon, cheddar and pineapple.",
+     "uses": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Wearing gloves, stem and halve the jalapeños, then scrape out the seeds and ribs.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Optional: plug the stem end of each half with an olive.",
+     "uses": [
+      5
+     ]
+    },
+    {
+     "text": "Fill each half without overfilling and dust with paprika.",
+     "uses": [
+      6
+     ]
+    },
+    {
+     "text": "Set the pellet smoker to 225°F, or run the Hasty Bake two-zone at 225°F on the indirect side.",
+     "uses": []
+    },
+    {
+     "text": "Cook indirect for about 20 minutes, until the cheese melts and the peppers just soften.",
+     "uses": []
+    },
+    {
+     "text": "Lift off with a spatula and cool briefly before serving.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "pork-butt-hot-and-fast",
+   "title": "Pork Butt, Hot & Fast",
+   "emoji": "🐖",
+   "category": "bbq",
+   "type": "Main",
+   "prep": 20,
+   "cook": 330,
+   "tags": [
+    "pork",
+    "smoker",
+    "pulled pork"
+   ],
+   "equipment": [
+    "Hasty Bake (or smoker that holds 275°F to 300°F)",
+    "Lump charcoal",
+    "Hickory chunks",
+    "Heavy-duty foil",
+    "Probe thermometer"
+   ],
+   "source": {
+    "name": "Heath Riles BBQ",
+    "url": "https://www.heathrilesbbq.com/blogs/favorite-recipes/hot-and-fast-vs-low-and-slow-pork-butt"
+   },
+   "placeholder": true,
+   "notes": "Missing: the source gives no butt weight, servings or rub and sauce amounts (\"a good layer\"). The author says about 4.5 hours, but his steps add up to about 5.5 hours plus the rest. Heath used a drum smoker; the Hasty Bake setup is the swap. Compare with Pork Butt, Low & Slow (same post). Keeps 4 days in the fridge or 4 months frozen.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "bone-in pork butt",
+     "note": "Boston butt",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Garlic Jalapeño Rub",
+     "note": "first layer",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Competition BBQ Rub",
+     "note": "second layer",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Tangy Vinegar BBQ Sauce",
+     "note": "for the wrap",
+     "aisle": "Oils, Vinegars & Condiments"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pat the butt dry, check for bone shards, trim loose flaps and lightly score the fat.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Season all sides with the garlic jalapeño rub, then the competition rub.",
+     "uses": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "Set up the Hasty Bake for indirect heat with lump charcoal and a few hickory chunks, and bring it to 275°F to 300°F.",
+     "uses": []
+    },
+    {
+     "text": "Cook directly on the grate for 1 hour, then flip.",
+     "uses": []
+    },
+    {
+     "text": "Cook about 2½ hours more, until it hits 142°F inside.",
+     "uses": []
+    },
+    {
+     "text": "Set on double-layered foil, drizzle with the vinegar sauce and wrap tight.",
+     "uses": [
+      3
+     ]
+    },
+    {
+     "text": "Cook about 2 hours more, rotating every 30 minutes, until 200°F inside.",
+     "uses": []
+    },
+    {
+     "text": "Rest wrapped for 1 hour, then pull.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "pork-butt-low-and-slow",
+   "title": "Pork Butt, Low & Slow",
+   "emoji": "🐷",
+   "category": "bbq",
+   "type": "Main",
+   "prep": 20,
+   "cook": 960,
+   "tags": [
+    "pork",
+    "smoker",
+    "pulled pork",
+    "overnight"
+   ],
+   "equipment": [
+    "Vertical pellet smoker",
+    "Heavy-duty foil",
+    "Probe thermometer with alarm"
+   ],
+   "source": {
+    "name": "Heath Riles BBQ",
+    "url": "https://www.heathrilesbbq.com/blogs/favorite-recipes/hot-and-fast-vs-low-and-slow-pork-butt"
+   },
+   "placeholder": true,
+   "notes": "Missing: the source gives no butt weight, servings or rub and sauce amounts (\"a good layer\"). About 16 hours total plus a 2-hour rest; the author put it on at 8 PM. Compare with Pork Butt, Hot & Fast (same post). Keeps 4 days in the fridge or 4 months frozen.",
+   "ingredients": [
+    {
+     "qty": null,
+     "unit": "",
+     "item": "bone-in pork butt",
+     "note": "Boston butt",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Garlic Jalapeño Rub",
+     "note": "first layer",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Competition BBQ Rub",
+     "note": "second layer",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "Heath Riles Tangy Vinegar BBQ Sauce",
+     "note": "for the wrap",
+     "aisle": "Oils, Vinegars & Condiments"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Pat the butt dry, check for bone shards, trim loose flaps and lightly score the fat.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Season all sides with the garlic jalapeño rub, then the competition rub.",
+     "uses": [
+      1,
+      2
+     ]
+    },
+    {
+     "text": "Preheat the smoker to 200°F and put the butt on fat side up.",
+     "uses": []
+    },
+    {
+     "text": "Smoke unwrapped 11 to 12 hours, until about 160°F inside.",
+     "uses": []
+    },
+    {
+     "text": "Set on double-layered foil, drizzle with the vinegar sauce and wrap tight.",
+     "uses": [
+      3
+     ]
+    },
+    {
+     "text": "Raise the smoker to 250°F and cook until 200°F inside and probe-tender.",
+     "uses": []
+    },
+    {
+     "text": "Rest wrapped for 2 hours, then pull.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "smoked-meatloaf",
+   "title": "Smoked Meatloaf",
+   "emoji": "🍖",
+   "category": "bbq",
+   "type": "Main",
+   "prep": 25,
+   "cook": 150,
+   "servings": 8,
+   "tags": [
+    "beef",
+    "pork",
+    "smoker"
+   ],
+   "equipment": [
+    "Skillet",
+    "Large bowl",
+    "Pellet smoker or Hasty Bake",
+    "Foil-covered rack or metal loaf pan",
+    "Instant-read thermometer"
+   ],
+   "source": {
+    "name": "BGE forum cookbook: sprinter + Mike Harmon",
+    "url": "http://docs.wixstatic.com/ugd/d18aac_b714ca37c0e546ab8d7373969d1f0445.pdf#page=23"
+   },
+   "notes": "Combines two forum recipes (cookbook p. 23). From sprinter's Meatloaf on the BGE: the meat, cheddar, ketchup, fajita seasoning and the 325°F finish. From Mike Harmon's Smoked Meatloaf: sautéed vegetables with cumin, garlic, Tabasco, the 225°F smoke, the rub and the sauce glaze. Left out Mike's salt and beef stock since the fajita seasoning and ketchup cover them. The 1-hour smoke then 325°F finish is the merge, so the cook time is an estimate; go by temperature. sprinter cooked to 170°F. Rack trick (sprinter): lay a V-rack flat, cover with foil, poke holes every couple of inches so smoke reaches all sides. Servings is an estimate for 3 lb of meat.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "lb",
+     "item": "ground chuck",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "sage breakfast sausage",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "egg",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "green and red bell pepper",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "red onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "canola oil",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "Italian bread crumbs",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 0.75,
+     "unit": "cup",
+     "item": "ketchup",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "Worcestershire sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "sharp cheddar",
+     "note": "shredded",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "fajita seasoning",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "Tabasco",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "steak and roast rub",
+     "note": "for the top",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "BBQ sauce",
+     "note": "optional glaze",
+     "aisle": "Oils, Vinegars & Condiments"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Warm the oil in a skillet over medium heat and sauté the peppers, onion and cumin until soft. Let cool.",
+     "uses": [
+      3,
+      4,
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Mix everything except the rub and sauce by hand in a large bowl.",
+     "uses": [
+      0,
+      1,
+      2,
+      5,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    {
+     "text": "Shape into a loaf on a foil-covered rack with holes poked in it, or pack into a metal loaf pan. Season the top with rub.",
+     "uses": [
+      15
+     ]
+    },
+    {
+     "text": "Set the smoker to 225°F.",
+     "uses": []
+    },
+    {
+     "text": "Smoke the loaf for 1 hour.",
+     "uses": []
+    },
+    {
+     "text": "Raise the heat to 325°F and cook until 160°F inside.",
+     "uses": []
+    },
+    {
+     "text": "Optional: brush with BBQ sauce for the last 20 minutes.",
+     "uses": [
+      16
+     ]
+    },
+    {
+     "text": "Rest a few minutes, then slice.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "cats-eggfest-meatloaf",
+   "title": "Cat's Eggfest Meatloaf",
+   "emoji": "🍞",
+   "category": "bbq",
+   "type": "Main",
+   "prep": 30,
+   "cook": 90,
+   "servings": 8,
+   "tags": [
+    "beef",
+    "pork",
+    "sausage",
+    "smoker",
+    "make-ahead"
+   ],
+   "equipment": [
+    "Skillet",
+    "Large bowl",
+    "9x5-inch loaf pan",
+    "Shallow pan",
+    "Pellet smoker or Hasty Bake",
+    "Instant-read thermometer"
+   ],
+   "source": {
+    "name": "BGE forum cookbook: Cat",
+    "url": "http://docs.wixstatic.com/ugd/d18aac_b714ca37c0e546ab8d7373969d1f0445.pdf#page=24"
+   },
+   "notes": "Chill the packed loaf several hours (or overnight) before cooking. Any cooked sausage can replace the andouille; chop it in a food processor. Cat serves it with Jimsberry finishing sauce (also in the cookbook). Cat pulls at 150°F and rests 20 minutes; the cookbook's own guide says 160°F for ground beef and pork. Servings is an estimate for about 2½ lb of meat.",
+   "ingredients": [
+    {
+     "qty": 10,
+     "unit": "oz",
+     "item": "andouille sausage",
+     "note": "coarsely chopped",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "Colby cheddar and Monterey Jack",
+     "note": "shredded",
+     "aisle": "Deli & Cheese"
+    },
+    {
+     "qty": 0.5,
+     "unit": "lb",
+     "item": "ground veal",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.5,
+     "unit": "lb",
+     "item": "ground pork",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "ground chuck",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "Dijon mustard",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "Worcestershire sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "sour cream",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "or bacon grease",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and black pepper",
+     "note": "to taste",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "red bell pepper",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 3,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "large, minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "tsp",
+     "item": "ground chipotle",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1.5,
+     "unit": "cup",
+     "item": "yellow onion",
+     "note": "diced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.5,
+     "unit": "cup",
+     "item": "fresh parsley",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "egg yolks",
+     "note": "large",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Sauté the onion and garlic in the oil until lightly browned.",
+     "uses": [
+      8,
+      12,
+      14
+     ]
+    },
+    {
+     "text": "Add the red pepper and cook until soft. Season with salt and pepper, then let cool.",
+     "uses": [
+      9,
+      10
+     ]
+    },
+    {
+     "text": "Mix the cooled vegetables with everything else by hand.",
+     "uses": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      11,
+      13,
+      15,
+      16
+     ]
+    },
+    {
+     "text": "Pack into a 9x5-inch loaf pan lined with foil or plastic wrap and chill for several hours.",
+     "uses": []
+    },
+    {
+     "text": "Start the smoker at 200°F, with red oak if you have it.",
+     "uses": []
+    },
+    {
+     "text": "Turn the loaf out onto a shallow pan, put it on, and raise the heat to 300°F over about 20 minutes.",
+     "uses": []
+    },
+    {
+     "text": "Cook until 150°F inside, about 1 to 1½ hours.",
+     "uses": []
+    },
+    {
+     "text": "Rest for 20 minutes before slicing.",
+     "uses": []
+    }
+   ]
+  },
+  {
+   "id": "egret-cow-lickin-chili",
+   "title": "Egret's Cow Lickin' Chili",
+   "emoji": "🌶️",
+   "category": "bbq",
+   "type": "Main",
+   "prep": 30,
+   "cook": 190,
+   "servings": 10,
+   "tags": [
+    "chili",
+    "beef",
+    "sausage",
+    "smoker",
+    "competition"
+   ],
+   "equipment": [
+    "Large Dutch oven",
+    "Hasty Bake or pellet smoker",
+    "Wood chunks"
+   ],
+   "source": {
+    "name": "Egret (John Hall), Big Green Egg Forum",
+    "url": "https://eggheadforum.com/discussion/411984/egrets-chili-recipe"
+   },
+   "notes": "Egret's competition chili from Eggtoberfest 2007. Steps 3 to 5 are rewritten to the big-patty house rule and keep the browned bits; tap \"As written\" for Egret's version. Seed the dried chiles before floating them so the seeds don't release. Cow Lick is a Dizzy Pig rub. Some versions swap the cocoa for 2 squares (1 oz each) of semi-sweet baking chocolate. Can be made on the stove too.",
+   "ingredients": [
+    {
+     "qty": 2,
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "plus more for the vegetables",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1.5,
+     "unit": "lb",
+     "item": "ground chuck",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "Italian sausage",
+     "note": "casing removed",
+     "aisle": "Meat & Seafood"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "onion",
+     "note": "chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "",
+     "item": "green bell pepper",
+     "note": "seeded and chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "jalapeños",
+     "note": "seeded and chopped fine",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "serrano chiles",
+     "note": "1 to 2, seeded and chopped fine",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "can",
+     "item": "diced tomatoes",
+     "note": "28 oz, with liquid",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "can",
+     "item": "diced tomatoes",
+     "note": "15 oz, with liquid",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "can",
+     "item": "Rotel",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 2,
+     "unit": "can",
+     "item": "pinto, dark kidney or black beans",
+     "note": "15 oz each, drained",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "chili powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "ancho chile powder",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1.5,
+     "unit": "tbsp",
+     "item": "ground cumin",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "cocoa powder",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "ground cinnamon",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "bay leaves",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "Tabasco",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "dried oregano",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 3,
+     "unit": "tbsp",
+     "item": "Dizzy Pig Cow Lick rub",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "beef broth",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "cup",
+     "item": "dry red wine",
+     "aisle": "Beverages"
+    },
+    {
+     "qty": 3,
+     "unit": "",
+     "item": "dried chiles",
+     "note": "2 to 3, chipotle or ancho, seeded",
+     "aisle": "Spices"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "salt and black pepper",
+     "note": "to taste",
+     "aisle": "Spices"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Set up the Hasty Bake or smoker at 350°F with 2 or 3 fist-sized wood chunks.",
+     "uses": []
+    },
+    {
+     "text": "Heat the oil in the Dutch oven on the grate.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Press the chuck into the hot Dutch oven as one big patty. Sear without moving it until the bottom is deeply browned, 4 to 5 minutes. Flip and sear the second side.",
+     "uses": [
+      1
+     ],
+     "asWritten": "Add the ground chuck and sausage, breaking them into smaller pieces with a wooden spoon.",
+     "tips": [
+      "big-beef-patty"
+     ]
+    },
+    {
+     "text": "Break up the patty, add the sausage, close the lid and cook about 1 hour, stirring every 15 minutes.",
+     "uses": [
+      1,
+      2
+     ],
+     "asWritten": "Close the lid and cook for about 1 hour, stirring every 10 to 15 minutes."
+    },
+    {
+     "text": "Lift the meat out to drain on paper towels and pour off the grease, keeping the browned bits in the pot.",
+     "uses": [],
+     "asWritten": "Remove the meat and drain on paper towels. Wipe the Dutch oven dry with paper towels."
+    },
+    {
+     "text": "Add a little more oil and sauté the onion, bell pepper, jalapeños and serranos until limp.",
+     "uses": [
+      3,
+      4,
+      5,
+      6
+     ]
+    },
+    {
+     "text": "Add the garlic and cook 2 to 3 minutes.",
+     "uses": [
+      7
+     ]
+    },
+    {
+     "text": "Return the meat and stir in the tomatoes, Rotel, beans, spices, rub, broth and wine. Float the dried chiles on top.",
+     "uses": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+     ]
+    },
+    {
+     "text": "Cook uncovered about 2 hours, adding water if it gets dry. Once it simmers, you can drop the heat to 300°F to 325°F.",
+     "uses": []
+    },
+    {
+     "text": "Remove the bay leaves and dried chiles, season with salt and pepper, and serve.",
+     "uses": [
+      24
+     ]
+    }
+   ]
   }
  ]
 }
