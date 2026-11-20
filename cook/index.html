@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>There and Snack Again</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A family recipe box with cook mode, grocery list and pantry.">
+<meta name="theme-color" content="#FBF4E4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Snack Again">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="preload" href="fonts/caveat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>
+  try {
+    var t = JSON.parse(localStorage.getItem('tasa:v1') || '{}').theme;
+    if (t) document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" id="side" aria-label="Menu">
+    <a class="brand" href="#/">
+      <img src="icons/icon.svg" alt="" width="44" height="44">
+      <span class="brand-text"><span class="brand-name">There and Snack Again</span><span class="brand-tag">a cook's tale</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/" data-nav=""><span class="ni">📖</span><span class="nl">Recipes</span></a>
+      <a href="#/tonight" data-nav="tonight"><span class="ni">🎲</span><span class="nl">Tonight</span></a>
+      <a href="#/list" data-nav="list"><span class="ni">🧺</span><span class="nl">Grocery list</span><span class="badge" id="listBadge" hidden></span></a>
+      <a href="#/pantry" data-nav="pantry"><span class="ni">🫙</span><span class="nl">Pantry</span></a>
+      <a href="#/favorites" data-nav="favorites"><span class="ni">❤️</span><span class="nl">Favorites</span></a>
+      <a href="#/add" data-nav="add"><span class="ni">✏️</span><span class="nl">Add a recipe</span></a>
+      <a href="#/settings" data-nav="settings"><span class="ni">⚙️</span><span class="nl">Settings</span></a>
+    </nav>
+    <div class="side-foot">
+      <button class="side-btn" data-act="theme" aria-label="Switch light or dark"><span class="ni" id="themeIcon">🌙</span><span class="nl" id="themeLabel">Dark mode</span></button>
+      <button class="side-btn rail-btn" data-act="rail" aria-label="Collapse menu"><span class="ni" id="railIcon">⇤</span><span class="nl">Collapse menu</span></button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" data-act="closeMenu"></div>
+  <div class="page">
+    <header class="top" id="top">
+      <button class="icon-btn" data-act="openMenu" aria-label="Open menu">☰</button>
+      <a class="top-title" href="#/">There and Snack Again</a>
+      <button class="icon-btn" data-act="theme" aria-label="Switch light or dark" id="topTheme">🌙</button>
+    </header>
+    <main id="main" tabindex="-1"></main>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

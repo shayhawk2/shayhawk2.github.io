@@ -1,0 +1,126 @@
+{
+  "categories": [
+    { "id": "weeknight", "name": "Weeknight Dinners", "emoji": "🍽️" },
+    { "id": "sunday", "name": "Sunday Suppers", "emoji": "🍝" },
+    { "id": "breakfast", "name": "Breakfast", "emoji": "🥞" },
+    { "id": "grill", "name": "Grill & Smoker", "emoji": "🔥" },
+    { "id": "sides", "name": "Sides", "emoji": "🥗" },
+    { "id": "snacks", "name": "Snacks", "emoji": "🥨" },
+    { "id": "desserts", "name": "Desserts", "emoji": "🍪" }
+  ],
+  "recipes": [
+    {
+      "id": "nonnas-enhanced-meatballs",
+      "title": "Nonna's Enhanced Meatballs",
+      "emoji": "🍝",
+      "category": "sunday",
+      "tags": ["italian", "beef", "pork", "freezer-friendly"],
+      "prep": 20,
+      "cook": 25,
+      "servings": 6,
+      "equipment": ["Sheet pan", "Dutch oven"],
+      "kid": true,
+      "placeholder": true,
+      "nutrition": { "cal": 480, "protein": 32, "carbs": 22, "fat": 28 },
+      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
+      "ingredients": [
+        { "qty": 1, "unit": "cup", "item": "fresh breadcrumbs", "aisle": "Bakery" },
+        { "qty": 0.333, "unit": "cup", "item": "whole milk", "aisle": "Dairy & Eggs" },
+        { "qty": 2, "unit": "", "item": "large eggs", "aisle": "Dairy & Eggs" },
+        { "qty": 0.5, "unit": "cup", "item": "grated Parmesan", "aisle": "Dairy & Eggs" },
+        { "qty": 3, "unit": "clove", "item": "garlic", "note": "minced", "aisle": "Produce" },
+        { "qty": 0.25, "unit": "cup", "item": "flat-leaf parsley", "note": "chopped", "aisle": "Produce" },
+        { "qty": 1, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "tsp", "item": "black pepper", "aisle": "Spices" },
+        { "qty": 1, "unit": "lb", "item": "ground beef", "note": "80/20", "aisle": "Meat & Seafood" },
+        { "qty": 0.5, "unit": "lb", "item": "ground pork", "aisle": "Meat & Seafood" },
+        { "qty": 2, "unit": "tbsp", "item": "olive oil", "aisle": "Pantry" },
+        { "qty": 24, "unit": "oz", "item": "marinara sauce", "aisle": "Pantry" }
+      ],
+      "steps": [
+        { "text": "Heat the oven to 425°F and line a sheet pan with parchment.", "uses": [] },
+        { "text": "Stir the breadcrumbs into the milk in a large bowl and let them soak for 5 minutes.", "uses": [0, 1] },
+        { "text": "Add the eggs, Parmesan, garlic, parsley, salt and pepper. Mix with a fork until even.", "uses": [2, 3, 4, 5, 6, 7] },
+        { "text": "Add the beef and pork. Mix gently with your hands just until combined; overmixing makes them tough.", "uses": [8, 9] },
+        { "text": "Roll into golf-ball-size meatballs, about 24. Set them on the sheet pan and brush with the olive oil.", "uses": [10] },
+        { "text": "Bake for 15 minutes, until browned on top.", "uses": [] },
+        { "text": "Warm the marinara in a Dutch oven, add the meatballs and simmer for 10 minutes.", "uses": [11] }
+      ]
+    },
+    {
+      "id": "crispy-chicken-cutlets",
+      "title": "Crispy Chicken Cutlets",
+      "emoji": "🍗",
+      "category": "weeknight",
+      "tags": ["chicken", "italian", "quick"],
+      "prep": 15,
+      "cook": 12,
+      "servings": 4,
+      "equipment": ["Large skillet", "Wire rack"],
+      "kid": true,
+      "placeholder": true,
+      "nutrition": { "cal": 520, "protein": 44, "carbs": 30, "fat": 24 },
+      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
+      "ingredients": [
+        { "qty": 1.5, "unit": "lb", "item": "boneless, skinless chicken breasts", "note": "about 2 large", "aisle": "Meat & Seafood" },
+        { "qty": 1, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "tsp", "item": "black pepper", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "cup", "item": "all-purpose flour", "aisle": "Pantry" },
+        { "qty": 2, "unit": "", "item": "large eggs", "aisle": "Dairy & Eggs" },
+        { "qty": 1, "unit": "cup", "item": "panko", "aisle": "Pantry" },
+        { "qty": 0.5, "unit": "cup", "item": "Italian breadcrumbs", "aisle": "Pantry" },
+        { "qty": 0.333, "unit": "cup", "item": "grated Parmesan", "aisle": "Dairy & Eggs" },
+        { "qty": 0.5, "unit": "tsp", "item": "garlic powder", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "cup", "item": "neutral oil", "note": "for frying", "aisle": "Pantry" },
+        { "qty": 1, "unit": "", "item": "lemon", "note": "cut in wedges", "aisle": "Produce" }
+      ],
+      "steps": [
+        { "text": "Slice each chicken breast in half horizontally, then pound to an even ½ inch. Season both sides with the salt and pepper.", "uses": [0, 1, 2] },
+        { "text": "Set up three shallow dishes: flour in the first, beaten eggs in the second, and the panko, breadcrumbs, Parmesan and garlic powder mixed in the third.", "uses": [3, 4, 5, 6, 7, 8] },
+        { "text": "Dredge each cutlet in flour, dip in egg, then press firmly into the crumbs. Rest on a rack for 5 minutes so the coating sets.", "uses": [] },
+        { "text": "Heat the oil in a large skillet over medium-high until a crumb sizzles on contact.", "uses": [9] },
+        { "text": "Fry the cutlets in batches, 3 minutes per side, until deep golden and 165°F inside. Drain on the rack.", "uses": [] },
+        { "text": "Serve hot with lemon wedges.", "uses": [10] }
+      ]
+    },
+    {
+      "id": "ground-beef-tacos",
+      "title": "Ground Beef Tacos",
+      "emoji": "🌮",
+      "category": "weeknight",
+      "tags": ["beef", "tex-mex", "quick"],
+      "prep": 10,
+      "cook": 15,
+      "servings": 4,
+      "equipment": ["Large skillet"],
+      "kid": true,
+      "placeholder": true,
+      "nutrition": { "cal": 540, "protein": 30, "carbs": 34, "fat": 31 },
+      "notes": "Stand-in version so the app has something to cook. Send me the real one and I'll swap it in.",
+      "ingredients": [
+        { "qty": 1, "unit": "lb", "item": "ground beef", "aisle": "Meat & Seafood" },
+        { "qty": 0.5, "unit": "", "item": "yellow onion", "note": "diced", "aisle": "Produce" },
+        { "qty": 2, "unit": "clove", "item": "garlic", "note": "minced", "aisle": "Produce" },
+        { "qty": 1, "unit": "tbsp", "item": "chili powder", "aisle": "Spices" },
+        { "qty": 1, "unit": "tsp", "item": "ground cumin", "aisle": "Spices" },
+        { "qty": 1, "unit": "tsp", "item": "paprika", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "tsp", "item": "dried oregano", "aisle": "Spices" },
+        { "qty": 0.5, "unit": "tsp", "item": "kosher salt", "aisle": "Spices" },
+        { "qty": 2, "unit": "tbsp", "item": "tomato paste", "aisle": "Pantry" },
+        { "qty": 0.5, "unit": "cup", "item": "water", "aisle": "Other" },
+        { "qty": 12, "unit": "", "item": "taco shells", "aisle": "Pantry" },
+        { "qty": 1, "unit": "cup", "item": "shredded lettuce", "aisle": "Produce" },
+        { "qty": 1, "unit": "cup", "item": "shredded cheddar", "aisle": "Dairy & Eggs" },
+        { "qty": 1, "unit": "", "item": "tomato", "note": "diced", "aisle": "Produce" },
+        { "qty": null, "unit": "", "item": "sour cream", "note": "for serving", "aisle": "Dairy & Eggs" }
+      ],
+      "steps": [
+        { "text": "Brown the beef with the onion in a large skillet over medium-high heat, breaking it up, about 6 minutes. Drain off most of the fat.", "uses": [0, 1] },
+        { "text": "Stir in the garlic, chili powder, cumin, paprika, oregano and salt. Cook for 1 minute until fragrant.", "uses": [2, 3, 4, 5, 6, 7] },
+        { "text": "Add the tomato paste and water. Simmer for 5 minutes, until saucy and thick.", "uses": [8, 9] },
+        { "text": "Warm the taco shells in a 350°F oven for 4 minutes.", "uses": [10] },
+        { "text": "Fill the shells with beef and top with lettuce, cheddar, tomato and sour cream.", "uses": [11, 12, 13, 14] }
+      ]
+    }
+  ]
+}
