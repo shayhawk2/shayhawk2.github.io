@@ -9133,6 +9133,242 @@
      ]
     }
    ]
+  },
+  {
+   "id": "thanksgiving-green-bean-casserole",
+   "title": "Thanksgiving Green Bean Casserole",
+   "emoji": "🫛",
+   "category": "american",
+   "type": "Side",
+   "tags": [
+    "thanksgiving",
+    "side",
+    "make-ahead"
+   ],
+   "prep": 25,
+   "cook": 85,
+   "servings": 8,
+   "equipment": [
+    "Heavy pot",
+    "12-inch skillet",
+    "Colander",
+    "Shallow metal baking dish",
+    "Foil",
+    "Thermometer"
+   ],
+   "source": {
+    "name": "Alton Brown, adapted with J. Kenji López-Alt’s techniques",
+    "url": "https://altonbrown.com/recipes/best-ever-green-bean-casserole/"
+   },
+   "notes": "I like smashing and rough chopping mushrooms. I’ll do the final oven cooking at my parents house.",
+   "ingredients": [
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "green beans",
+     "note": "trimmed and halved",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 2,
+     "unit": "",
+     "item": "large onions",
+     "note": "thinly sliced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 0.25,
+     "unit": "cup",
+     "item": "rice flour",
+     "aisle": "Baking"
+    },
+    {
+     "qty": null,
+     "unit": "",
+     "item": "neutral oil",
+     "note": "for frying, about 1 inch deep",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 8,
+     "unit": "tsp",
+     "item": "kosher salt",
+     "note": "divided",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 1,
+     "unit": "lb",
+     "item": "cremini mushrooms",
+     "note": "smashed and rough-chopped",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 4,
+     "unit": "tbsp",
+     "item": "unsalted butter",
+     "aisle": "Dairy & Eggs"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "black pepper",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 4,
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "aisle": "Produce"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "nutmeg",
+     "note": "freshly grated",
+     "aisle": "Spices"
+    },
+    {
+     "qty": 0.333,
+     "unit": "cup",
+     "item": "all-purpose flour",
+     "aisle": "Baking"
+    },
+    {
+     "qty": 1,
+     "unit": "tbsp",
+     "item": "sherry vinegar",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "unsalted chicken broth",
+     "aisle": "Canned & Jarred"
+    },
+    {
+     "qty": 1,
+     "unit": "tsp",
+     "item": "soy sauce",
+     "aisle": "Oils, Vinegars & Condiments"
+    },
+    {
+     "qty": 2,
+     "unit": "cup",
+     "item": "half-and-half",
+     "aisle": "Dairy & Eggs"
+    }
+   ],
+   "steps": [
+    {
+     "text": "Wednesday: Heat the oil to 375°F in a heavy pot.",
+     "uses": [
+      3
+     ]
+    },
+    {
+     "text": "Toss onions with rice flour. Fry in four batches for 5 minutes each or until golden.",
+     "uses": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "text": "Drain on paper towels. Season with a pinch from the measured salt. Strain and reserve 1 tbsp oil.",
+     "uses": [
+      1,
+      3,
+      4
+     ]
+    },
+    {
+     "text": "Blanch beans in 3 qt boiling water with 6 tsp salt for 5 minutes.",
+     "uses": [
+      0,
+      4
+     ]
+    },
+    {
+     "text": "Transfer all beans to ice water. Once cool, drain and pat dry with towels.",
+     "uses": [
+      0
+     ]
+    },
+    {
+     "text": "Brown mushrooms in butter and reserved oil with pepper and remaining salt for about 10 minutes, until liquid evaporates and edges brown.",
+     "uses": [
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "text": "Stir in garlic and nutmeg for 30 seconds.",
+     "uses": [
+      8,
+      9
+     ]
+    },
+    {
+     "text": "Sprinkle in flour and stir for 1 minute.",
+     "uses": [
+      10
+     ]
+    },
+    {
+     "text": "Stir in vinegar for 1 minute.",
+     "uses": [
+      11
+     ]
+    },
+    {
+     "text": "Mix soy sauce into broth. Gradually stir into skillet, scraping up browned bits.",
+     "uses": [
+      12,
+      13
+     ],
+     "tips": [
+      "savory-enhancer"
+     ]
+    },
+    {
+     "text": "At a simmer, add half-and-half. Simmer gently for 12 minutes or until sauce thickly coats a spoon.",
+     "uses": [
+      14
+     ]
+    },
+    {
+     "text": "Fold in beans and half the onions. Transfer to a shallow metal baking dish and refrigerate promptly.",
+     "uses": [
+      0,
+      1
+     ]
+    },
+    {
+     "text": "Cool remaining onions completely and seal at room temperature.",
+     "uses": [
+      1
+     ]
+    },
+    {
+     "text": "Thursday: Transport filling in a cooler with ice packs. Keep topping separate. Preheat oven to 350°F.",
+     "uses": []
+    },
+    {
+     "text": "Bake covered for 30 minutes. Uncover and bake until bubbling and center reaches 165°F, about 10 minutes more.",
+     "uses": []
+    },
+    {
+     "text": "Scatter reserved onions on top for the final 2–3 minutes of oven time, then serve.",
+     "uses": [
+      1
+     ]
+    }
+   ]
   }
  ]
 }
